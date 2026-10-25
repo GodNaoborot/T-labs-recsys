@@ -1,0 +1,42 @@
+{
+  "completed": true,
+  "split": "val",
+  "test_used": false,
+  "training_performed": false,
+  "model": "D462-sub frozen",
+  "feature_index": 131,
+  "intervention": "same conditional phase permutation as C2b; only User recency column changed",
+  "changed_rows": 1233368,
+  "max_freshness_change_seconds": 4.0,
+  "original_metrics": {
+    "NDCG@10": 0.8472023765502168,
+    "QueryAUC": 0.7579127905385112
+  },
+  "permuted_metrics": {
+    "NDCG@10": 0.8025634063771995,
+    "QueryAUC": 0.6828033508576242
+  },
+  "delta_ndcg": -0.04463897017301732,
+  "paired_exploratory_intervals": [
+    {
+      "block_days": 3,
+      "ci_low": -0.045675486884626595,
+      "ci_high": -0.043617830691961304
+    },
+    {
+      "block_days": 4,
+      "ci_low": -0.045718212956727365,
+      "ci_high": -0.04359842198960434
+    }
+  ],
+  "original_raw_predictions_match_saved": true,
+  "model_sha256_unchanged": "992f00c00d516803cc04f57258ea1e9e6348fce11c0bc426f0fd62d643ecf91e",
+  "source_sha256": "b4bc292da3e83ba852c8ca91276850c92333eb38f22e2723238ed5594a652a78",
+  "elapsed_seconds": 60.49468129797606,
+  "limitations": [
+    "post-hoc validation sensitivity, not refitted-model quality",
+    "other feature relationships can be disrupted",
+    "true start unobserved; no causal fraction of leakage",
+    "other start-derived features and groups were not changed"
+  ]
+}

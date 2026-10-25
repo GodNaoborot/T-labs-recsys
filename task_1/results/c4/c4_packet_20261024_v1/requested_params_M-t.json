@@ -1,0 +1,30 @@
+{
+  "iterations": 1600,
+  "early_stopping_rounds": 80,
+  "random_seed": 42,
+  "use_best_model": true,
+  "verbose": 100,
+  "allow_writing_files": false,
+  "nan_mode": "Min",
+  "border_count": 254,
+  "task_type": "CPU",
+  "random_strength": 1.0,
+  "rsm": 1.0,
+  "loss_function": "YetiRank",
+  "eval_metric": "NDCG:top=10;type=Base;denominator=LogPosition",
+  "thread_count": 4,
+  "bootstrap_type": "MVS",
+  "subsample": 0.8,
+  "depth": 6,
+  "learning_rate": 0.1,
+  "l2_leaf_reg": 1e-20,
+  "ignored_features": [
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48
+  ]
+}

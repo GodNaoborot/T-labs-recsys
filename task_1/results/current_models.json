@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "comparison_id": "manual_vs_dfs_validation_20261020",
+  "updated_utc": "2026-10-22T21:17:39.187254+00:00",
+  "evaluation_split": "val",
+  "test_used": false,
+  "note": "Текущее исходное сравнение: обе ручные модели переобучены с validation. Rolling — отдельная проверка на пяти окнах.",
+  "manual": {
+    "config": {
+      "path": "results/baselines/timing-20261020/run_config.json",
+      "sha256": "cfb8bbd14ef3d5f749805ea9b73dedda0ea6725502ce00089873b0d1e011c30b"
+    },
+    "metrics": {
+      "path": "results/baselines/timing-20261020/validation_metrics.csv",
+      "sha256": "6c26ba3fbf24a84880c62739105e76128c0a33229e8a05fc48e668aa713a0bec"
+    },
+    "models": {
+      "ranker": {
+        "path": "models/baseline-timing-20261020/baseline.cbm",
+        "sha256": "97242814c1234f5be3a6091a516e5448dc8a421c2c312202cba51fb00f081648"
+      },
+      "pointwise": {
+        "path": "models/baseline-timing-20261020/baseline_pointwise.cbm",
+        "sha256": "37fe880aedcab825302873cca5d83f66dae4da11fc102c2055d7044b4587af76"
+      }
+    }
+  },
+  "dfs": {
+    "config": {
+      "path": "results/experiment-1/dfs/run_config.json",
+      "sha256": "159a7b9b3299ac008bd482bf000a868405bf233c1c1a8f6755567f91e6021c08"
+    },
+    "metrics": {
+      "path": "results/experiment-1/dfs/validation_metrics.csv",
+      "sha256": "c3ddc505f55520dacfdc982a3bd17afc58b7b5bd579e18345cb2de403c3778f3"
+    },
+    "models": {
+      "ranker": {
+        "path": "models/experiment-1/dfs/ranker.cbm",
+        "sha256": "5901854e6f4d8b797f6cdff5acdf28154902f212c43274df932ac0e8b630d207"
+      },
+      "pointwise": {
+        "path": "models/experiment-1/dfs/pointwise.cbm",
+        "sha256": "fc120e479135571ca1fe344791ea339f6f0c4b99df27ea36a822337f0aa5097e"
+      }
+    }
+  },
+  "rolling": {
+    "results": "results/experiment-1/rolling_windows",
+    "windows": 5,
+    "objectives": [
+      "ranker",
+      "pointwise"
+    ]
+  }
+}

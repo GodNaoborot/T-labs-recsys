@@ -1,0 +1,15 @@
+{
+  "dataset": "yandex/yambda",
+  "revision": "dd6f3a19eef5866e346c3270e098baa641a44948",
+  "files": {
+    "flat/50m/multi_event.parquet": {
+      "bytes": 384465869,
+      "sha256": "b92f6c97277a554c8a7d6cfea900eca51639fd53a3e6c4fa58b82e35fd35804d"
+    },
+    "artist_item_mapping.parquet": {
+      "bytes": 38274621,
+      "sha256": "cf1110aa2413ed70008ec9232d395660b2181ffda731002fb74da54e87b6f25d"
+    }
+  },
+  "purpose": "Pinned raw inputs of the recorded Yambda flat50m experiment; no data rows included"
+}

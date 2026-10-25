@@ -1,0 +1,15 @@
+{
+  "completed": true,
+  "test_used": false,
+  "history_upper_exclusive": 24624000,
+  "frozen_labels_match": true,
+  "all_attached_reactions_at_or_before_listen_end": true,
+  "rule": "next_same_pair_end>=reaction_ts; reaction_ts>=saved start_ts; like overrides dislike",
+  "source_rows_scanned": 46467212,
+  "historical_listen_rows": 43053080,
+  "verified_labels": 43053080,
+  "attached_reaction_rows": 303685,
+  "attached_like_rows": 279155,
+  "attached_dislike_rows": 24530,
+  "listens_with_both_reaction_types": 515
+}

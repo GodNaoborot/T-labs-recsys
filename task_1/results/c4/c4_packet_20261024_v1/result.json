@@ -1,0 +1,19 @@
+{
+  "run_name": "c4_packet_20261024_v1",
+  "completed": true,
+  "test_used": false,
+  "supervisor_pid": 595240,
+  "started_at_utc": "2026-10-24T07:10:32.662192+00:00",
+  "stage": "completed",
+  "worker_pid": null,
+  "peak_anonymous_gib": 5.744941711425781,
+  "stage_seconds": {
+    "targets": 44.356874488003086,
+    "features": 555.7688993640186,
+    "quantize": 223.1419863810006,
+    "train": 3199.0094498769904
+  },
+  "elapsed_seconds": 4022.3419424110034,
+  "exit_code": 0,
+  "protocol_sha256": "37923d78392cacd00ab9d0969e979177da5baede7fd1bee7e8e45150ffeceb95"
+}

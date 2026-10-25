@@ -1,0 +1,192 @@
+{
+  "priority_order": [
+    "first_packet",
+    "outside_train_val",
+    "target_end_gap",
+    "attached_reaction_before_cutoff"
+  ],
+  "intersection_bits": {
+    "first_packet": 1,
+    "outside_train_val": 2,
+    "target_end_gap": 4,
+    "attached_reaction_before_cutoff": 8
+  },
+  "nonexclusive": {
+    "first_packet": {
+      "rows": 14326,
+      "labels": {
+        "0": 6362,
+        "1": 7783,
+        "2": 181
+      }
+    },
+    "outside_train_val": {
+      "rows": 31450862,
+      "labels": {
+        "0": 10712809,
+        "1": 20541931,
+        "2": 196122
+      }
+    },
+    "target_end_gap": {
+      "rows": 16719,
+      "labels": {
+        "0": 6144,
+        "1": 10452,
+        "2": 123
+      }
+    },
+    "attached_reaction_before_cutoff": {
+      "rows": 2290,
+      "labels": {
+        "0": 62,
+        "1": 0,
+        "2": 2228
+      }
+    }
+  },
+  "priority": {
+    "first_packet": {
+      "rows": 14326,
+      "labels": {
+        "0": 6362,
+        "1": 7783,
+        "2": 181
+      }
+    },
+    "outside_train_val": {
+      "rows": 31436536,
+      "labels": {
+        "0": 10706447,
+        "1": 20534148,
+        "2": 195941
+      }
+    },
+    "target_end_gap": {
+      "rows": 16719,
+      "labels": {
+        "0": 6144,
+        "1": 10452,
+        "2": 123
+      }
+    },
+    "attached_reaction_before_cutoff": {
+      "rows": 618,
+      "labels": {
+        "0": 15,
+        "1": 0,
+        "2": 603
+      }
+    }
+  },
+  "intersection_bitsets": {
+    "0": 11584881,
+    "2": 31434864,
+    "3": 14326,
+    "4": 16719,
+    "8": 618,
+    "10": 1672
+  },
+  "by_split": {
+    "train": {
+      "assigned": {
+        "rows": 8523543,
+        "labels": {
+          "0": 2903762,
+          "1": 5562223,
+          "2": 57558
+        }
+      },
+      "first_packet": {
+        "rows": 0,
+        "labels": {
+          "0": 0,
+          "1": 0,
+          "2": 0
+        }
+      },
+      "outside_train_val": {
+        "rows": 0,
+        "labels": {
+          "0": 0,
+          "1": 0,
+          "2": 0
+        }
+      },
+      "target_end_gap": {
+        "rows": 15202,
+        "labels": {
+          "0": 5572,
+          "1": 9518,
+          "2": 112
+        }
+      },
+      "attached_reaction_before_cutoff": {
+        "rows": 448,
+        "labels": {
+          "0": 13,
+          "1": 0,
+          "2": 435
+        }
+      },
+      "eligible": {
+        "rows": 8507893,
+        "labels": {
+          "0": 2898177,
+          "1": 5552705,
+          "2": 57011
+        }
+      }
+    },
+    "val": {
+      "assigned": {
+        "rows": 3078675,
+        "labels": {
+          "0": 1040093,
+          "1": 2016255,
+          "2": 22327
+        }
+      },
+      "first_packet": {
+        "rows": 0,
+        "labels": {
+          "0": 0,
+          "1": 0,
+          "2": 0
+        }
+      },
+      "outside_train_val": {
+        "rows": 0,
+        "labels": {
+          "0": 0,
+          "1": 0,
+          "2": 0
+        }
+      },
+      "target_end_gap": {
+        "rows": 1517,
+        "labels": {
+          "0": 572,
+          "1": 934,
+          "2": 11
+        }
+      },
+      "attached_reaction_before_cutoff": {
+        "rows": 170,
+        "labels": {
+          "0": 2,
+          "1": 0,
+          "2": 168
+        }
+      },
+      "eligible": {
+        "rows": 3076988,
+        "labels": {
+          "0": 1039519,
+          "1": 2015321,
+          "2": 22148
+        }
+      }
+    }
+  }
+}

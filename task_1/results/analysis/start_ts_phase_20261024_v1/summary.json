@@ -1,0 +1,126 @@
+{
+  "completed": true,
+  "test_read": false,
+  "model_fit": false,
+  "model_predict": false,
+  "diagnostic_not_ranking_result": true,
+  "smoothing_alpha": 1.0,
+  "phase_formula": "start=floor(end-length*ratio/100-5); for end%5=0: start%5=-ceil(length*ratio/100)%5",
+  "caveat": "Target-derived phase association does not identify the causal fraction of the CatBoost gain; true-start timing and legal behavior also matter.",
+  "source_sha256": "60da520066e5ae87a322991989755ba997193c1b2d967338a632adad9af0695a",
+  "borders_sha256": "985f744704cb17fa35d2f04eda0bc96fd09691a46210a8237042b076c0fb2fed",
+  "dfs_borders_path": "data/experiment-1/temporal_runs/temporal_full462_20261023_v5/quantized/train_borders.tsv",
+  "dfs_borders_sha256": "7dca38898ba6a28a61e426ba83f8df31c938c59e42a4451ff8ba3bfba3d6fcba",
+  "dfs_quantizer_rule": "searchsorted fixed column131 borders on float32(F_seconds / 86400)",
+  "inputs": {
+    "train": {
+      "selection": "data/experiment-1/temporal_controls/dfs462_controls_20261023_v1/selection/train.npz",
+      "selection_sha256": "ef41945a4e1bd2e18d2adf459545bffca231b109ad5b880bf77d24610115d8cd",
+      "metadata": "data/experiment-1/featuretools/full_train_cumulative/train_all_cumulative_metadata.parquet",
+      "metadata_size_bytes": 219646982,
+      "session": "data/experiment-1/temporal_controls/dfs462_controls_20261023_v1/manual_sessions/train_session_X.npy",
+      "session_recorded_sha256": null,
+      "session_actual_sha256": "a9b6e37280a9947cf7d58c62f39d4fa6f5b6d4d501ff17b150df8e615fd61542"
+    },
+    "val": {
+      "selection": "data/experiment-1/temporal_controls/dfs462_controls_20261023_v1/selection/val.npz",
+      "selection_sha256": "1a519cfdaa0a751cb70c7bdf1ead2999f9578b03210834c1c6569cd9be281188",
+      "metadata": "data/experiment-1/featuretools/full_val_cumulative/val_all_cumulative_metadata.parquet",
+      "metadata_size_bytes": 78258179,
+      "session": "data/experiment-1/temporal_controls/dfs462_controls_20261023_v1/manual_sessions/val_session_X.npy",
+      "session_recorded_sha256": null,
+      "session_actual_sha256": "9d1a59fdb787767302f4689c51924251e3c18f657110e86e6a613b4e885fb685"
+    }
+  },
+  "splits": [
+    {
+      "split": "train",
+      "rows": 2039017,
+      "groups": 40000,
+      "end_not_multiple_5": 0,
+      "track_length_not_multiple_5": 0,
+      "start_not_multiple_5": 725557,
+      "start_not_multiple_5_share": 0.3558366605084705,
+      "freshness_nan": 662,
+      "freshness_present": 2038355,
+      "freshness_non_integer_present": 0,
+      "phase_equal_present": 2038345,
+      "phase_equal_present_share": 0.9999950940832191,
+      "phase_equal_up_to_float32_exact_integer": 2038340,
+      "present_up_to_float32_exact_integer": 2038340,
+      "inferred_last_end_not_multiple_5": 10,
+      "freshness_singleton_integer_bin": 874410,
+      "freshness_singleton_integer_bin_present_share": 0.42897826924161886,
+      "freshness_phase_sensitive_quantization": 1507806,
+      "freshness_phase_sensitive_present_share": 0.7397170757792435,
+      "dfs_freshness_phase_sensitive_quantization": 1522325,
+      "dfs_freshness_phase_sensitive_present_share": 0.7468399763534811
+    },
+    {
+      "split": "val",
+      "rows": 2882983,
+      "groups": 56946,
+      "end_not_multiple_5": 0,
+      "track_length_not_multiple_5": 0,
+      "start_not_multiple_5": 1034242,
+      "start_not_multiple_5_share": 0.3587402353742634,
+      "freshness_nan": 728,
+      "freshness_present": 2882255,
+      "freshness_non_integer_present": 0,
+      "phase_equal_present": 2882231,
+      "phase_equal_present_share": 0.999991673186446,
+      "phase_equal_up_to_float32_exact_integer": 2882211,
+      "present_up_to_float32_exact_integer": 2882211,
+      "inferred_last_end_not_multiple_5": 24,
+      "freshness_singleton_integer_bin": 1228076,
+      "freshness_singleton_integer_bin_present_share": 0.4260816617544249,
+      "freshness_phase_sensitive_quantization": 2142263,
+      "freshness_phase_sensitive_present_share": 0.7432593576904195,
+      "dfs_freshness_phase_sensitive_quantization": 2163467,
+      "dfs_freshness_phase_sensitive_present_share": 0.7506160974653526
+    }
+  ],
+  "lookup_diagnostics": [
+    {
+      "diagnostic": "global",
+      "alpha": 1.0,
+      "train_keys": 1,
+      "val_unseen_rows": 0,
+      "validation_rows": 2882983,
+      "multiclass_logloss": 0.6950569809872714,
+      "skip_vs_other_roc_auc": 0.5,
+      "diagnostic_not_model_comparison": true
+    },
+    {
+      "diagnostic": "track_length",
+      "alpha": 1.0,
+      "train_keys": 492,
+      "val_unseen_rows": 35,
+      "validation_rows": 2882983,
+      "multiclass_logloss": 0.691995069580776,
+      "skip_vs_other_roc_auc": 0.5457292799789819,
+      "diagnostic_not_model_comparison": true
+    },
+    {
+      "diagnostic": "phase",
+      "alpha": 1.0,
+      "train_keys": 5,
+      "val_unseen_rows": 0,
+      "validation_rows": 2882983,
+      "multiclass_logloss": 0.5696939068832917,
+      "skip_vs_other_roc_auc": 0.7541958543579306,
+      "diagnostic_not_model_comparison": true
+    },
+    {
+      "diagnostic": "track_length_and_phase",
+      "alpha": 1.0,
+      "train_keys": 1767,
+      "val_unseen_rows": 916,
+      "validation_rows": 2882983,
+      "multiclass_logloss": 0.5494203174980455,
+      "skip_vs_other_roc_auc": 0.7893295406933338,
+      "diagnostic_not_model_comparison": true
+    }
+  ],
+  "elapsed_seconds": 6.7435005720180925
+}

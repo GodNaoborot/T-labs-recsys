@@ -1,0 +1,7 @@
+{
+  "max_hours": 6.0,
+  "started_unix": 1792769778.436247,
+  "deadline_unix": 1792791378.436247,
+  "sequential": true,
+  "threads": 4
+}

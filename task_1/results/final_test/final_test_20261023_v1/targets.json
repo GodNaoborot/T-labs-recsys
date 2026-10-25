@@ -1,0 +1,19 @@
+{
+  "completed": true,
+  "split": "test",
+  "rows_total": 3414036,
+  "groups_total": 74998,
+  "rows_used": 3165779,
+  "groups_used": 61842,
+  "source_rows": 46467212,
+  "day_min": 285,
+  "day_max": 300,
+  "hashes": {
+    "raw_queries.parquet": "41e39c43a5fea2576128f75559744661515fe2da71f125d540199eb8f9eb0901",
+    "queries.parquet": "2f8ae70f48117e344a34287b48b860f061014915d92a49b18de316d9a0989cd5",
+    "targets.npz": "4b55c841b4132e115e5b82c2cfa159199f9ee6c796b0ef71737288ea72630cf8"
+  },
+  "samples_match_listens": true,
+  "all_model_rows_shared": true,
+  "elapsed_seconds": 7.520830634020967
+}

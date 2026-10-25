@@ -1,0 +1,20 @@
+{
+  "completed": true,
+  "all_original_models_sources_borders_and_plan_hashes_unchanged": true,
+  "smoke_before_test": {
+    "passed": true,
+    "tests": 144,
+    "synthetic_adapter_tests": 12
+  },
+  "independent_group_report_check": {
+    "models": 7,
+    "intervals": 14,
+    "max_ndcg_difference": 6.55e-15,
+    "max_interval_difference": 2.06e-16,
+    "all_group_keys_sizes_days_equal": true,
+    "calendar_days": 16
+  },
+  "rows": 3165779,
+  "groups": 61842,
+  "new_training_performed": false
+}

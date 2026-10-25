@@ -1,0 +1,95 @@
+{
+  "run_name": "temporal_topk_20261023_v2",
+  "windows_days": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30
+  ],
+  "budget_minutes": 25.0,
+  "all_history": true,
+  "freshness": [
+    "time_since_last",
+    "time_since_first"
+  ],
+  "freshness_unit": "days",
+  "feature_cap": null,
+  "dfs_depth": 2,
+  "candidate_grammar": "all original DFS formulas; products within one window",
+  "cross_window_products": false,
+  "time_rule": "end_ts < prediction.time",
+  "window_rule": "prediction.time - window <= end_ts < prediction.time",
+  "selection": {
+    "kind": "YetiRank",
+    "importance": "LossFunctionChange on train",
+    "k_values": [
+      32,
+      64,
+      128,
+      256,
+      512,
+      1024,
+      2048,
+      4096,
+      8192
+    ],
+    "all_features_reference": true,
+    "iterations": 300,
+    "seed": 42,
+    "train_row_cap": 10000,
+    "val_row_cap": 5000,
+    "threads": 4
+  },
+  "versions": {
+    "featuretools": "1.31.0",
+    "numpy": "2.4.6",
+    "pandas": "2.3.3"
+  },
+  "source_sha256": {
+    "run_temporal_selection.py": "71d9746fc21d28806fcaf074a4a9b29cd4bd2325c3df17520fe060a1427c8583",
+    "temporal_dfs_features.py": "1db8f6e0299d6b0dc773d35344f5495575c73db1f8512f88ca3074d49396c6c8",
+    "temporal_feature_selection.py": "23ad30162424ec91a9a447607b597fdc14f312b600eb8c2d1b70d66c1e3aaa03",
+    "temporal_sample_data.py": "c4c10989ac13df8a2f0f1664b1c9c0b11bd01d6e55a87bccbbb640be3d047e6b",
+    "train_dfs_catboost.py": "bd8aef058dae7624f8035aaff11433f26262c1495ee01800db3be0f116f33dd3",
+    "cumulative_features.py": "4ddd51fc370c7fbd87fd6dec4cf670366a4786982ff7b3599b1e1b36018c9dbb"
+  },
+  "history_source": {
+    "path": "data/listens.parquet",
+    "bytes": 708076568,
+    "sha256": "4e12c359c03035d4274f02500186ce8d69114a07c0ff9abb3bab4e2303da8c9c"
+  },
+  "test_used": false,
+  "limitations": [
+    "Subsample whole ranking groups; full past history retained.",
+    "Validation reused for early stopping and selection of k.",
+    "One seed and a finite training cap; exploratory selection.",
+    "Selected k has not been validated after full-data refit.",
+    "Timestamp-as-end interpretation remains a project assumption."
+  ]
+}

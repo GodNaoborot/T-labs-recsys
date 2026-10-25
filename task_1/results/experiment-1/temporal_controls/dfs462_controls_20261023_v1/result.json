@@ -1,0 +1,85 @@
+{
+  "completed": true,
+  "variants": [
+    {
+      "variant": "M-sub",
+      "active_features": 42,
+      "NDCG@10": 0.7675789909768354,
+      "QueryAUC": 0.6102821907761423,
+      "delta_ndcg_vs_M_sub": 0.0,
+      "fit_seconds": 674.441475856991,
+      "tree_count": 629,
+      "ci_3d_low": 0.0,
+      "ci_3d_high": 0.0,
+      "ci_4d_low": 0.0,
+      "ci_4d_high": 0.0
+    },
+    {
+      "variant": "D462-sub",
+      "active_features": 462,
+      "NDCG@10": 0.8472023765502168,
+      "QueryAUC": 0.7579127905385112,
+      "delta_ndcg_vs_M_sub": 0.07962338557338589,
+      "fit_seconds": 2297.3958304690022,
+      "tree_count": 1510,
+      "ci_3d_low": 0.07799342243427752,
+      "ci_3d_high": 0.08147584635362462,
+      "ci_4d_low": 0.07795942222122641,
+      "ci_4d_high": 0.08157471596050395
+    },
+    {
+      "variant": "C1",
+      "active_features": 330,
+      "NDCG@10": 0.7719707402198622,
+      "QueryAUC": 0.6164796607341689,
+      "delta_ndcg_vs_M_sub": 0.004391749243028098,
+      "fit_seconds": 514.0808848529996,
+      "tree_count": 322,
+      "ci_3d_low": 0.00374005788817843,
+      "ci_3d_high": 0.004944087991981934,
+      "ci_4d_low": 0.0037981214842623713,
+      "ci_4d_high": 0.004975622288931048
+    },
+    {
+      "variant": "C2a",
+      "active_features": 48,
+      "NDCG@10": 0.7978720377225449,
+      "QueryAUC": 0.6729818268597386,
+      "delta_ndcg_vs_M_sub": 0.030293046745711094,
+      "fit_seconds": 860.1951256870234,
+      "tree_count": 876,
+      "ci_3d_low": 0.029338292780187472,
+      "ci_3d_high": 0.031128542273554865,
+      "ci_4d_low": 0.029357027229362676,
+      "ci_4d_high": 0.031049815423299848
+    },
+    {
+      "variant": "C2b",
+      "active_features": 49,
+      "NDCG@10": 0.8498333824797429,
+      "QueryAUC": 0.7632757500701808,
+      "delta_ndcg_vs_M_sub": 0.08225439150291347,
+      "fit_seconds": 1076.5246468280093,
+      "tree_count": 1112,
+      "ci_3d_low": 0.08069400229466697,
+      "ci_3d_high": 0.08386071354864348,
+      "ci_4d_low": 0.08077054144162889,
+      "ci_4d_high": 0.08378892688679287
+    }
+  ],
+  "test_used": false,
+  "c4_deferred": true,
+  "validation_reused": true,
+  "selection": {
+    "train": {
+      "rows": 2039017,
+      "groups": 40000,
+      "sha256": "ef41945a4e1bd2e18d2adf459545bffca231b109ad5b880bf77d24610115d8cd"
+    },
+    "val": {
+      "rows": 2882983,
+      "groups": 56946,
+      "sha256": "1a519cfdaa0a751cb70c7bdf1ead2999f9578b03210834c1c6569cd9be281188"
+    }
+  }
+}

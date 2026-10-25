@@ -1,0 +1,13 @@
+{
+  "completed": true,
+  "iterations_measured": 200,
+  "fit_seconds": 293.6966573940008,
+  "dfs_1600_seconds_linear_estimate": 2349.5732591520064,
+  "five_fits_hours_rough_range": [
+    2.153775487556006,
+    3.2632961932666755
+  ],
+  "limitation": "Пилот не измеряет все варианты; время поздних итераций может отличаться",
+  "metrics_are_pilot_only": true,
+  "test_used": false
+}

@@ -1,0 +1,471 @@
+{
+  "scope": "audit and replay preparation; full research training queue not executed",
+  "environment": {
+    "python": "3.12.13",
+    "isolated_environment": true,
+    "initial_public_copy_without_models_and_raw_data": true
+  },
+  "unit_tests": {
+    "total": 246,
+    "passed": 245,
+    "skipped": 1,
+    "failed": 0,
+    "skip_reason": "historical checkpoints not included in public copy"
+  },
+  "notebooks": {
+    "files": 5,
+    "code_cells": 42,
+    "report_mode_executed": true,
+    "full_recompute_mode_all_experiments_executed": false
+  },
+  "workflow": {
+    "commands_checked_against_parsers": 28,
+    "new_run_sources_linked": true,
+    "test_evaluation_requires_explicit_flag": true
+  },
+  "synthetic_end_to_end": {
+    "completed": true,
+    "profile": "synthetic",
+    "raw_rows": 8256,
+    "real_dataset_read": false,
+    "research_test_read": false,
+    "fresh_training_performed": true,
+    "model_hashes_unchanged_after_test": true,
+    "feature_counts": [
+      42,
+      49,
+      462
+    ],
+    "stages": [
+      {
+        "stage": "history",
+        "exit_code": 0,
+        "seconds": 0.27646492699932423
+      },
+      {
+        "stage": "eda",
+        "exit_code": 0,
+        "seconds": 0.8607765010001458
+      },
+      {
+        "stage": "train",
+        "exit_code": 0,
+        "seconds": 39.21009015300115
+      },
+      {
+        "stage": "synthetic-test",
+        "exit_code": 0,
+        "seconds": 21.056518138000683
+      },
+      {
+        "stage": "features",
+        "exit_code": 0,
+        "seconds": 0.08113398199930089
+      }
+    ],
+    "seconds": 61.51294513499852,
+    "scope": "actual production CLI chain on small artificial data; not a full Yambda rerun"
+  },
+  "full_history_preparation": {
+    "completed": true,
+    "exit_code": 0,
+    "seconds": 21.008398271998885,
+    "peak_rss_gib": 5.701511383056641,
+    "training_performed": false,
+    "test_evaluated": false
+  },
+  "full_history_values": {
+    "listens": {
+      "rows": 46467212,
+      "columns": [
+        "uid",
+        "item_id",
+        "artist_id",
+        "timestamp",
+        "start_ts",
+        "played_ratio_pct",
+        "track_length_seconds",
+        "is_organic",
+        "label",
+        "group_id"
+      ],
+      "all_values_equal": true,
+      "physical_row_order_equal": true
+    },
+    "events": {
+      "rows": 1323237,
+      "columns": [
+        "uid",
+        "item_id",
+        "timestamp",
+        "event_type"
+      ],
+      "all_values_equal": true,
+      "physical_row_order_equal": true
+    },
+    "completed": true,
+    "seconds": 1.9111639330003527
+  },
+  "full_eda": {
+    "completed": true,
+    "exit_code": 0,
+    "seconds": 20.830520895000518,
+    "training_performed": false,
+    "test_evaluated": false,
+    "counts": {
+      "rows": 47790449,
+      "users": 10000,
+      "items": 934057,
+      "listen_rows": 46467212,
+      "reaction_rows": 1323237,
+      "duplicated_rows": 236230
+    },
+    "all_saved_counts_match": true,
+    "new_plots": 7,
+    "schema_missing_and_unique_match": true
+  },
+  "full_manual_preparation": {
+    "completed": true,
+    "exit_code": 0,
+    "seconds": 155.06922914499955,
+    "peak_rss_gib": 6.022365570068359,
+    "training_performed": false,
+    "test_evaluated": false
+  },
+  "full_manual_values": {
+    "samples": {
+      "rows": 15029857,
+      "columns": 10,
+      "mismatched_values": {},
+      "max_absolute_difference": {},
+      "all_values_close": true
+    },
+    "features": {
+      "rows": 15029857,
+      "columns": 48,
+      "mismatched_values": {},
+      "max_absolute_difference": {
+        "ui_lst_amt_7": 0.0,
+        "ui_skip_cnt_7": 0.0,
+        "ui_lst_amt_14": 0.0,
+        "ui_skip_cnt_14": 0.0,
+        "ui_lst_amt_30": 0.0,
+        "ui_skip_cnt_30": 0.0,
+        "ui_lst_amt_90": 0.0,
+        "ui_skip_cnt_90": 0.0,
+        "ui_lst_decay_1": 0.0,
+        "ui_lst_decay_7": 0.0,
+        "ui_lst_decay_30": 0.0,
+        "ui_time_since_last_lst": 0.0,
+        "ui_liked_now": 0.0,
+        "item_lst_amt_1": 0.0,
+        "item_skip_rate_1": 0.0,
+        "item_like_rate_1": 0.0,
+        "item_avg_played_ratio_1": 0.0,
+        "item_lst_amt_7": 0.0,
+        "item_skip_rate_7": 0.0,
+        "item_like_rate_7": 0.0,
+        "item_avg_played_ratio_7": 0.0,
+        "item_lst_amt_30": 0.0,
+        "item_skip_rate_30": 0.0,
+        "item_like_rate_30": 0.0,
+        "item_avg_played_ratio_30": 0.0,
+        "item_lst_amt_90": 0.0,
+        "item_skip_rate_90": 0.0,
+        "item_like_rate_90": 0.0,
+        "item_avg_played_ratio_90": 0.0,
+        "ua_lst_amt_7": 0.0,
+        "ua_skip_rate_7": 0.0,
+        "ua_lst_amt_14": 0.0,
+        "ua_skip_rate_14": 0.0,
+        "ua_lst_amt_30": 0.0,
+        "ua_skip_rate_30": 0.0,
+        "ua_lst_amt_90": 0.0,
+        "ua_skip_rate_90": 0.0,
+        "ua_lst_decay_1": 0.0,
+        "ua_lst_decay_7": 0.0,
+        "ua_lst_decay_30": 0.0
+      },
+      "all_values_close": true
+    },
+    "completed": true,
+    "seconds": 6.5002156240007025,
+    "rtol": 1e-06,
+    "atol": 1e-06
+  },
+  "full_dfs130_preparation": {
+    "completed": true,
+    "splits": [
+      {
+        "split": "train",
+        "completed": true,
+        "exit_code": 0,
+        "seconds": 161.06266841199977,
+        "peak_rss_gib": 5.584506988525391
+      },
+      {
+        "split": "val",
+        "completed": true,
+        "exit_code": 0,
+        "seconds": 71.02869953999834,
+        "peak_rss_gib": 4.867153167724609
+      }
+    ],
+    "training_performed": false,
+    "test_evaluated": false
+  },
+  "full_dfs130_files": {
+    "completed": true,
+    "files": [
+      {
+        "split": "train",
+        "kind": "X",
+        "bytes": 3224809509,
+        "original_sha256": "98f7aa8b02bf16b37b4cb48580c9209d261a9bc9f3e7716248fb3bdeb3c37a02",
+        "new_sha256": "98f7aa8b02bf16b37b4cb48580c9209d261a9bc9f3e7716248fb3bdeb3c37a02",
+        "byte_identical": true
+      },
+      {
+        "split": "train",
+        "kind": "metadata",
+        "bytes": 219646982,
+        "original_sha256": "9ebeda4d74bc6fd70d6db5b1bf5f60f38ab4b09ff4c0e418f3d15cff5aa026af",
+        "new_sha256": "9ebeda4d74bc6fd70d6db5b1bf5f60f38ab4b09ff4c0e418f3d15cff5aa026af",
+        "byte_identical": true
+      },
+      {
+        "split": "val",
+        "kind": "X",
+        "bytes": 1183676388,
+        "original_sha256": "7e864a904561f2553d07fa90070049b438764d41f5427a8c96ed6091fe17b87c",
+        "new_sha256": "7e864a904561f2553d07fa90070049b438764d41f5427a8c96ed6091fe17b87c",
+        "byte_identical": true
+      },
+      {
+        "split": "val",
+        "kind": "metadata",
+        "bytes": 78258179,
+        "original_sha256": "c6bbf39c90e18cf420d615a7cc9ae9aee26f4c0b4fa844475d824be1aba1e218",
+        "new_sha256": "c6bbf39c90e18cf420d615a7cc9ae9aee26f4c0b4fa844475d824be1aba1e218",
+        "byte_identical": true
+      }
+    ],
+    "seconds": 5.564940952997858
+  },
+  "full_pools_preparation": {
+    "completed": true,
+    "splits": [
+      {
+        "split": "train",
+        "completed": true,
+        "exit_code": 0,
+        "seconds": 20.55514296399997,
+        "peak_rss_gib": 7.797142028808594,
+        "peak_anonymous_gib": 3.945758819580078
+      },
+      {
+        "split": "val",
+        "completed": true,
+        "exit_code": 0,
+        "seconds": 15.212479877998703,
+        "peak_rss_gib": 3.37091064453125,
+        "peak_anonymous_gib": 1.8693161010742188
+      }
+    ],
+    "training_performed": false,
+    "test_evaluated": false
+  },
+  "full_pool_serialization": {
+    "completed": false,
+    "files": [
+      {
+        "file": "train.qbin",
+        "bytes": 1126510264,
+        "original_sha256": "9fb24ac8de2e0226174653c64592bec2e00e85fb7276d6e44058f7321b04e285",
+        "new_sha256": "a65300f78b614958e0a0a8a480d1b833f282d0ea9775ac47890c8b2af5ef3da4",
+        "byte_identical": false
+      },
+      {
+        "file": "val.qbin",
+        "bytes": 409561960,
+        "original_sha256": "80818bf3bf780bb56e396d1ccfd5c28ec3ace0afd7c67e90f6239dc3f9f2ba0b",
+        "new_sha256": "f8d6ea05db7a58eac7a9059d5414c8d2287d6db5c49e35e4f761ace168fd8e3e",
+        "byte_identical": false
+      },
+      {
+        "file": "train_targets.npz",
+        "bytes": 13591042,
+        "original_sha256": "12575f3c443608f96b96d910692e29ff5108a7b7bbd07570fa82b7fe42839157",
+        "new_sha256": "12575f3c443608f96b96d910692e29ff5108a7b7bbd07570fa82b7fe42839157",
+        "byte_identical": true
+      },
+      {
+        "file": "val_targets.npz",
+        "bytes": 4962329,
+        "original_sha256": "9b617c625b54b57d9cc93c418beeb58f181f07a6a1be392c20ab48d09e712204",
+        "new_sha256": "9b617c625b54b57d9cc93c418beeb58f181f07a6a1be392c20ab48d09e712204",
+        "byte_identical": true
+      },
+      {
+        "file": "train_borders.tsv",
+        "bytes": 402219,
+        "original_sha256": "16431bd2f70cbe28262edda3efb241ad45202fc05150f09d40e60f9df45a4482",
+        "new_sha256": "16431bd2f70cbe28262edda3efb241ad45202fc05150f09d40e60f9df45a4482",
+        "byte_identical": true
+      }
+    ]
+  },
+  "full_pool_predictions": {
+    "completed": true,
+    "validation_predictions": {
+      "ranker": {
+        "rows": 2882983,
+        "predictions_exact": true,
+        "max_absolute_difference": 0.0
+      },
+      "pointwise": {
+        "rows": 2882983,
+        "predictions_exact": true,
+        "max_absolute_difference": 0.0
+      }
+    },
+    "new_training": false,
+    "test_evaluated": false,
+    "seconds": 1.0825372969993623,
+    "quantized_file_bytes_differ": true,
+    "raw_features_targets_and_borders_match": true
+  },
+  "original_artifacts": {
+    "published_numeric_and_protocol_files_checked": 256,
+    "changed": [],
+    "model_files_checked": 10,
+    "all_model_hashes_match": true
+  },
+  "numerical_review": {
+    "table_rows_checked": 149,
+    "numeric_entries_checked": 495,
+    "mismatches": 0,
+    "bootstrap_intervals_recomputed": 30,
+    "interval_bounds": 60
+  },
+  "remaining_not_executed": [
+    "all historical model refits and fresh Optuna search in clean copy",
+    "full-size corrected three-model refit and subsequent test replay under current source snapshot"
+  ],
+  "research_training_performed": false,
+  "research_test_evaluated": false,
+  "publication_cleanup": {
+    "previous_file_count": 447,
+    "current_file_count": 398,
+    "excluded_files": [
+      "docs/provenance/c4_report_update_20261024.json",
+      "docs/provenance/clean_environment_20261024.json",
+      "docs/provenance/cleanup_checks_20261022.json",
+      "docs/provenance/editorial_review_20261025.json",
+      "docs/provenance/full_runner_before_columns_20261023.py",
+      "docs/provenance/full_runner_before_memmap_20261023.py",
+      "docs/provenance/full_runner_before_single_thread_20261023.py",
+      "docs/provenance/publication_20261024.json",
+      "docs/provenance/recorded_sources_20261022.tar.gz",
+      "docs/provenance/reproducibility_20261025.json",
+      "docs/provenance/reproduction_sources_before_20261025.zip",
+      "docs/provenance/temporal_engine_before_stability_20261023.py",
+      "docs/provenance/temporal_stability_20261023.json",
+      "docs/provenance/text_cleanup_20261025.json",
+      "task_1/requirements-featuretools.txt",
+      "task_1/results/baselines/timing-20261020/final_checks.json",
+      "task_1/results/baselines/timing-20261020/notebook_run_report.json",
+      "task_1/results/c4/c4_packet_20261024_v1/progress.json",
+      "task_1/results/c4/c4_packet_20261024_v1/stage_features.json",
+      "task_1/results/c4/c4_packet_20261024_v1/stage_quantize.json",
+      "task_1/results/c4/c4_packet_20261024_v1/stage_targets.json",
+      "task_1/results/c4/c4_packet_20261024_v1/stage_train.json",
+      "task_1/results/c4/c4_packet_20261024_v1/training_budget.json",
+      "task_1/results/c4/c4_packet_20261024_v1/training_status.json",
+      "task_1/results/c4_test/c4_test_20261024_v1/progress.json",
+      "task_1/results/c4_test/c4_test_20261024_v1/stage_evaluate.json",
+      "task_1/results/c4_test/c4_test_20261024_v1/stage_features.json",
+      "task_1/results/c4_test/c4_test_20261024_v1/stage_quantize.json",
+      "task_1/results/c4_test/c4_test_20261024_v1/stage_targets.json",
+      "task_1/results/experiment-1/dfs/final_checks.json",
+      "task_1/results/experiment-1/dfs/notebook_check.json",
+      "task_1/results/experiment-1/dfs/parameter_check.json",
+      "task_1/results/experiment-1/dfs/ranker_raw_prediction_check.json",
+      "task_1/results/experiment-1/rolling_windows/runner.json",
+      "task_1/results/experiment-1/temporal_runs/temporal_full462_20261023_v5/progress.json",
+      "task_1/results/experiment-1/temporal_runs/temporal_full462_20261023_v5/resources.json",
+      "task_1/results/final_test/final_test_20261023_v1/progress.json",
+      "task_1/results/final_test/final_test_20261023_v1/quantization_dfs462_request.json",
+      "task_1/results/final_test/final_test_20261023_v1/quantization_manual42_request.json",
+      "task_1/results/final_test/final_test_20261023_v1/quantization_manual49_request.json",
+      "task_1/results/final_test/final_test_20261023_v1/resources.json",
+      "task_1/src/temporal_memmap_training.py",
+      "task_1/src/temporal_single_thread_quantization.py",
+      "task_1/src/temporal_dfs_demo.py",
+      "task_1/tests/test_temporal_memmap_training.py",
+      "task_1/tests/test_temporal_single_thread_quantization.py",
+      "task_1/results/experiment-1/temporal_runs/temporal_topk_20261023_v2/selection/status.json",
+      "task_1/results/experiment-1/temporal_runs/temporal_used_20261023_v1/status.json",
+      "task_1/results/final_test/final_test_20261023_v1/frozen_plan.json"
+    ],
+    "excluded_count": 49,
+    "local_backups_preserved": true,
+    "validation": {
+      "tests_total": 246,
+      "tests_passed": 245,
+      "tests_skipped": 1,
+      "report_notebooks": 5,
+      "code_cells": 42,
+      "local_links": 95,
+      "missing_links": 0
+    },
+    "second_pass": {
+      "excluded_count": 8,
+      "excluded": [
+        "task_1/src/temporal_memmap_training.py",
+        "task_1/src/temporal_single_thread_quantization.py",
+        "task_1/src/temporal_dfs_demo.py",
+        "task_1/tests/test_temporal_memmap_training.py",
+        "task_1/tests/test_temporal_single_thread_quantization.py",
+        "task_1/results/experiment-1/temporal_runs/temporal_topk_20261023_v2/selection/status.json",
+        "task_1/results/experiment-1/temporal_runs/temporal_used_20261023_v1/status.json",
+        "task_1/results/final_test/final_test_20261023_v1/frozen_plan.json"
+      ],
+      "reason": "unused alternatives, their tests, standalone demo and duplicate bookkeeping JSON"
+    }
+  },
+  "prior_unit_tests_before_removing_unused_implementations": {
+    "total": 252,
+    "passed": 251,
+    "skipped": 1,
+    "failed": 0,
+    "skip_reason": "historical checkpoints not included in public copy"
+  },
+  "source_links": {
+    "unique_urls_checked": 21,
+    "http_get_success": true,
+    "redirect_targets_checked": true,
+    "html_fragments_checked": true,
+    "document_content_identity_checked": true,
+    "broken_pdf_replaced": 1,
+    "archive_fragment_fixes": 2,
+    "dfs_source": {
+      "authors": [
+        "James Max Kanter",
+        "Kalyan Veeramachaneni"
+      ],
+      "year": 2015,
+      "pdf_pages": 10,
+      "sections_checked": [
+        "II",
+        "III",
+        "IV"
+      ]
+    },
+    "licensing_source_pinned_to_dataset_revision": true,
+    "timestamp_start_or_end_claimed_by_sources": false,
+    "active_and_archived_code_cells_unchanged": true,
+    "numerical_outputs_unchanged": true,
+    "archived_seed_feature_demo_checked": true
+  }
+}

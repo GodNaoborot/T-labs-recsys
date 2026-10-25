@@ -1,0 +1,115 @@
+{
+  "priority_order": [
+    "first_packet",
+    "cutoff_before_test",
+    "attached_reaction_before_cutoff"
+  ],
+  "intersection_bits": {
+    "first_packet": 1,
+    "cutoff_before_test": 2,
+    "attached_reaction_before_cutoff": 4
+  },
+  "by_split": {
+    "test": {
+      "first_packet": {
+        "rows": 0,
+        "labels": {
+          "0": 0,
+          "1": 0,
+          "2": 0
+        }
+      },
+      "cutoff_before_test": {
+        "rows": 0,
+        "labels": {
+          "0": 0,
+          "1": 0,
+          "2": 0
+        }
+      },
+      "attached_reaction_before_cutoff": {
+        "rows": 191,
+        "labels": {
+          "0": 5,
+          "1": 0,
+          "2": 186
+        }
+      },
+      "assigned": {
+        "rows": 3397059,
+        "labels": {
+          "0": 1100328,
+          "1": 2273114,
+          "2": 23617
+        }
+      },
+      "eligible": {
+        "rows": 3396868,
+        "labels": {
+          "0": 1100323,
+          "1": 2273114,
+          "2": 23431
+        }
+      }
+    }
+  },
+  "nonexclusive": {
+    "first_packet": {
+      "rows": 14355,
+      "labels": {
+        "0": 6373,
+        "1": 7801,
+        "2": 181
+      }
+    },
+    "cutoff_before_test": {
+      "rows": 43070153,
+      "labels": {
+        "0": 14663595,
+        "1": 28130427,
+        "2": 276131
+      }
+    },
+    "attached_reaction_before_cutoff": {
+      "rows": 2481,
+      "labels": {
+        "0": 67,
+        "1": 0,
+        "2": 2414
+      }
+    }
+  },
+  "priority": {
+    "first_packet": {
+      "rows": 14355,
+      "labels": {
+        "0": 6373,
+        "1": 7801,
+        "2": 181
+      }
+    },
+    "cutoff_before_test": {
+      "rows": 43055798,
+      "labels": {
+        "0": 14657222,
+        "1": 28122626,
+        "2": 275950
+      }
+    },
+    "attached_reaction_before_cutoff": {
+      "rows": 191,
+      "labels": {
+        "0": 5,
+        "1": 0,
+        "2": 186
+      }
+    }
+  },
+  "intersection_bitsets": {
+    "0": 3396868,
+    "2": 43053508,
+    "3": 14355,
+    "4": 191,
+    "6": 2290
+  }
+}

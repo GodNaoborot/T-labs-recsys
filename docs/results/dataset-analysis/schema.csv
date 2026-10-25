@@ -1,0 +1,8 @@
+column,dtype,missing,missing_pct,unique
+uid,uint32,0,0.000,10000
+timestamp,uint32,0,0.000,5052573
+item_id,uint32,0,0.000,934057
+is_organic,uint8,0,0.000,2
+played_ratio_pct,float64,1323237,2.769,160
+track_length_seconds,float64,1323237,2.769,499
+event_type,str,0,0.000,5

@@ -1,0 +1,61 @@
+{
+  "description": "Сохранённые выводы первичного анализа; новый проход по исходному журналу не выполнялся.",
+  "source_archive": "docs/provenance/notebooks_before_report_mode_20261025.zip",
+  "source_notebook": "task_1/notebooks/dataset-analysis.ipynb",
+  "rows": 47790449,
+  "users": 10000,
+  "items": 934057,
+  "listen_rows": 46467212,
+  "reaction_rows": 1323237,
+  "duplicated_rows": 236230,
+  "row_counts_origin": "Сохранённый вывод info(df), включая count/freq event_type; reactions = rows - listens.",
+  "saved_info_streams": [
+    "========= INFO =========\nshape: 47,790,449 rows x 7 cols\nmemory: 1,958.3 MB\n\n========= COLUMNS =========\n",
+    "\n========= DUPLICATES =========\nduplicates: 236,230 (0.494%)\n\n========= STATS =========\n"
+  ],
+  "schema_origin": "Сохранённый text/plain вывод column_summary в ячейке 13.",
+  "images": [
+    {
+      "file": "saved-cell-07-1.png",
+      "caption": "Доля прослушивания, все listen-события",
+      "source_cell_index": 7,
+      "sha256": "ca71809b89ad8062ce9d16ddbd7c30ec5c5f261920f08f2a016a822a4a883976"
+    },
+    {
+      "file": "saved-cell-07-2.png",
+      "caption": "Доля прослушивания: логарифмическая шкала и is_organic",
+      "source_cell_index": 7,
+      "sha256": "3ebe53e868cfd9a260afb088eb70aa0a4c46ea0b14f94dc31745f79a8da994b5"
+    },
+    {
+      "file": "saved-cell-07-3.png",
+      "caption": "Рекомендованные прослушивания: интервалы по 5 процентных пунктов",
+      "source_cell_index": 7,
+      "sha256": "9063fbc5b9fb6ece87bf3774db087043fe224fd9a762fe3a8ad1161d23fd3169"
+    },
+    {
+      "file": "saved-cell-08-1.png",
+      "caption": "Доля прослушивания у is_organic = 0",
+      "source_cell_index": 8,
+      "sha256": "259a60bfcea306d8e10a880c8e59ea7009aa396e7f832f31b2cbadd729e98d7c"
+    },
+    {
+      "file": "saved-cell-17-1.png",
+      "caption": "Прослушивания в пределах 10 минут от первого лайка пары",
+      "source_cell_index": 17,
+      "sha256": "65888a02bae8486bc4c9f04bed23487ef03edf76495d9578bd0cd3bce2a79e6a"
+    },
+    {
+      "file": "saved-cell-17-2.png",
+      "caption": "Прослушивания в пределах трёх часов от первого лайка пары",
+      "source_cell_index": 17,
+      "sha256": "242e48f5a9a81db9bef1cfa22c5411c43c9a5e3c50fac8c70ba45a6bd3475d70"
+    },
+    {
+      "file": "saved-cell-17-3.png",
+      "caption": "Последующие события относительно первого прослушивания пары",
+      "source_cell_index": 17,
+      "sha256": "150f81d16fa0465e71eea19a77975c02a8f99efa06d01f608a336b1592c6bc0e"
+    }
+  ]
+}

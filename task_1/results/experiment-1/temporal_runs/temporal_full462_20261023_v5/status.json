@@ -1,0 +1,10 @@
+{
+  "completed": true,
+  "stage": "finished",
+  "elapsed_seconds": 10440.629547804012,
+  "rss_gib": 0.009677886962890625,
+  "anonymous_rss_gib": 0.002986907958984375,
+  "peak_rss_gib": 0.039966583251953125,
+  "available_gib": 8.778091430664062,
+  "host_disk_free_gib": 52.68851089477539
+}

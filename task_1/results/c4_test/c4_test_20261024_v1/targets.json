@@ -1,0 +1,186 @@
+{
+  "completed": true,
+  "test_used": true,
+  "new_training": false,
+  "test": {
+    "rows_before_mixed": 3396868,
+    "constant_group_rows_removed": 236800,
+    "mixed_groups_available": 61964,
+    "rows": 3160068,
+    "groups": 61964,
+    "labels": {
+      "0": 1089755,
+      "1": 2046924,
+      "2": 23389
+    },
+    "day_min": 285,
+    "day_max": 300,
+    "array_sha256": {
+      "label": "0a0bbbc210dca802c70344dfd8fd43be36d902b80b8d2b52011d94e14e89990e",
+      "group_id": "d9d911a5356ee9c144c81485f4d7dd383258f595b7d8d2bf97d61bbfc70f7ec9",
+      "log_id": "b5a485792d0d43881285b161f6f6122b04af80cb1a5b2243691221d890e1d473",
+      "day": "f221d8dc9c844cbc9357809613941947ab8259463b495d6479a5df0e3c06ce65",
+      "time": "f1d0e77eb4462117afd29678bed12f43839bdabb823285856be98bc29386971e"
+    },
+    "shared_order_sha256": "92e7ff7d072d4a043a488339a7dd298f17c6e230b6313e42eb0f165d5562f820",
+    "queries_path": "data/c4_test/c4_test_20261024_v1/test_queries.parquet",
+    "targets_path": "data/c4_test/c4_test_20261024_v1/test_targets.npz",
+    "queries_sha256": "646026fdcb989ca193e996c2f53319e61ce5b3baa648dfcbb2430844a5a57b7b",
+    "targets_sha256": "eabcf5c29264bbe8cefb7cef4b82a1ecf5d31e22de78b8270400991677801105",
+    "targets_alias_path": "data/c4_test/c4_test_20261024_v1/targets.npz"
+  },
+  "history_rule": "original_timestamp < t (previous distinct user timestamp)",
+  "group_rule": "uid*1000+floor(t/86400); all mixed test groups; order group_id,log_id",
+  "label_rule_preserved": true,
+  "label_mapping_still_depends_on_reconstructed_start": true,
+  "guard": "exclude any attached like/dislike with timestamp<t; equality permitted",
+  "historical_ties": "(timestamp, immutable physical source_event_id)",
+  "split": {
+    "test_cutoff_start": 24624000,
+    "cutoff_max_before_mixed": 25999990,
+    "upper_bound": "last observed next packet",
+    "end_gap_seconds": 0
+  },
+  "exclusions": {
+    "priority_order": [
+      "first_packet",
+      "cutoff_before_test",
+      "attached_reaction_before_cutoff"
+    ],
+    "intersection_bits": {
+      "first_packet": 1,
+      "cutoff_before_test": 2,
+      "attached_reaction_before_cutoff": 4
+    },
+    "by_split": {
+      "test": {
+        "first_packet": {
+          "rows": 0,
+          "labels": {
+            "0": 0,
+            "1": 0,
+            "2": 0
+          }
+        },
+        "cutoff_before_test": {
+          "rows": 0,
+          "labels": {
+            "0": 0,
+            "1": 0,
+            "2": 0
+          }
+        },
+        "attached_reaction_before_cutoff": {
+          "rows": 191,
+          "labels": {
+            "0": 5,
+            "1": 0,
+            "2": 186
+          }
+        },
+        "assigned": {
+          "rows": 3397059,
+          "labels": {
+            "0": 1100328,
+            "1": 2273114,
+            "2": 23617
+          }
+        },
+        "eligible": {
+          "rows": 3396868,
+          "labels": {
+            "0": 1100323,
+            "1": 2273114,
+            "2": 23431
+          }
+        }
+      }
+    },
+    "nonexclusive": {
+      "first_packet": {
+        "rows": 14355,
+        "labels": {
+          "0": 6373,
+          "1": 7801,
+          "2": 181
+        }
+      },
+      "cutoff_before_test": {
+        "rows": 43070153,
+        "labels": {
+          "0": 14663595,
+          "1": 28130427,
+          "2": 276131
+        }
+      },
+      "attached_reaction_before_cutoff": {
+        "rows": 2481,
+        "labels": {
+          "0": 67,
+          "1": 0,
+          "2": 2414
+        }
+      }
+    },
+    "priority": {
+      "first_packet": {
+        "rows": 14355,
+        "labels": {
+          "0": 6373,
+          "1": 7801,
+          "2": 181
+        }
+      },
+      "cutoff_before_test": {
+        "rows": 43055798,
+        "labels": {
+          "0": 14657222,
+          "1": 28122626,
+          "2": 275950
+        }
+      },
+      "attached_reaction_before_cutoff": {
+        "rows": 191,
+        "labels": {
+          "0": 5,
+          "1": 0,
+          "2": 186
+        }
+      }
+    },
+    "intersection_bitsets": {
+      "0": 3396868,
+      "2": 43053508,
+      "3": 14355,
+      "4": 191,
+      "6": 2290
+    }
+  },
+  "history_label_availability": {
+    "completed": true,
+    "test_used": true,
+    "history_scope": "complete source journal; actual feature history remains original_timestamp<t",
+    "frozen_labels_match": true,
+    "all_attached_reactions_at_or_before_listen_end": true,
+    "rule": "next_same_pair_end>=reaction_ts; reaction_ts>=saved start_ts; like overrides dislike",
+    "source_end_max": 26000000,
+    "source_rows_scanned": 46467212,
+    "historical_listen_rows": 46467212,
+    "verified_labels": 46467212,
+    "attached_reaction_rows": 329520,
+    "attached_like_rows": 303207,
+    "attached_dislike_rows": 26313,
+    "listens_with_both_reaction_types": 567
+  },
+  "sources": {
+    "listens": {
+      "path": "data/listens.parquet",
+      "sha256": "4e12c359c03035d4274f02500186ce8d69114a07c0ff9abb3bab4e2303da8c9c"
+    },
+    "events": {
+      "path": "data/events.parquet",
+      "sha256": "e49dc23e0b3779cb172985c426855fa0c2bd14701fd2fc57fb0760f96974b65f"
+    }
+  },
+  "elapsed_seconds": 17.93861709802877
+}

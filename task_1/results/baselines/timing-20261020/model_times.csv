@@ -1,0 +1,3 @@
+model,mode,fit_seconds,load_seconds,save_seconds,training_threads,tree_count
+YetiRank,trained_with_validation,2315.550146572,,0.005303714999627118,4,578
+MultiClass,trained_with_validation,574.9551637499999,,0.00927862400021695,8,600

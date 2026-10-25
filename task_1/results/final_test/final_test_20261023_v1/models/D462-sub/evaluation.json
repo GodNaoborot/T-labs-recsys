@@ -1,0 +1,51 @@
+{
+  "completed": true,
+  "split": "test",
+  "model_id": "D462-sub",
+  "family": "sub",
+  "schema": "dfs462",
+  "active_features": 462,
+  "physical_features": 462,
+  "tree_count": 1510,
+  "rows": 3165779,
+  "groups": 61842,
+  "metrics": {
+    "NDCG@10": 0.8498973369531829,
+    "QueryAUC": 0.7582632886791354
+  },
+  "inputs": {
+    "plan_id": "final_test_20261023_v1",
+    "model_id": "D462-sub",
+    "model_sha256": "992f00c00d516803cc04f57258ea1e9e6348fce11c0bc426f0fd62d643ecf91e",
+    "targets_sha256": "4b55c841b4132e115e5b82c2cfa159199f9ee6c796b0ef71737288ea72630cf8",
+    "pool_sha256": "e4e10bbee25798e90491345ea42a1a7347b1548347066942ed19ce0c6ea7cdd4",
+    "schema": "dfs462"
+  },
+  "fit_executed": false,
+  "hyperparameter_search": false,
+  "timings": {
+    "verification_and_pool_seconds": 4.901780496002175,
+    "model_load_seconds": 0.0070546909992117435,
+    "predict_seconds": 0.7644014600082301,
+    "metrics_seconds": 1.8301426889956929,
+    "elapsed_seconds": 7.5854503650043625
+  },
+  "artifacts": {
+    "score": {
+      "path": "results/final_test/final_test_20261023_v1/models/D462-sub/test_score.npy",
+      "sha256": "6eb640f0205abcec0b36629c52dbc589acc9f23a0172ca7a33bd069e5f610e95"
+    },
+    "groups": {
+      "path": "results/final_test/final_test_20261023_v1/models/D462-sub/group_ndcg.parquet",
+      "sha256": "77713935387b5697d2efaf11efefa386ab8badf8afa39e1f33dfdf7678b3cc9a"
+    },
+    "daily": {
+      "path": "results/final_test/final_test_20261023_v1/models/D462-sub/daily_ndcg.csv",
+      "sha256": "a835aa38387c3d23e19190b789ef492b68a80a2911f45527826a66598491f4a3"
+    },
+    "metrics": {
+      "path": "results/final_test/final_test_20261023_v1/models/D462-sub/metrics.json",
+      "sha256": "64c01326e2579c15aa9f12685ef15ec7af5ee0a420717c693317ffc3a2448ce2"
+    }
+  }
+}

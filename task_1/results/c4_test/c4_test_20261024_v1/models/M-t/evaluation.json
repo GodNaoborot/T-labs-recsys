@@ -1,0 +1,54 @@
+{
+  "completed": true,
+  "split": "test",
+  "test_used": true,
+  "variant": "M-t",
+  "rows": 3160068,
+  "groups": 61964,
+  "metrics": {
+    "NDCG@10": 0.7715468166705189,
+    "QueryAUC": 0.6046588636275559
+  },
+  "tree_count": 791,
+  "active_features": 42,
+  "physical_features": 49,
+  "inputs": {
+    "model": {
+      "path": "results/c4/c4_packet_20261024_v1/models/M-t/model.cbm",
+      "sha256": "a880df1ca6151c1fb201ed458f17b4f7f16a94a104535504f55db9ab8ee821bd"
+    },
+    "schema": "manual49",
+    "targets_sha256": "eabcf5c29264bbe8cefb7cef4b82a1ecf5d31e22de78b8270400991677801105",
+    "pool_sha256": "1c25fc0895b54cc4fa63fe3db5ad7ece4b3ccb3b583c1786a0657dd6b6dc077e",
+    "train_borders": {
+      "path": "results/c4/c4_packet_20261024_v1/quantized/manual49/train_borders.tsv",
+      "sha256": "ce59b031b063661c57f519247a439a87c3e7316df7b8d7e936716301f7b56e0e"
+    }
+  },
+  "fit_executed": false,
+  "hyperparameter_search": false,
+  "timings": {
+    "verification_and_load_seconds": 6.542473014007555,
+    "predict_seconds": 0.23787684697890654,
+    "metrics_and_save_seconds": 1.9392151870124508,
+    "elapsed_seconds": 8.753028676001122
+  },
+  "artifacts": {
+    "score": {
+      "path": "results/c4_test/c4_test_20261024_v1/models/M-t/test_score.npy",
+      "sha256": "f54bbead4c6bda1032233f282bb27e2274b53d8520eb4b32b10c89a2e8027eaa"
+    },
+    "groups": {
+      "path": "results/c4_test/c4_test_20261024_v1/models/M-t/group_ndcg.parquet",
+      "sha256": "3bd93a9ea27a036102c030911e4543853d7ec6f791953efc7c9d47deda74824d"
+    },
+    "daily": {
+      "path": "results/c4_test/c4_test_20261024_v1/models/M-t/daily_ndcg.csv",
+      "sha256": "32e27527b506adc2d1278c650f0349d4788474e2868d88abd5651f3c9e3d4691"
+    },
+    "metrics": {
+      "path": "results/c4_test/c4_test_20261024_v1/models/M-t/metrics.json",
+      "sha256": "b7dbac8391b5df3e7eae943217774d38e9aa322742caf28d2a3d6509b425909d"
+    }
+  }
+}

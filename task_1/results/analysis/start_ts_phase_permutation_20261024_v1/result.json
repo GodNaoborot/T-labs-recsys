@@ -1,0 +1,44 @@
+{
+  "completed": true,
+  "split": "val",
+  "test_used": false,
+  "training_performed": false,
+  "model": "C2b frozen",
+  "model_sha256_unchanged": "312b5aef0a25f3c6724754b78d66305e4903988401a2506ad4322c9c33941a8c",
+  "rows": 2882983,
+  "groups": 56946,
+  "intervention": "permutation within (current track_length, floor(user freshness/5)), seed42",
+  "labels_used_for_permutation": false,
+  "changed_fraction_present": 0.4279177241430755,
+  "max_freshness_change_seconds": 4.0,
+  "original_metrics": {
+    "NDCG@10": 0.8498333824797429,
+    "QueryAUC": 0.7632757500701808
+  },
+  "permuted_metrics": {
+    "NDCG@10": 0.8067957289752425,
+    "QueryAUC": 0.6882532530363857
+  },
+  "delta_ndcg": -0.043037653504500395,
+  "paired_exploratory_intervals": [
+    {
+      "block_days": 3,
+      "ci_low": -0.04376211371119761,
+      "ci_high": -0.042295415555534836
+    },
+    {
+      "block_days": 4,
+      "ci_low": -0.043748784164087,
+      "ci_high": -0.04236096876501172
+    }
+  ],
+  "source_sha256": "44850e476ecc548fa5599556d0d3d794dae36e438927ce92ca52cf81838058c7",
+  "raw_validation_sha256": "5c416a2dda14f74c3f43185a07469be17fd462fb3d1f599f9fafcb6df94635f6",
+  "elapsed_seconds": 7.985057993995724,
+  "limitations": [
+    "post-hoc validation sensitivity, not refitted-model quality",
+    "other feature relationships can be disrupted",
+    "does not prove inaccurate reconstruction against independently observed true start",
+    "does not remove cutoff dependence from other features or group construction"
+  ]
+}

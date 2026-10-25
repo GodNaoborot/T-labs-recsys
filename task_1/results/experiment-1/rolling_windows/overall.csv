@@ -1,0 +1,3 @@
+objective,windows_completed,windows_passed,minimum_loss,maximum_loss,worst_upper_bound,passes_all_requested_windows
+pointwise,5,5,-0.009782796497894,-0.0080987339678544,-0.0068765551039333,True
+ranker,5,5,0.0089151006762944,0.0104566199180122,0.011483518277469,True

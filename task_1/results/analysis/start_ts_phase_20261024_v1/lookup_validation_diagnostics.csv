@@ -1,0 +1,5 @@
+diagnostic,alpha,train_keys,val_unseen_rows,validation_rows,multiclass_logloss,skip_vs_other_roc_auc,diagnostic_not_model_comparison
+global,1.0,1,0,2882983,0.6950569809872714,0.5,True
+track_length,1.0,492,35,2882983,0.691995069580776,0.5457292799789819,True
+phase,1.0,5,0,2882983,0.5696939068832917,0.7541958543579306,True
+track_length_and_phase,1.0,1767,916,2882983,0.5494203174980455,0.7893295406933338,True

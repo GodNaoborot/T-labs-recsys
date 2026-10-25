@@ -1,0 +1,10 @@
+{
+  "completed": true,
+  "test_evaluated": true,
+  "plan_id": "final_test_20261023_v1",
+  "plan_sha256": "a7e07dd4ed5a034184fa7b7f0e30048b4e7ba58d17fe95dda60bc98692a44950",
+  "models": 7,
+  "comparisons": 7,
+  "new_training_performed": false,
+  "elapsed_seconds": 471.2530990119849
+}

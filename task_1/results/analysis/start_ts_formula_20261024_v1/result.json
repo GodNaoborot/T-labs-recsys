@@ -1,0 +1,38 @@
+{
+  "completed": true,
+  "test_used": false,
+  "training_performed": false,
+  "splits": {
+    "train": {
+      "rows": 2039017,
+      "targets_sha256": "ef41945a4e1bd2e18d2adf459545bffca231b109ad5b880bf77d24610115d8cd",
+      "timestamp_multiple5_fraction": 1.0,
+      "length_multiple5_fraction": 1.0,
+      "stored_start_matches_exact_fraction": 1.0,
+      "stored_start_exact_mismatches": 0,
+      "phase_matches_current_length_ratio_fraction": 1.0,
+      "nonzero_start_phase_fraction": 0.3558366605084705,
+      "ratio100_count": 1016646,
+      "ratio100_phase0_fraction": 1.0,
+      "start_ts_min": 19440005,
+      "start_ts_max": 23326138
+    },
+    "val": {
+      "rows": 2882983,
+      "targets_sha256": "1a519cfdaa0a751cb70c7bdf1ead2999f9578b03210834c1c6569cd9be281188",
+      "timestamp_multiple5_fraction": 1.0,
+      "length_multiple5_fraction": 1.0,
+      "stored_start_matches_exact_fraction": 1.0,
+      "stored_start_exact_mismatches": 0,
+      "phase_matches_current_length_ratio_fraction": 1.0,
+      "nonzero_start_phase_fraction": 0.3587402353742634,
+      "ratio100_count": 1435156,
+      "ratio100_phase0_fraction": 1.0,
+      "start_ts_min": 23328003,
+      "start_ts_max": 24622172
+    }
+  },
+  "identity": "start_mod5 = (-ceil(current_length*current_ratio/100)) mod5 when end_mod5=0",
+  "interpretation": "a current-outcome-derived phase; true start is not independently observed",
+  "source_sha256": "9fa91365d1c77e5fd1a5b8566b109ddc6933b2efb815159f5d2d93ab0cbb10b8"
+}

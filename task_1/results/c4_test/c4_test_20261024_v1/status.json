@@ -1,0 +1,20 @@
+{
+  "completed": true,
+  "run_name": "c4_test_20261024_v1",
+  "test_used": true,
+  "fit_executed": false,
+  "supervisor_pid": 656112,
+  "started_at_utc": "2026-10-24T11:44:35.577797+00:00",
+  "stage": "completed",
+  "worker_pid": null,
+  "peak_anonymous_gib": 4.931270599365234,
+  "stage_seconds": {
+    "targets": 20.11479841399705,
+    "features": 310.9584879690083,
+    "quantize": 85.64567136199912,
+    "evaluate": 30.22747201900347
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 448.33904542101664,
+  "plan_sha256": "b4867c90f7afdff30cb172d09753a4fbbe21bb76949de40da251ab6c88faa28b"
+}

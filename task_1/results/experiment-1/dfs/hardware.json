@@ -1,0 +1,11 @@
+{
+  "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "cpu_count_logical": 12,
+  "cpu_count_physical": 12,
+  "ram_bytes": 12541640704,
+  "swap_bytes": 17179869184,
+  "training_threads_by_model": {
+    "ranker": 4,
+    "pointwise": 8
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "rows": 24,
+  "interval": "percentile q.025/q.975",
+  "upper_bound": "one-sided q.95; original NI results unchanged",
+  "scope": "exploratory; conditional on fixed fitted models; periods are dependent",
+  "test_used": false,
+  "training_started": false
+}

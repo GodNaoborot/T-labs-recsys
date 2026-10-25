@@ -1,0 +1,128 @@
+{
+  "pointwise": {
+    "k": 12,
+    "manual": {
+      "trial_number": 0,
+      "params": {
+        "depth": 6,
+        "learning_rate": 0.1,
+        "l2_leaf_reg": 3.0
+      },
+      "value": 0.7472968026009245,
+      "eligible_trial_numbers": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ]
+    },
+    "dfs": {
+      "trial_number": 0,
+      "params": {
+        "depth": 6,
+        "learning_rate": 0.1,
+        "l2_leaf_reg": 3.0
+      },
+      "value": 0.7540881556692118,
+      "eligible_trial_numbers": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ]
+    },
+    "counts": {
+      "manual": {
+        "complete": 12,
+        "fail": 0,
+        "pruned": 0,
+        "running": 0,
+        "waiting": 0,
+        "attempted": 12
+      },
+      "dfs": {
+        "complete": 12,
+        "fail": 0,
+        "pruned": 0,
+        "running": 0,
+        "waiting": 0,
+        "attempted": 12
+      }
+    }
+  },
+  "ranker": {
+    "k": 8,
+    "manual": {
+      "trial_number": 4,
+      "params": {
+        "depth": 8,
+        "learning_rate": 0.03265032174029169,
+        "l2_leaf_reg": 1e-20
+      },
+      "value": 0.7660313205638292,
+      "eligible_trial_numbers": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    "dfs": {
+      "trial_number": 2,
+      "params": {
+        "depth": 8,
+        "learning_rate": 0.036598533291456736,
+        "l2_leaf_reg": 1e-20
+      },
+      "value": 0.7599503504060998,
+      "eligible_trial_numbers": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    "counts": {
+      "manual": {
+        "complete": 8,
+        "fail": 0,
+        "pruned": 0,
+        "running": 0,
+        "waiting": 0,
+        "attempted": 8
+      },
+      "dfs": {
+        "complete": 8,
+        "fail": 0,
+        "pruned": 0,
+        "running": 0,
+        "waiting": 0,
+        "attempted": 8
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "stage": "train",
+  "split": null,
+  "completed": true,
+  "elapsed_seconds": 1197.4115043600032,
+  "resources": {
+    "peak_rss_bytes": 4883857408,
+    "min_system_available_bytes": 4748742656,
+    "initial_swap_bytes": 6173540352,
+    "peak_system_swap_bytes": 6173515776
+  },
+  "max_rss_gib": 4.549709320068359
+}

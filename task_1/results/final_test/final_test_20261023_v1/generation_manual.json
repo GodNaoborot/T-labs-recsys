@@ -1,0 +1,52 @@
+{
+  "completed": true,
+  "split": "test",
+  "test_used": true,
+  "rows": 3165779,
+  "matrices": {
+    "manual42": {
+      "path": "data/final_test/final_test_20261023_v1/manual42/test_X.npy",
+      "sha256": "e41b26ba7627c8c98aa24c1113f90df9b03ca3fc46a2ea1bbfc9bc0b34dbb9e6"
+    },
+    "manual49": {
+      "path": "data/final_test/final_test_20261023_v1/manual49/test_X.npy",
+      "sha256": "138fe0eac8074eeec2d1bd3003ef415e3222d9520928adcb5a7c1f3fbce51bcc"
+    }
+  },
+  "targets_sha256": "4b55c841b4132e115e5b82c2cfa159199f9ee6c796b0ef71737288ea72630cf8",
+  "queries_sha256": "2f8ae70f48117e344a34287b48b860f061014915d92a49b18de316d9a0989cd5",
+  "alignment": {
+    "all_split_rows": 3414036,
+    "retained_rows": 3165779,
+    "all_alignment_columns_checked": [
+      "uid",
+      "item_id",
+      "start_ts",
+      "label",
+      "group_id",
+      "is_organic",
+      "track_length_seconds"
+    ]
+  },
+  "session": {
+    "matrix_path": "data/final_test/final_test_20261023_v1/manual49/test_session_X.npy",
+    "rows": 3165779,
+    "features": [
+      "user_prev_played_ratio",
+      "user_prev_skip",
+      "user_skip_rate_last5",
+      "user_skip_rate_last20",
+      "user_skip_rate_1d",
+      "user_lst_cnt_1d",
+      "user_time_since_last"
+    ],
+    "feature_count": 7,
+    "dtype": "float32",
+    "layout": "F-order",
+    "history_rows": 46467212,
+    "history_cutoff": "history.timestamp < query.start_ts",
+    "day_window": "[start_ts - 86400, start_ts)",
+    "elapsed_seconds": 2.8278991949919146
+  },
+  "elapsed_seconds": 12.344941693998408
+}

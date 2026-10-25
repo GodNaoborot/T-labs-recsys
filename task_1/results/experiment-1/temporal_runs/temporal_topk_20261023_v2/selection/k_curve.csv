@@ -1,0 +1,11 @@
+k,NDCG@10,QueryAUC,fit_seconds,best_iteration,tree_count,model_path
+32,0.7716128725525472,0.6404355357073044,0.5294093350239564,31,32,results/experiment-1/temporal_runs/temporal_topk_20261023_v2/selection/models/top_32/model.cbm
+64,0.7720117925835418,0.6346492479453014,0.8828170390042942,68,69,results/experiment-1/temporal_runs/temporal_topk_20261023_v2/selection/models/top_64/model.cbm
+128,0.7711646395667991,0.6682475156665876,0.8884567699860781,40,41,results/experiment-1/temporal_runs/temporal_topk_20261023_v2/selection/models/top_128/model.cbm
+256,0.768477016285254,0.6361531158164223,1.944552943983581,85,86,results/experiment-1/temporal_runs/temporal_topk_20261023_v2/selection/models/top_256/model.cbm
+512,0.7782296285045812,0.6547357515040196,1.7513015320000704,20,21,results/experiment-1/temporal_runs/temporal_topk_20261023_v2/selection/models/top_512/model.cbm
+1024,0.7775699375216969,0.6575030421935774,9.032250919000944,205,206,results/experiment-1/temporal_runs/temporal_topk_20261023_v2/selection/models/top_1024/model.cbm
+2048,0.7618070673871152,0.6349680125813867,7.390269977011485,63,64,results/experiment-1/temporal_runs/temporal_topk_20261023_v2/selection/models/top_2048/model.cbm
+4096,0.7688983387259055,0.6355183257501942,11.785052561986959,48,49,results/experiment-1/temporal_runs/temporal_topk_20261023_v2/selection/models/top_4096/model.cbm
+8192,0.7768615807583431,0.6526345327896521,26.11014306798461,58,59,results/experiment-1/temporal_runs/temporal_topk_20261023_v2/selection/models/top_8192/model.cbm
+12782,0.7934151174704774,0.6478908977906584,51.72832045299583,90,91,results/experiment-1/temporal_runs/temporal_topk_20261023_v2/selection/models/all_features/model.cbm

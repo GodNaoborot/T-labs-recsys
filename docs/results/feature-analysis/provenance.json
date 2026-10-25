@@ -1,0 +1,71 @@
+{
+  "model_name": "Автоматические DFS (462)",
+  "internal_variant": "D462-t",
+  "protocol_name": "Прогноз следующего временного пакета",
+  "internal_run": "c4_packet_20261024_v1",
+  "model_sha256": "2770e140e4cbee26bc5d858b5e59e37d5d8971f111f22df98d62e6fd156e4dd7",
+  "feature_count": 462,
+  "importance_type": "PredictionValuesChange",
+  "importance_sum": 99.99999999999991,
+  "new_training": false,
+  "new_predictions": false,
+  "test_data_read": false,
+  "selection_repeated": false,
+  "current_event_context_features": [],
+  "history_rule": "original_timestamp < t; window=[t-window,t)",
+  "selection_note": "Список перенесён из прежнего протокола; нового отбора на C4 не было.",
+  "importance_note": "Сохранённый PredictionValuesChange; не доля NDCG и не причинный вклад.",
+  "primitive_counts_note": "Одна формула может содержать несколько разных агрегатов; суммы не обязаны равняться 462.",
+  "source_files": {
+    "generation": {
+      "path": "task_1/results/c4/c4_packet_20261024_v1/generation_dfs_train.json",
+      "sha256": "10b6a06782bcb3141c4043ed21a7ec1f3f260ae0cb1fc29642f95e0a4fd5214a"
+    },
+    "features_preparation": {
+      "path": "task_1/results/c4/c4_packet_20261024_v1/features_preparation.json",
+      "sha256": "7483d8131d4287e788a108eb62fc38c5cb767e6a4f17c1e7a389668c085636ce"
+    },
+    "evaluation": {
+      "path": "task_1/results/c4/c4_packet_20261024_v1/models/D462-t/evaluation.json",
+      "sha256": "b8b677eb6489d651b2356c04432e8169f7910e123e94d28a5ef10b38ddcbdb69"
+    },
+    "control": {
+      "path": "task_1/results/c4/c4_packet_20261024_v1/models/D462-t/control.json",
+      "sha256": "0212622e5bd7b2a57b4d4c0e62815c5bbead7c26f135a380bbf4f7a8f82dfea2"
+    },
+    "importance": {
+      "path": "docs/results/feature-analysis/prediction_values_change.csv",
+      "sha256": "6397d49b7e03059024e37f538d4229eb21ade271cc9046a6c45997b17dca8d4a"
+    },
+    "selection": {
+      "path": "task_1/results/experiment-1/temporal_runs/temporal_used_20261023_v1/protocol.json",
+      "sha256": "c276c79bac461e3ca78d83d5e9149c621dff70fb5f1ffd36458513d78e34d3c8"
+    },
+    "Users_definitions": {
+      "path": "task_1/data/experiment-1/temporal_runs/temporal_topk_20261023_v2/definitions/Users.json",
+      "sha256": "ba770bd7176264ec45e08c67c9dda659f96d5f9ed0cae11a1c9db8c6109861a8"
+    },
+    "Items_definitions": {
+      "path": "task_1/data/experiment-1/temporal_runs/temporal_topk_20261023_v2/definitions/Items.json",
+      "sha256": "3ee3e4b01a7b782710e3b93e7f3270e4f78ade992d6322421b86d6c1c06fb209"
+    },
+    "UserItem_definitions": {
+      "path": "task_1/data/experiment-1/temporal_runs/temporal_topk_20261023_v2/definitions/UserItem.json",
+      "sha256": "1516f503d10179161f23c5449d7bbde494c2c89cefa2eed1d871967b4f954190"
+    },
+    "UserArtist_definitions": {
+      "path": "task_1/data/experiment-1/temporal_runs/temporal_topk_20261023_v2/definitions/UserArtist.json",
+      "sha256": "4763f1550082e670c4277e1768b38c513d5f333cf3f0f989feb13c00baea0075"
+    }
+  },
+  "historical_importance_path": "task_1/results/c4/c4_packet_20261024_v1/models/D462-t/feature_importance.csv",
+  "outputs_sha256": {
+    "entity_summary.csv": "ed535dba868a4ef21e68f96544e54504f9f34b6707140b7ba9b36245451b5962",
+    "operation_summary.csv": "595c317157e3cc3f7d1abb06cdc040e567e8c0dac96c7da74d682ba8eab6f2a6",
+    "prediction_values_change.csv": "6397d49b7e03059024e37f538d4229eb21ade271cc9046a6c45997b17dca8d4a",
+    "primitive_counts.csv": "59cbbd8e0b9e15aee6800dae6124977c461c93e160030c8a8e4c9a2d4cff8884",
+    "selected_features.csv": "b8e5c652a2259785d53efb0b2fa6ad80f6cf62afa504d47c54145686aa20ac63",
+    "top_features.csv": "34633f1eefa2a551d0dbc343eafbdba91cd09cef00e77686a98f273e20bd23eb",
+    "window_summary.csv": "8b855ac5dffa7ddab9086817e67faf049f5f601bbdaea0d6765853178060f8a9"
+  }
+}

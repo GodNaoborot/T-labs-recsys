@@ -1,0 +1,72 @@
+{
+  "completed": true,
+  "comparison": [
+    {
+      "metric": "NDCG@10",
+      "manual": 0.7697936304620093,
+      "temporal_dfs_462": 0.8516161510990763,
+      "difference": 0.08182252063706696,
+      "relative_loss_percent": -10.62915012533415
+    },
+    {
+      "metric": "QueryAUC",
+      "manual": 0.6128472074572333,
+      "temporal_dfs_462": 0.7673989801420381,
+      "difference": 0.1545517726848048,
+      "relative_loss_percent": -25.218646802039963
+    }
+  ],
+  "validation_rows": 2882983,
+  "validation_groups": 56946,
+  "parameters": {
+    "iterations": 1600,
+    "early_stopping_rounds": 80,
+    "random_seed": 42,
+    "use_best_model": true,
+    "verbose": 100,
+    "allow_writing_files": false,
+    "nan_mode": "Min",
+    "border_count": 254,
+    "task_type": "CPU",
+    "random_strength": 1.0,
+    "rsm": 1.0,
+    "loss_function": "YetiRank",
+    "eval_metric": "NDCG:top=10;type=Base;denominator=LogPosition",
+    "thread_count": 4,
+    "bootstrap_type": "MVS",
+    "subsample": 0.8,
+    "depth": 6,
+    "learning_rate": 0.1,
+    "l2_leaf_reg": 1e-20
+  },
+  "feature_count": 462,
+  "test_used": false,
+  "validation_reused": true,
+  "fit_seconds": 9935.499978809996,
+  "new_artifacts": {
+    "model.cbm": {
+      "path": "results/experiment-1/temporal_runs/temporal_full462_20261023_v5/model/model.cbm",
+      "bytes": 1944288,
+      "mtime_ns": 1792762928732232276,
+      "sha256": "dc7839814adf8947efed52e279f398f9fe5fd55c197aa08b5d431324ce1803f3"
+    },
+    "metrics.json": {
+      "path": "results/experiment-1/temporal_runs/temporal_full462_20261023_v5/model/metrics.json",
+      "bytes": 70,
+      "mtime_ns": 1792762929140001596,
+      "sha256": "cee1aa495ee80185e8ea72bdc1a85e5f3820612b88b96cf385bd337e4557e1ba"
+    },
+    "evaluation.json": {
+      "path": "results/experiment-1/temporal_runs/temporal_full462_20261023_v5/model/evaluation.json",
+      "bytes": 3266,
+      "mtime_ns": 1792762929140328907,
+      "sha256": "05c9a2d4ae6ed1669f735aaa7011c6c5a7ca75063c2bf10b6d01e34c52988ac4"
+    },
+    "val_score.npy": {
+      "path": "results/experiment-1/temporal_runs/temporal_full462_20261023_v5/model/val_score.npy",
+      "bytes": 23063992,
+      "mtime_ns": 1792762928848232263,
+      "sha256": "fb81b621e5d6bbc9259b955bb6036f523e21ad32cbf9977736ab5b624dd67080"
+    }
+  }
+}

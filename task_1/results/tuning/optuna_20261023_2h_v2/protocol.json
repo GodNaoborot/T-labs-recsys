@@ -1,0 +1,118 @@
+{
+  "run_name": "optuna_20261023_2h_v2",
+  "budget_hours": 2.0,
+  "deadline_utc": "2026-10-24T11:00:00+00:00",
+  "seed": 42,
+  "search_space": {
+    "depth": [
+      4,
+      8
+    ],
+    "learning_rate": [
+      0.03,
+      0.2
+    ],
+    "l2_leaf_reg": [
+      1e-20,
+      0.1,
+      1.0,
+      3.0,
+      10.0,
+      30.0
+    ]
+  },
+  "test_used": false,
+  "train_groups_requested": 12000,
+  "val_groups_requested": 8000,
+  "trial_limits": {
+    "ranker": 8,
+    "pointwise": 12
+  },
+  "n_startup_trials": 3,
+  "selection": "best among first k COMPLETE per side; k=min COMPLETE count within objective",
+  "attempts": "COMPLETE+FAIL+PRUNED+RUNNING; WAITING excluded; baseline included",
+  "schedule": "pointwise pair then ranker pair; fewer attempted within objective",
+  "search_clock": "first search start+budget, includes preparation/load/fit/evaluation; no reset",
+  "queue": [
+    "control_pointwise",
+    "search",
+    "tuned_pointwise",
+    "control_ranker",
+    "tuned_ranker"
+  ],
+  "fixed_params": {
+    "ranker": {
+      "iterations": 1600,
+      "early_stopping_rounds": 80,
+      "random_seed": 42,
+      "use_best_model": true,
+      "verbose": 100,
+      "allow_writing_files": false,
+      "nan_mode": "Min",
+      "border_count": 254,
+      "task_type": "CPU",
+      "random_strength": 1.0,
+      "rsm": 1.0,
+      "loss_function": "YetiRank",
+      "eval_metric": "NDCG:top=10;type=Base;denominator=LogPosition",
+      "thread_count": 4,
+      "bootstrap_type": "MVS",
+      "subsample": 0.8
+    },
+    "pointwise": {
+      "iterations": 1600,
+      "early_stopping_rounds": 80,
+      "random_seed": 42,
+      "use_best_model": true,
+      "verbose": 100,
+      "allow_writing_files": false,
+      "nan_mode": "Min",
+      "border_count": 254,
+      "task_type": "CPU",
+      "random_strength": 1.0,
+      "rsm": 1.0,
+      "loss_function": "MultiClass",
+      "eval_metric": "MultiClass",
+      "thread_count": 8,
+      "bootstrap_type": "Bayesian",
+      "bagging_temperature": 1.0
+    }
+  },
+  "baseline_params": {
+    "ranker": {
+      "depth": 6,
+      "learning_rate": 0.1,
+      "l2_leaf_reg": 1e-20
+    },
+    "pointwise": {
+      "depth": 6,
+      "learning_rate": 0.1,
+      "l2_leaf_reg": 3.0
+    }
+  },
+  "source_sha256": {
+    "src/optuna_config.py": "d5f8e88724bb9cd508d16066a706d83a09aadf5bf86587f835ba90298d1432c0",
+    "src/optuna_data.py": "7d8dbbd2341e042a5fe3ba0e03b7747b0b3779b432a71a7aa41cb11971c196a3",
+    "src/optuna_worker.py": "5583e609f729f8b0e5e705f9cb7cd60f2c50edb226a4c47b532eb9333a678eb4",
+    "src/run_optuna.py": "d12ae9c046e23ac5089de0781d096a03604779e4c14c65d393f80d9da6011002",
+    "src/optuna_evaluation.py": "d3884b6af36d5395e4f1f9c44f0aad3cfe2d7e2ef76b3bfbfa7b00230a3efd38",
+    "src/optuna_selection.py": "9ff8521c40bd9a4f683c5b91f158ca1c2ef2fa613d6be51cf6e81bcabfc2e568",
+    "src/optuna_report.py": "3f697a42922d967dd4bbe2d34e4be423ede4f28a62c295c1d63e087bd866ed68",
+    "src/train_dfs_catboost.py": "bd8aef058dae7624f8035aaff11433f26262c1495ee01800db3be0f116f33dd3",
+    "src/block_bootstrap.py": "9d7609cc1514b5c37f1de3f2fdf5e7681a8240401798d0f4fca7072f87231174",
+    "src/bootstrap_intervals.py": "cb9fc3ade4f843f5405a9af96d988b92ec8fdbd95eb1fd498cbf5c41e1760745",
+    "src/project_artifacts.py": "e8416a3aa54fb1b645e4b71d8ac4aa1341fb3d3a8724f1685275b7e9f015f8e5",
+    "results/current_models.json": "7dfab86274c38a297448f676281d63436e0ad928b0cb54893a50b0e127ac827c"
+  },
+  "versions": {
+    "optuna": "5.0.0",
+    "catboost": "1.2.10",
+    "numpy": "2.4.6",
+    "pyarrow": "24.0.0",
+    "pandas": "2.3.3"
+  },
+  "objective": "external NDCG@10 with fixed seed ties",
+  "limitations": [
+    "group subsample; fulltrain borders; reused val; exploratory results"
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "completed": true,
+  "models": [
+    {
+      "variant": "M-t",
+      "active_features": 42,
+      "physical_features": 49,
+      "NDCG@10": 0.7689636751991845,
+      "QueryAUC": 0.6078904971191514,
+      "fit_seconds": 805.6686694360105,
+      "tree_count": 791,
+      "rows": 2879535,
+      "groups": 57097,
+      "test_used": false,
+      "delta_ndcg_vs_M_t": 0.0
+    },
+    {
+      "variant": "C2b-t",
+      "active_features": 49,
+      "physical_features": 49,
+      "NDCG@10": 0.8048955859810567,
+      "QueryAUC": 0.6784790940492508,
+      "fit_seconds": 721.9582338000182,
+      "tree_count": 685,
+      "rows": 2879535,
+      "groups": 57097,
+      "test_used": false,
+      "delta_ndcg_vs_M_t": 0.03593191078187219
+    },
+    {
+      "variant": "D462-t",
+      "active_features": 462,
+      "physical_features": 462,
+      "NDCG@10": 0.8046234035916301,
+      "QueryAUC": 0.676804783423684,
+      "fit_seconds": 1603.624572367,
+      "tree_count": 1043,
+      "rows": 2879535,
+      "groups": 57097,
+      "test_used": false,
+      "delta_ndcg_vs_M_t": 0.03565972839244558
+    }
+  ],
+  "comparisons": [
+    {
+      "candidate": "D462-t",
+      "reference": "M-t",
+      "delta_ndcg": 0.03565972839244702,
+      "ci_low": 0.03472090544383683,
+      "ci_high": 0.03655544034848753,
+      "block_days": 3,
+      "replicates": 20000,
+      "seed": 42,
+      "confidence": 0.95,
+      "two_sided": true,
+      "validation_reused": true,
+      "multiplicity_correction": false
+    },
+    {
+      "candidate": "D462-t",
+      "reference": "M-t",
+      "delta_ndcg": 0.03565972839244702,
+      "ci_low": 0.03473687840009121,
+      "ci_high": 0.03649710456280157,
+      "block_days": 4,
+      "replicates": 20000,
+      "seed": 42,
+      "confidence": 0.95,
+      "two_sided": true,
+      "validation_reused": true,
+      "multiplicity_correction": false
+    },
+    {
+      "candidate": "C2b-t",
+      "reference": "M-t",
+      "delta_ndcg": 0.03593191078187119,
+      "ci_low": 0.03483908115316608,
+      "ci_high": 0.03716771144161295,
+      "block_days": 3,
+      "replicates": 20000,
+      "seed": 42,
+      "confidence": 0.95,
+      "two_sided": true,
+      "validation_reused": true,
+      "multiplicity_correction": false
+    },
+    {
+      "candidate": "C2b-t",
+      "reference": "M-t",
+      "delta_ndcg": 0.03593191078187119,
+      "ci_low": 0.03475731193444063,
+      "ci_high": 0.03719039316758666,
+      "block_days": 4,
+      "replicates": 20000,
+      "seed": 42,
+      "confidence": 0.95,
+      "two_sided": true,
+      "validation_reused": true,
+      "multiplicity_correction": false
+    },
+    {
+      "candidate": "C2b-t",
+      "reference": "D462-t",
+      "delta_ndcg": 0.0002721823894241693,
+      "ci_low": -0.0007819251576365849,
+      "ci_high": 0.0013447050428964785,
+      "block_days": 3,
+      "replicates": 20000,
+      "seed": 42,
+      "confidence": 0.95,
+      "two_sided": true,
+      "validation_reused": true,
+      "multiplicity_correction": false
+    },
+    {
+      "candidate": "C2b-t",
+      "reference": "D462-t",
+      "delta_ndcg": 0.0002721823894241693,
+      "ci_low": -0.0007095074854279741,
+      "ci_high": 0.001316845066703511,
+      "block_days": 4,
+      "replicates": 20000,
+      "seed": 42,
+      "confidence": 0.95,
+      "two_sided": true,
+      "validation_reused": true,
+      "multiplicity_correction": false
+    }
+  ],
+  "test_used": false,
+  "validation_reused": true,
+  "calendar_days": 15,
+  "limitations": [
+    "fixed fitted models and previously selected DFS formulas",
+    "validation reused; marginal intervals without multiplicity correction",
+    "observed event user-day proxy; timestamp availability assumption",
+    "different C4 task and rows from original start_ts comparison"
+  ]
+}

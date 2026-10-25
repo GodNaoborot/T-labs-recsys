@@ -1,0 +1,154 @@
+{
+  "windows": [
+    {
+      "id": "train_121_165",
+      "train_days": [
+        121,
+        165
+      ],
+      "val_days": [
+        166,
+        180
+      ],
+      "train_start": 10368000,
+      "train_end": 14256000,
+      "val_start": 14256000,
+      "val_end": 15552000
+    },
+    {
+      "id": "train_136_180",
+      "train_days": [
+        136,
+        180
+      ],
+      "val_days": [
+        181,
+        195
+      ],
+      "train_start": 11664000,
+      "train_end": 15552000,
+      "val_start": 15552000,
+      "val_end": 16848000
+    },
+    {
+      "id": "train_151_195",
+      "train_days": [
+        151,
+        195
+      ],
+      "val_days": [
+        196,
+        210
+      ],
+      "train_start": 12960000,
+      "train_end": 16848000,
+      "val_start": 16848000,
+      "val_end": 18144000
+    },
+    {
+      "id": "train_206_250",
+      "train_days": [
+        206,
+        250
+      ],
+      "val_days": [
+        251,
+        265
+      ],
+      "train_start": 17712000,
+      "train_end": 21600000,
+      "val_start": 21600000,
+      "val_end": 22896000
+    },
+    {
+      "id": "train_221_265",
+      "train_days": [
+        221,
+        265
+      ],
+      "val_days": [
+        266,
+        280
+      ],
+      "train_start": 19008000,
+      "train_end": 22896000,
+      "val_start": 22896000,
+      "val_end": 24192000
+    }
+  ],
+  "seed": 42,
+  "params": {
+    "ranker": {
+      "random_seed": 42,
+      "learning_rate": 0.1,
+      "iterations": 600,
+      "depth": 6,
+      "early_stopping_rounds": 50,
+      "use_best_model": true,
+      "verbose": 25,
+      "allow_writing_files": false,
+      "border_count": 254,
+      "loss_function": "YetiRank",
+      "thread_count": 4,
+      "eval_metric": "NDCG:top=10;type=Base;denominator=LogPosition"
+    },
+    "pointwise": {
+      "random_seed": 42,
+      "learning_rate": 0.1,
+      "iterations": 600,
+      "depth": 6,
+      "early_stopping_rounds": 50,
+      "use_best_model": true,
+      "verbose": 25,
+      "allow_writing_files": false,
+      "border_count": 254,
+      "loss_function": "MultiClass",
+      "eval_metric": "MultiClass",
+      "thread_count": 8
+    }
+  },
+  "bootstrap": {
+    "block_days": [
+      3,
+      4
+    ],
+    "n_resamples": 20000,
+    "margin": 0.03,
+    "alpha_sig": 0.05,
+    "seed": 42,
+    "upper_bound": "percentile"
+  },
+  "success_rule": "for each objective: U95 < 3% in all windows and both block lengths",
+  "test_used": false,
+  "versions": {
+    "numpy": "2.4.6",
+    "pandas": "2.3.3",
+    "pyarrow": "24.0.0",
+    "catboost": "1.2.10"
+  },
+  "source_files": {
+    "data/listens.parquet": "4e12c359c03035d4274f02500186ce8d69114a07c0ff9abb3bab4e2303da8c9c",
+    "data/events.parquet": "e49dc23e0b3779cb172985c426855fa0c2bd14701fd2fc57fb0760f96974b65f",
+    "src/rolling_catboost.py": "395a2c1b827ebc46752319fdbf4abcefe2a0b76da7a72043dec539c4ed701f64",
+    "src/rolling_dfs_features.py": "eb412dec777864dd0e7d1aacaa6c66ccf0f035bf8140cdec2c9d68eeccc87fab",
+    "src/rolling_manual_features.py": "e9bacb74a774ed311d71f66cabfd906a96c1f56d89781a0e75112068460a07af",
+    "src/rolling_report.py": "e12151e248dfc5a03bef09fd9b07201fc12ac48706dc281088684fcd7e72ffec",
+    "src/rolling_windows.py": "e33afa163416d33fcd50f3563e134d8928a6e520c4e529c19064b035bb821437",
+    "src/block_bootstrap.py": "9d7609cc1514b5c37f1de3f2fdf5e7681a8240401798d0f4fca7072f87231174",
+    "src/cumulative_features.py": "ad74d81b5b07b180ae103fcff07211332be1569a667e32cf72683942fef9818e",
+    "src/run_rolling_windows.py": "f969d08a24370c405a92eec92523c28342cfd29e1b056254c788daa706528077",
+    "results/baselines/timing-20261020/run_config.json": "cfb8bbd14ef3d5f749805ea9b73dedda0ea6725502ce00089873b0d1e011c30b",
+    "results/experiment-1/dfs/run_config.json": "159a7b9b3299ac008bd482bf000a868405bf233c1c1a8f6755567f91e6021c08",
+    "data/experiment-1/featuretools/train_sample_200_cumulative_Items_definitions.json": "cead300b0a3776a612b88b0a7ebfa8ebbde9fb831629528a44c65c15542d6725",
+    "data/experiment-1/featuretools/train_sample_200_cumulative_UserArtist_definitions.json": "e0494a54296777854024de0fd6ecb0270f8bc30de8d656a8db2b937f1908434a",
+    "data/experiment-1/featuretools/train_sample_200_cumulative_UserItem_definitions.json": "29be97c63fbbcd9b28ecac7b66cd63f24f13c160ee2658d4f8d9e41dfd6d1f8c",
+    "data/experiment-1/featuretools/train_sample_200_cumulative_Users_definitions.json": "ecf1f81a5e950643048980a4de69dac68b663a2738056d8bc81c7eac306263b5"
+  },
+  "limitations": [
+    "Overlapping train; dependent windows.",
+    "Per-window bootstrap conditional on fixed trained models.",
+    "One seed; margin chosen after first experiment.",
+    "Last val overlaps original val; exploratory robustness analysis."
+  ],
+  "created_unix": 1792591519.6558566
+}

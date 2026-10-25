@@ -1,0 +1,22 @@
+{
+  "Users": {
+    "seconds": 3.6204476009879727,
+    "history_rows": 2152042,
+    "features": 3195
+  },
+  "Items": {
+    "seconds": 47.15458569698967,
+    "history_rows": 13905007,
+    "features": 3195
+  },
+  "UserItem": {
+    "seconds": 1.4808910569990985,
+    "history_rows": 170584,
+    "features": 3195
+  },
+  "UserArtist": {
+    "seconds": 1.7963002259784844,
+    "history_rows": 475795,
+    "features": 3195
+  }
+}

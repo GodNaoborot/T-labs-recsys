@@ -1,0 +1,121 @@
+{
+  "completed": true,
+  "inputs": {
+    "files": {
+      "base_config": {
+        "path": "results/baselines/timing-20261020/run_config.json",
+        "sha256": "cfb8bbd14ef3d5f749805ea9b73dedda0ea6725502ce00089873b0d1e011c30b"
+      },
+      "base_metrics": {
+        "path": "results/baselines/timing-20261020/validation_metrics.csv",
+        "sha256": "6c26ba3fbf24a84880c62739105e76128c0a33229e8a05fc48e668aa713a0bec"
+      },
+      "dfs_config": {
+        "path": "results/experiment-1/dfs/run_config.json",
+        "sha256": "159a7b9b3299ac008bd482bf000a868405bf233c1c1a8f6755567f91e6021c08"
+      },
+      "dfs_metrics": {
+        "path": "results/experiment-1/dfs/validation_metrics.csv",
+        "sha256": "c3ddc505f55520dacfdc982a3bd17afc58b7b5bd579e18345cb2de403c3778f3"
+      },
+      "features": {
+        "path": "data/features.parquet",
+        "sha256": "fea7038dad4ec1b2bce2c2f71cf0d16e3fae6e95198983dc403e82b41a98d1ad"
+      },
+      "metadata": {
+        "path": "data/experiment-1/featuretools/full_val_cumulative/val_all_cumulative_metadata.parquet",
+        "sha256": "c6bbf39c90e18cf420d615a7cc9ae9aee26f4c0b4fa844475d824be1aba1e218"
+      },
+      "targets": {
+        "path": "data/experiment-1/featuretools/catboost_pools/val_targets.npz",
+        "sha256": "9b617c625b54b57d9cc93c418beeb58f181f07a6a1be392c20ab48d09e712204"
+      },
+      "pool": {
+        "path": "data/experiment-1/featuretools/catboost_pools/val.qbin",
+        "sha256": "80818bf3bf780bb56e396d1ccfd5c28ec3ace0afd7c67e90f6239dc3f9f2ba0b"
+      },
+      "ranker_scores": {
+        "path": "results/experiment-1/dfs/ranker_val_score.npy",
+        "sha256": "82365e3ad74087a34de10a29ec543a14589dad9868d89913bedf081c046397d2"
+      },
+      "pointwise_scores": {
+        "path": "results/experiment-1/dfs/pointwise_val_score.npy",
+        "sha256": "52ec7f355754c8a28475832f42b30f8f03aa9688cca2af178f6d694305e2856e"
+      },
+      "base_ranker": {
+        "path": "models/baseline-timing-20261020/baseline.cbm",
+        "sha256": "97242814c1234f5be3a6091a516e5448dc8a421c2c312202cba51fb00f081648"
+      },
+      "base_pointwise": {
+        "path": "models/baseline-timing-20261020/baseline_pointwise.cbm",
+        "sha256": "37fe880aedcab825302873cca5d83f66dae4da11fc102c2055d7044b4587af76"
+      },
+      "dfs_ranker": {
+        "path": "models/experiment-1/dfs/ranker.cbm",
+        "sha256": "5901854e6f4d8b797f6cdff5acdf28154902f212c43274df932ac0e8b630d207"
+      },
+      "dfs_pointwise": {
+        "path": "models/experiment-1/dfs/pointwise.cbm",
+        "sha256": "fc120e479135571ca1fe344791ea339f6f0c4b99df27ea36a822337f0aa5097e"
+      },
+      "bootstrap_validation.py": {
+        "path": "src/bootstrap_validation.py",
+        "sha256": "df5c6b40f8300f8e6e13f995fa7036d39b83400d819b40fe29688b198689df3d"
+      },
+      "block_bootstrap.py": {
+        "path": "src/block_bootstrap.py",
+        "sha256": "9d7609cc1514b5c37f1de3f2fdf5e7681a8240401798d0f4fca7072f87231174"
+      }
+    },
+    "tie_seed": 42,
+    "ndcg": "NDCG:top=10;type=Base;denominator=LogPosition",
+    "versions": {
+      "numpy": "2.4.6",
+      "pandas": "2.3.3",
+      "pyarrow": "24.0.0",
+      "catboost": "1.2.10"
+    },
+    "tie_policy": "descending score, then descending global seed permutation"
+  },
+  "checks": {
+    "paired_rows": 2882983,
+    "groups": 56946,
+    "days": 15,
+    "target_log_id_order_sha256": "8b10d58585c8232370aed963743aa72cbb6ef2a4b5b020635e4f178756c522da",
+    "ndcg_checks": {
+      "base_ranker": {
+        "group_mean": 0.7686182410853829,
+        "catboost": 0.768618241085386,
+        "saved_metric": 0.768618241085386,
+        "match": true
+      },
+      "base_pointwise": {
+        "group_mean": 0.7481242472256004,
+        "catboost": 0.7481242472256027,
+        "saved_metric": 0.7481242472256027,
+        "match": true
+      },
+      "dfs_ranker": {
+        "group_mean": 0.7601513798851632,
+        "catboost": 0.7601513798851673,
+        "saved_metric": 0.7601513798851673,
+        "match": true
+      },
+      "dfs_pointwise": {
+        "group_mean": 0.7538916875336011,
+        "catboost": 0.7538916875336042,
+        "saved_metric": 0.7538916875336042,
+        "match": true
+      }
+    },
+    "dfs_saved_predictions_match_models": true
+  },
+  "group_table_sha256": "8db512b2cfe097e680795788b64a54c5b4486d941e8502d1aad5adbab3c96aae",
+  "elapsed_seconds": 12.94724636599858,
+  "versions": {
+    "numpy": "2.4.6",
+    "pandas": "2.3.3",
+    "pyarrow": "24.0.0",
+    "catboost": "1.2.10"
+  }
+}

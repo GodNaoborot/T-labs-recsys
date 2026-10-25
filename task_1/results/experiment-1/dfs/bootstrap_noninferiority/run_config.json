@@ -1,0 +1,30 @@
+{
+  "metric": "NDCG@10; Base gain; LogPosition; macro over mixed user-day groups",
+  "h0": "relative_loss >= 0.03",
+  "h1": "relative_loss < 0.03",
+  "margin": 0.03,
+  "alpha_sig": 0.05,
+  "block_days": [
+    3,
+    4
+  ],
+  "n_resamples": 20000,
+  "seed": 42,
+  "tie_seed": 42,
+  "bootstrap": "paired circular blocks of calendar days; trim to 15 positions",
+  "bound": "one-sided upper percentile; quantile(1-alpha_sig), method=linear",
+  "group_weighting": "sum of group NDCG / number of groups; repeated days retain multiplicity",
+  "conditional_on_fixed_models": true,
+  "test_used": false,
+  "baseline_config": "results/baselines/timing-20261020/run_config.json",
+  "preparation_report_sha256": "04b9a51fb721fc87269f99928b0d6c685da280a05a08a01697bc2d47be48fc6e",
+  "statistics_source_sha256": "9d7609cc1514b5c37f1de3f2fdf5e7681a8240401798d0f4fca7072f87231174",
+  "multiplicity_policy": "all lengths reported; stability requires both; no best-test selection",
+  "versions": {
+    "numpy": "2.4.6",
+    "pandas": "2.3.3",
+    "pyarrow": "24.0.0",
+    "catboost": "1.2.10"
+  },
+  "elapsed_seconds": 1.683221515002515
+}

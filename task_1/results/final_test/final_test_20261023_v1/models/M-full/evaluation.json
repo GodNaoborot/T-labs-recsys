@@ -1,0 +1,51 @@
+{
+  "completed": true,
+  "split": "test",
+  "model_id": "M-full",
+  "family": "full",
+  "schema": "manual42",
+  "active_features": 42,
+  "physical_features": 42,
+  "tree_count": 1574,
+  "rows": 3165779,
+  "groups": 61842,
+  "metrics": {
+    "NDCG@10": 0.7723753473606698,
+    "QueryAUC": 0.6082301018158477
+  },
+  "inputs": {
+    "plan_id": "final_test_20261023_v1",
+    "model_id": "M-full",
+    "model_sha256": "5b4e5db112b8d63eba7228902a0d4827a5a7375a229ab65638654e89dfa7471a",
+    "targets_sha256": "4b55c841b4132e115e5b82c2cfa159199f9ee6c796b0ef71737288ea72630cf8",
+    "pool_sha256": "f63a25fdefdd0ec70d0553be982c4e75963a2112ff61392f33fdc8285a2f7d00",
+    "schema": "manual42"
+  },
+  "fit_executed": false,
+  "hyperparameter_search": false,
+  "timings": {
+    "verification_and_pool_seconds": 3.1611361769901123,
+    "model_load_seconds": 0.005744198017055169,
+    "predict_seconds": 0.4376104190014303,
+    "metrics_seconds": 1.8751931190199684,
+    "elapsed_seconds": 5.573086382006295
+  },
+  "artifacts": {
+    "score": {
+      "path": "results/final_test/final_test_20261023_v1/models/M-full/test_score.npy",
+      "sha256": "f0b2906379f02418121638223297492f6e38f40c271c3c17e03d0a55ef4d02d2"
+    },
+    "groups": {
+      "path": "results/final_test/final_test_20261023_v1/models/M-full/group_ndcg.parquet",
+      "sha256": "00cccc3cc9bc98afd52c71adfd6ab6d79f8b6d39c666489d8fd3f4d13570f5d1"
+    },
+    "daily": {
+      "path": "results/final_test/final_test_20261023_v1/models/M-full/daily_ndcg.csv",
+      "sha256": "3b8cab0a7b0df519d37af73074ab72276074740cf4f3883a06a7d879a4c0bd85"
+    },
+    "metrics": {
+      "path": "results/final_test/final_test_20261023_v1/models/M-full/metrics.json",
+      "sha256": "f76a446da0c20b918888c1cf76615e5cbda2de61049e4d87d9e0a0dd38f1f83d"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "completed": true,
+  "schema": "manual49",
+  "rows": 3165779,
+  "groups": 61842,
+  "physical_features": 49,
+  "pool_sha256": "4d6490f06a79a508d955240b7f9f8b7ca1b743e05c0ec16f88cb5c4cce8c7d1e",
+  "targets_sha256": "4b55c841b4132e115e5b82c2cfa159199f9ee6c796b0ef71737288ea72630cf8",
+  "schema_targets_sha256": "377ae19eca97f0f2a5ee7a000294b5828e36c1a6238bd429317447bf09f2e017",
+  "applied_borders_sha256": "985f744704cb17fa35d2f04eda0bc96fd09691a46210a8237042b076c0fb2fed",
+  "predict_executed": false,
+  "metrics_computed": false
+}

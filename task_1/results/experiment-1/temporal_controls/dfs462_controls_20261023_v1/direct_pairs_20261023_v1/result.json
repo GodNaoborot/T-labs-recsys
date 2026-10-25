@@ -1,0 +1,81 @@
+{
+  "completed": true,
+  "split": "val",
+  "test_opened": false,
+  "run": "results/experiment-1/temporal_controls/dfs462_controls_20261023_v1",
+  "rows": 2882983,
+  "groups": 56946,
+  "calendar": [
+    270,
+    284
+  ],
+  "pairs": [
+    {
+      "candidate": "C2b",
+      "reference": "D462-sub",
+      "block_days": 3,
+      "replicates": 20000,
+      "seed": 42,
+      "delta_ndcg": 0.0026310059295275856,
+      "ci_low": 0.0018083029424259592,
+      "ci_high": 0.0034935355969205775,
+      "confidence": 0.95,
+      "two_sided": true,
+      "validation_reused": true
+    },
+    {
+      "candidate": "C2b",
+      "reference": "D462-sub",
+      "block_days": 4,
+      "replicates": 20000,
+      "seed": 42,
+      "delta_ndcg": 0.0026310059295275856,
+      "ci_low": 0.001777351364988995,
+      "ci_high": 0.0034719093489237497,
+      "confidence": 0.95,
+      "two_sided": true,
+      "validation_reused": true
+    },
+    {
+      "candidate": "C2b",
+      "reference": "C2a",
+      "block_days": 3,
+      "replicates": 20000,
+      "seed": 42,
+      "delta_ndcg": 0.05196134475720238,
+      "ci_low": 0.05095919881651726,
+      "ci_high": 0.053134153424503124,
+      "confidence": 0.95,
+      "two_sided": true,
+      "validation_reused": true
+    },
+    {
+      "candidate": "C2b",
+      "reference": "C2a",
+      "block_days": 4,
+      "replicates": 20000,
+      "seed": 42,
+      "delta_ndcg": 0.05196134475720238,
+      "ci_low": 0.05102650448014624,
+      "ci_high": 0.053119136305299956,
+      "confidence": 0.95,
+      "two_sided": true,
+      "validation_reused": true
+    }
+  ],
+  "source_sha256": {
+    "results/experiment-1/temporal_controls/dfs462_controls_20261023_v1/models/C2a/group_ndcg.parquet": "5a1371d70738f943232f997cac6f74db630dcca0b9e82c1c9d21ee0cef0646f8",
+    "results/experiment-1/temporal_controls/dfs462_controls_20261023_v1/models/C2b/group_ndcg.parquet": "38bbc8ea937232dc24024c82594ea998ae4f7a664ae8ba607ea0f315baaf5851",
+    "results/experiment-1/temporal_controls/dfs462_controls_20261023_v1/models/D462-sub/group_ndcg.parquet": "03de2b7b630a868855fa9f0c82a786ea703cedc8ed232f610f6648c508213a37",
+    "results/experiment-1/temporal_controls/dfs462_controls_20261023_v1/comparison.csv": "c1985eb07ec4d66acf4fd66cc54279947761072fb1a3cde1d6167daff34cc191",
+    "src/compare_temporal_controls_pairs.py": "6d6e77318f16a0a531488178e296c07ba950c5cae11468689411176171089eb7",
+    "src/block_bootstrap.py": "9d7609cc1514b5c37f1de3f2fdf5e7681a8240401798d0f4fca7072f87231174"
+  },
+  "method": "paired circular day-block percentile bootstrap; group-weighted",
+  "limitations": [
+    "validation reused",
+    "fixed fitted models",
+    "no multiplicity correction",
+    "not an equivalence test"
+  ]
+}

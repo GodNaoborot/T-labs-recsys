@@ -1,0 +1,27 @@
+{
+  "completed": true,
+  "window": {
+    "id": "train_221_265",
+    "train_days": [
+      221,
+      265
+    ],
+    "val_days": [
+      266,
+      280
+    ],
+    "train_start": 19008000,
+    "train_end": 22896000,
+    "val_start": 22896000,
+    "val_end": 24192000
+  },
+  "rows": {
+    "train": 8415609,
+    "val": 3053080
+  },
+  "targets_sha256": "0524040ed5f68f5355031d813c22a0e747d0df5585156f26402f2f6490c7b049",
+  "gap_seconds": 1800,
+  "day_numbering": "one-based inclusive display",
+  "time_rule": "history.timestamp < query.start_ts",
+  "test_used": false
+}

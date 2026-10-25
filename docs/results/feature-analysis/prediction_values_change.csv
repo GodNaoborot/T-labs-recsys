@@ -1,0 +1,463 @@
+Feature Id,Importances
+"Users__TIME_SINCE_LAST(Interactions.end_ts, unit=days)",14.212618502209546
+"Users__MAX(Interactions.label, Last 1 Days) * MEAN(Interactions.label, Last 1 Days)",7.034664615869603
+UserItem__MEAN(Interactions.label),6.712521155983893
+"Users__MEAN(Interactions.label, Last 3 Days)",3.6373039781838155
+"Users__COUNT(Interactions, Last 2 Days) * MEAN(Interactions.label, Last 2 Days)",2.008320402767869
+UserItem__COUNT(Interactions) * MEAN(Interactions.label),1.74171991247244
+"Users__COUNT(Interactions, Last 1 Days)",1.6797138184549512
+"Users__MAX(Interactions.track_length_seconds, Last 1 Days) * MEAN(Interactions.label, Last 1 Days)",1.5344036456668666
+"Users__COUNT(Interactions, Last 1 Days) * MIN(Interactions.label, Last 1 Days)",1.2844058778273006
+"UserItem__TIME_SINCE_FIRST(Interactions.end_ts, unit=days)",1.1331826859064893
+"UserArtist__TIME_SINCE_LAST(Interactions.end_ts, unit=days)",1.107982165647089
+"Users__MEAN(Interactions.label * track_length_seconds, Last 4 Days)",1.0415925566667457
+UserItem__COUNT(Interactions) * MEAN(Interactions.is_organic),1.0217393854156864
+"Users__MEAN(Interactions.label, Last 1 Days) * MIN(Interactions.track_length_seconds, Last 1 Days)",0.926784006038006
+UserItem__MEAN(Interactions.is_organic) * STD(Interactions.label),0.9122689397244816
+Users__MAX(Interactions.label) * MEAN(Interactions.label),0.9067055411746102
+"Items__TIME_SINCE_LAST(Interactions.end_ts, unit=days)",0.8768252133622697
+UserItem__MAX(Interactions.is_organic) * MEAN(Interactions.label),0.8648917125961821
+"UserArtist__COUNT(Interactions, Last 2 Days) * MEAN(Interactions.label, Last 2 Days)",0.8231380943909884
+"UserArtist__MEAN(Interactions.label, Last 25 Days)",0.7711104348955076
+"Users__MEAN(Interactions.label, Last 2 Days) * STD(Interactions.track_length_seconds, Last 2 Days)",0.7594193569751225
+UserItem__MEAN(Interactions.track_length_seconds) * STD(Interactions.label),0.7493578567964033
+"UserItem__COUNT(Interactions, Last 7 Days) * MEAN(Interactions.label, Last 7 Days)",0.7395314684885989
+"Users__MAX(Interactions.track_length_seconds, Last 1 Days) * STD(Interactions.label, Last 1 Days)",0.6776568838271739
+"UserItem__COUNT(Interactions, Last 1 Days) * MAX(Interactions.label, Last 1 Days)",0.6676236258134538
+"Users__MEAN(Interactions.label, Last 2 Days) * STD(Interactions.label, Last 2 Days)",0.6531318439565139
+Items__MEAN(Interactions.label) * STD(Interactions.label),0.6271610636573229
+"UserItem__MEAN(Interactions.label, Last 25 Days)",0.6172244097078663
+UserArtist__MEAN(Interactions.label) * MIN(Interactions.track_length_seconds),0.5878885828745815
+Items__MAX(Interactions.is_organic) * STD(Interactions.label),0.587344305439395
+"Items__MEAN(Interactions.label, Last 26 Days)",0.5571260913590622
+"Items__MEAN(Interactions.label, Last 29 Days)",0.5312535253438309
+"UserItem__MEAN(Interactions.track_length_seconds, Last 1 Days)",0.5270983353163261
+"Users__COUNT(Interactions, Last 2 Days)",0.5212044614927942
+"Users__MEAN(Interactions.label, Last 2 Days) * MIN(Interactions.track_length_seconds, Last 2 Days)",0.5039905363813453
+"Users__COUNT(Interactions, Last 3 Days) * MEAN(Interactions.label, Last 3 Days)",0.49006865603977234
+UserArtist__COUNT(Interactions) * MEAN(Interactions.label),0.467843562246599
+"Users__MEAN(Interactions.label, Last 1 Days) * STD(Interactions.track_length_seconds, Last 1 Days)",0.46167485004436365
+"Users__MEAN(Interactions.is_organic * label, Last 1 Days)",0.42833774570572963
+Items__MEAN(Interactions.is_organic * label),0.41137092775281153
+"Items__TIME_SINCE_FIRST(Interactions.end_ts, unit=days)",0.3979334742703079
+UserItem__COUNT(Interactions) * MIN(Interactions.label),0.38831873294627856
+"Users__COUNT(Interactions, Last 16 Days) * MEAN(Interactions.label, Last 16 Days)",0.3827118251277573
+UserItem__MAX(Interactions.label) * MEAN(Interactions.label),0.3804838499516458
+"UserArtist__COUNT(Interactions, Last 11 Days) * MEAN(Interactions.label, Last 11 Days)",0.36554454727409663
+"Items__MAX(Interactions.track_length_seconds, Last 30 Days) * MEAN(Interactions.is_organic, Last 30 Days)",0.35836164411122773
+"Users__MIN(Interactions.track_length_seconds, Last 1 Days) * STD(Interactions.label, Last 1 Days)",0.3442080601870119
+"UserItem__COUNT(Interactions, Last 22 Days) * MEAN(Interactions.label, Last 22 Days)",0.34189971969965843
+"Users__MAX(Interactions.label, Last 1 Days) * STD(Interactions.track_length_seconds, Last 1 Days)",0.33910912199357646
+UserArtist__MAX(Interactions.label) * STD(Interactions.label),0.3348068870542947
+"Users__STD(Interactions.label, Last 2 Days) * STD(Interactions.track_length_seconds, Last 2 Days)",0.3304282410678467
+"Users__MEAN(Interactions.label, Last 7 Days) * MEAN(Interactions.track_length_seconds, Last 7 Days)",0.31186236314647847
+"Users__STD(Interactions.label * track_length_seconds, Last 1 Days)",0.30081041008190107
+"UserItem__MAX(Interactions.is_organic, Last 21 Days) * MEAN(Interactions.label, Last 21 Days)",0.2787025412249623
+"Users__MIN(Interactions.track_length_seconds, Last 2 Days) * STD(Interactions.label, Last 2 Days)",0.2653882826692101
+UserItem__MAX(Interactions.track_length_seconds) * MIN(Interactions.track_length_seconds),0.2628033874137069
+"UserItem__MEAN(Interactions.label, Last 13 Days) * MEAN(Interactions.track_length_seconds, Last 13 Days)",0.26136505338258176
+"Users__MAX(Interactions.label, Last 28 Days) * MEAN(Interactions.label, Last 28 Days)",0.2599954866702337
+"UserArtist__MAX(Interactions.label, Last 27 Days) * MEAN(Interactions.label, Last 27 Days)",0.2587726313821146
+"Users__MEAN(Interactions.label, Last 13 Days)",0.2548842531129305
+"Items__MAX(Interactions.label, Last 1 Days) * MEAN(Interactions.label, Last 1 Days)",0.2522912646723405
+"UserItem__COUNT(Interactions, Last 18 Days) * MEAN(Interactions.label, Last 18 Days)",0.2484930197422621
+"Items__MAX(Interactions.track_length_seconds, Last 24 Days) * MEAN(Interactions.label, Last 24 Days)",0.24716408680321503
+"Users__MEAN(Interactions.label, Last 11 Days)",0.2456608420936026
+"Users__MEAN(Interactions.label, Last 4 Days) * STD(Interactions.label, Last 4 Days)",0.24558790036181433
+"Items__MEAN(Interactions.label, Last 20 Days)",0.24389102282068734
+"Items__MAX(Interactions.label, Last 6 Days) * MEAN(Interactions.label, Last 6 Days)",0.23752246294326473
+"UserItem__MEAN(Interactions.label * track_length_seconds, Last 28 Days)",0.2360579160719817
+"UserItem__MAX(Interactions.track_length_seconds, Last 1 Days) * MIN(Interactions.label, Last 1 Days)",0.23004740248225297
+Items__STD(Interactions.is_organic) * STD(Interactions.label),0.22713470003589056
+UserItem__MAX(Interactions.is_organic) * STD(Interactions.is_organic),0.2254064356107003
+"Items__MEAN(Interactions.is_organic * label, Last 30 Days)",0.21682096161411923
+UserArtist__MAX(Interactions.is_organic) * STD(Interactions.label),0.20751016458849536
+UserArtist__MEAN(Interactions.label) * STD(Interactions.label),0.20564957565469372
+"UserItem__COUNT(Interactions, Last 5 Days) * MAX(Interactions.is_organic, Last 5 Days)",0.20154718994269188
+UserItem__MEAN(Interactions.label * track_length_seconds),0.20068192993535164
+"Items__MEAN(Interactions.is_organic, Last 1 Days) * STD(Interactions.is_organic, Last 1 Days)",0.1998791322963748
+"UserArtist__MEAN(Interactions.label, Last 5 Days) * MEAN(Interactions.track_length_seconds, Last 5 Days)",0.19722944240649176
+"Items__MAX(Interactions.track_length_seconds, Last 24 Days) * MEAN(Interactions.track_length_seconds, Last 24 Days)",0.19720759910147245
+"UserArtist__MAX(Interactions.track_length_seconds, Last 30 Days) * MIN(Interactions.track_length_seconds, Last 30 Days)",0.19712856729536957
+UserItem__MAX(Interactions.label * track_length_seconds),0.19282251591744243
+"UserItem__MAX(Interactions.track_length_seconds, Last 29 Days) * STD(Interactions.label, Last 29 Days)",0.19061610760183517
+UserArtist__MEAN(Interactions.is_organic * track_length_seconds),0.19047643880331103
+"Users__MEAN(Interactions.is_organic, Last 1 Days) * STD(Interactions.track_length_seconds, Last 1 Days)",0.18460548333759252
+"Users__COUNT(Interactions, Last 17 Days) * MEAN(Interactions.label, Last 17 Days)",0.18211396827058227
+"Items__COUNT(Interactions, Last 7 Days) * MEAN(Interactions.label, Last 7 Days)",0.17928607533814767
+"Users__STD(Interactions.is_organic, Last 1 Days)",0.17448741085510575
+"Users__MEAN(Interactions.label, Last 3 Days) * STD(Interactions.label, Last 3 Days)",0.17329838789516264
+"Items__STD(Interactions.label * track_length_seconds, Last 29 Days)",0.17319524165463174
+"UserItem__COUNT(Interactions, Last 23 Days) * MIN(Interactions.label, Last 23 Days)",0.17215361862178946
+"Users__COUNT(Interactions, Last 27 Days) * STD(Interactions.label, Last 27 Days)",0.17040466089416884
+Items__MAX(Interactions.is_organic) * STD(Interactions.is_organic),0.17011493370242275
+"UserArtist__MAX(Interactions.track_length_seconds, Last 23 Days) * MEAN(Interactions.label, Last 23 Days)",0.168437685845428
+UserItem__MAX(Interactions.label) * MEAN(Interactions.track_length_seconds),0.16483102423124235
+"UserArtist__MEAN(Interactions.is_organic, Last 3 Days) * MEAN(Interactions.label, Last 3 Days)",0.16059232279061822
+"UserItem__MEAN(Interactions.label, Last 5 Days) * MIN(Interactions.track_length_seconds, Last 5 Days)",0.1591065713703229
+"UserArtist__MIN(Interactions.label * track_length_seconds, Last 1 Days)",0.15842823485818258
+"UserArtist__COUNT(Interactions, Last 29 Days) * MIN(Interactions.label, Last 29 Days)",0.1557906350057569
+"UserArtist__MAX(Interactions.label, Last 17 Days) * MEAN(Interactions.label, Last 17 Days)",0.15448936137363042
+Items__COUNT(Interactions) * MAX(Interactions.is_organic),0.15434994421930065
+Users__MEAN(Interactions.is_organic) * STD(Interactions.label),0.1534501796012488
+"Users__STD(Interactions.track_length_seconds, Last 2 Days)",0.15322764365799071
+"Items__MEAN(Interactions.label, Last 2 Days) * STD(Interactions.label, Last 2 Days)",0.15026213964708196
+UserItem__MAX(Interactions.label) * STD(Interactions.is_organic),0.15008793950457502
+"Items__STD(Interactions.label, Last 1 Days)",0.14889023439607657
+"UserItem__STD(Interactions.is_organic * label, Last 26 Days)",0.14839222663137197
+"Users__MAX(Interactions.is_organic, Last 24 Days) * STD(Interactions.label, Last 24 Days)",0.1481343276446996
+"UserArtist__MEAN(Interactions.label, Last 12 Days) * STD(Interactions.track_length_seconds, Last 12 Days)",0.14764599145528054
+"Items__COUNT(Interactions, Last 2 Days) * MAX(Interactions.is_organic, Last 2 Days)",0.14727212916543184
+"Users__MAX(Interactions.track_length_seconds, Last 11 Days) * STD(Interactions.label, Last 11 Days)",0.1466864942649718
+"Items__MAX(Interactions.label, Last 23 Days) * MEAN(Interactions.label, Last 23 Days)",0.14191040139358538
+"UserItem__MEAN(Interactions.track_length_seconds, Last 30 Days) * MIN(Interactions.track_length_seconds, Last 30 Days)",0.1402861552221992
+"Items__MEAN(Interactions.label, Last 24 Days) * STD(Interactions.is_organic, Last 24 Days)",0.14009568193671107
+"Users__MEAN(Interactions.is_organic * track_length_seconds, Last 3 Days)",0.13925745332924266
+"Users__MIN(Interactions.label, Last 3 Days) * STD(Interactions.track_length_seconds, Last 3 Days)",0.13850973366271307
+"Items__MAX(Interactions.label, Last 21 Days) * STD(Interactions.is_organic, Last 21 Days)",0.13708072667826318
+"UserArtist__COUNT(Interactions, Last 30 Days) * MIN(Interactions.track_length_seconds, Last 30 Days)",0.13613118574280136
+"Users__MAX(Interactions.label, Last 20 Days) * STD(Interactions.label, Last 20 Days)",0.13568996303628697
+"Items__STD(Interactions.is_organic * label, Last 3 Days)",0.1342551759872103
+"UserArtist__MEAN(Interactions.track_length_seconds, Last 5 Days)",0.1339951036070773
+"Users__MEAN(Interactions.is_organic, Last 25 Days) * STD(Interactions.label, Last 25 Days)",0.13396261309265667
+"UserItem__COUNT(Interactions, Last 6 Days) * MIN(Interactions.label, Last 6 Days)",0.13122219981940625
+Users__COUNT(Interactions) * MIN(Interactions.track_length_seconds),0.13060950165888782
+Items__COUNT(Interactions) * STD(Interactions.label),0.1298303273085222
+"Users__MAX(Interactions.track_length_seconds, Last 3 Days) * MEAN(Interactions.label, Last 3 Days)",0.1298112610361688
+"UserItem__MIN(Interactions.label * track_length_seconds, Last 16 Days)",0.12954585877443436
+"UserArtist__COUNT(Interactions, Last 30 Days) * MAX(Interactions.label, Last 30 Days)",0.1289155090454691
+"Items__MEAN(Interactions.label, Last 6 Days) * STD(Interactions.is_organic, Last 6 Days)",0.128285205148254
+"Items__STD(Interactions.is_organic * label, Last 1 Days)",0.1282787073824996
+"Items__MEAN(Interactions.label, Last 5 Days) * STD(Interactions.is_organic, Last 5 Days)",0.12782831677538758
+"Items__MEAN(Interactions.is_organic, Last 25 Days) * MIN(Interactions.track_length_seconds, Last 25 Days)",0.12781686107558438
+Items__MAX(Interactions.label) * MEAN(Interactions.is_organic),0.12770117408707424
+"Items__MEAN(Interactions.is_organic, Last 5 Days) * STD(Interactions.is_organic, Last 5 Days)",0.12760440564940423
+UserArtist__STD(Interactions.is_organic * label),0.1268734052103294
+"Items__STD(Interactions.is_organic * label, Last 26 Days)",0.12619351092763692
+"Items__MEAN(Interactions.is_organic, Last 27 Days) * STD(Interactions.is_organic, Last 27 Days)",0.1260409476571109
+"Users__MEAN(Interactions.is_organic * label, Last 19 Days)",0.12580713135378174
+"Users__MAX(Interactions.label, Last 14 Days) * MEAN(Interactions.label, Last 14 Days)",0.12464745059025208
+"Users__MAX(Interactions.label, Last 30 Days) * MEAN(Interactions.label, Last 30 Days)",0.1239276412417269
+"Users__COUNT(Interactions, Last 9 Days) * MIN(Interactions.track_length_seconds, Last 9 Days)",0.12356699336058442
+"Items__MAX(Interactions.label, Last 23 Days) * MIN(Interactions.track_length_seconds, Last 23 Days)",0.12339872465351406
+UserArtist__MAX(Interactions.track_length_seconds) * MIN(Interactions.track_length_seconds),0.12323439904488362
+"Users__COUNT(Interactions, Last 2 Days) * STD(Interactions.track_length_seconds, Last 2 Days)",0.12320029022124149
+"Items__MAX(Interactions.is_organic, Last 15 Days) * STD(Interactions.is_organic, Last 15 Days)",0.12285494623796497
+"Items__STD(Interactions.is_organic, Last 3 Days) * STD(Interactions.label, Last 3 Days)",0.12148219402192069
+"UserArtist__STD(Interactions.label, Last 4 Days)",0.12145724925959464
+"Users__MAX(Interactions.label, Last 19 Days) * MEAN(Interactions.is_organic, Last 19 Days)",0.12123109639864393
+UserArtist__MAX(Interactions.track_length_seconds) * MEAN(Interactions.track_length_seconds),0.1202739000735293
+"Items__MEAN(Interactions.label, Last 16 Days) * MIN(Interactions.track_length_seconds, Last 16 Days)",0.11936366848123338
+"Items__MAX(Interactions.is_organic, Last 30 Days) * MIN(Interactions.track_length_seconds, Last 30 Days)",0.11928515392681319
+"Items__MAX(Interactions.label, Last 1 Days) * MEAN(Interactions.is_organic, Last 1 Days)",0.1185639268457639
+"Users__MAX(Interactions.track_length_seconds, Last 26 Days) * MEAN(Interactions.label, Last 26 Days)",0.11689767684093008
+"Items__MAX(Interactions.label, Last 17 Days) * MEAN(Interactions.is_organic, Last 17 Days)",0.11636174949213424
+"Users__MAX(Interactions.is_organic, Last 11 Days) * STD(Interactions.label, Last 11 Days)",0.11615468605625753
+"UserArtist__MAX(Interactions.track_length_seconds, Last 12 Days) * MEAN(Interactions.label, Last 12 Days)",0.1154449786485511
+"Items__MEAN(Interactions.track_length_seconds, Last 21 Days) * STD(Interactions.label, Last 21 Days)",0.11490488627042497
+"Users__MIN(Interactions.track_length_seconds, Last 24 Days) * STD(Interactions.is_organic, Last 24 Days)",0.11459042017491604
+"Items__STD(Interactions.is_organic, Last 25 Days) * STD(Interactions.label, Last 25 Days)",0.11349169213024421
+"Users__MAX(Interactions.label, Last 12 Days) * MEAN(Interactions.label, Last 12 Days)",0.11323998769711559
+"Users__MAX(Interactions.is_organic, Last 8 Days) * STD(Interactions.is_organic, Last 8 Days)",0.1125688790495614
+"Users__MEAN(Interactions.label, Last 14 Days) * STD(Interactions.label, Last 14 Days)",0.11252478758234144
+"UserItem__MIN(Interactions.label, Last 1 Days)",0.11222546890594144
+UserArtist__MAX(Interactions.track_length_seconds) * STD(Interactions.track_length_seconds),0.112127281347281
+UserArtist__COUNT(Interactions) * MAX(Interactions.label),0.11201333019055817
+"UserItem__MAX(Interactions.label, Last 9 Days) * MEAN(Interactions.label, Last 9 Days)",0.11183557454715805
+"Users__MEAN(Interactions.track_length_seconds, Last 20 Days) * MIN(Interactions.track_length_seconds, Last 20 Days)",0.11179073252073365
+"UserArtist__MAX(Interactions.track_length_seconds, Last 15 Days) * MIN(Interactions.track_length_seconds, Last 15 Days)",0.10992734460630876
+"Users__MEAN(Interactions.is_organic, Last 1 Days) * MEAN(Interactions.track_length_seconds, Last 1 Days)",0.1095639481981199
+"Users__MEAN(Interactions.track_length_seconds, Last 1 Days) * MIN(Interactions.track_length_seconds, Last 1 Days)",0.10920558297022663
+"UserItem__MAX(Interactions.track_length_seconds, Last 2 Days) * MIN(Interactions.label, Last 2 Days)",0.10861694126096147
+"Items__MAX(Interactions.label, Last 15 Days) * MEAN(Interactions.label, Last 15 Days)",0.1077731921875791
+"Users__MEAN(Interactions.track_length_seconds, Last 6 Days) * MIN(Interactions.track_length_seconds, Last 6 Days)",0.10597921925793613
+"Users__MAX(Interactions.track_length_seconds, Last 3 Days)",0.10424219119485302
+"Users__MAX(Interactions.is_organic, Last 5 Days) * STD(Interactions.is_organic, Last 5 Days)",0.10369446365573401
+UserItem__MEAN(Interactions.is_organic) * MEAN(Interactions.label),0.10183161385717572
+"Users__COUNT(Interactions, Last 24 Days) * MEAN(Interactions.label, Last 24 Days)",0.10055674297365777
+"Items__MEAN(Interactions.is_organic, Last 2 Days) * MIN(Interactions.track_length_seconds, Last 2 Days)",0.10024882791378016
+"Items__MEAN(Interactions.is_organic, Last 18 Days) * STD(Interactions.is_organic, Last 18 Days)",0.09974983980368377
+"Items__MIN(Interactions.track_length_seconds, Last 1 Days) * STD(Interactions.is_organic, Last 1 Days)",0.09960329342108708
+"Items__MAX(Interactions.track_length_seconds, Last 4 Days) * STD(Interactions.is_organic, Last 4 Days)",0.09932245923874228
+"Users__STD(Interactions.label, Last 13 Days) * STD(Interactions.track_length_seconds, Last 13 Days)",0.0992099123321064
+"Items__STD(Interactions.is_organic, Last 3 Days)",0.09827882716528796
+"Items__MEAN(Interactions.label, Last 26 Days) * STD(Interactions.is_organic, Last 26 Days)",0.09739014869093787
+"Users__MEAN(Interactions.track_length_seconds, Last 1 Days)",0.09719115847405747
+Items__MAX(Interactions.label) * STD(Interactions.label),0.09715995146462474
+"UserArtist__MAX(Interactions.is_organic, Last 27 Days) * MEAN(Interactions.label, Last 27 Days)",0.096418782607499
+"Users__MAX(Interactions.is_organic, Last 6 Days) * STD(Interactions.label, Last 6 Days)",0.09611331746848048
+"UserArtist__MEAN(Interactions.label * track_length_seconds, Last 30 Days)",0.09602973786734126
+"Users__STD(Interactions.label * track_length_seconds, Last 5 Days)",0.09568543597993333
+"Items__MIN(Interactions.track_length_seconds, Last 1 Days) * STD(Interactions.label, Last 1 Days)",0.0951206568207384
+"Users__MEAN(Interactions.track_length_seconds, Last 9 Days)",0.09479897765222567
+"Items__MAX(Interactions.track_length_seconds, Last 2 Days) * MEAN(Interactions.label, Last 2 Days)",0.09183839675378952
+"Items__MEAN(Interactions.label, Last 5 Days) * STD(Interactions.label, Last 5 Days)",0.0909560892962801
+"Items__MEAN(Interactions.label, Last 4 Days) * STD(Interactions.is_organic, Last 4 Days)",0.08948651389687227
+"Items__MAX(Interactions.track_length_seconds, Last 20 Days)",0.08901739177999454
+"UserArtist__STD(Interactions.is_organic * label, Last 26 Days)",0.08866629581594761
+"Users__MEAN(Interactions.track_length_seconds, Last 23 Days) * STD(Interactions.label, Last 23 Days)",0.08807927277588067
+"UserItem__COUNT(Interactions, Last 29 Days) * MAX(Interactions.track_length_seconds, Last 29 Days)",0.08727059386138533
+"Items__STD(Interactions.is_organic, Last 13 Days) * STD(Interactions.label, Last 13 Days)",0.08723351932764221
+"Items__MAX(Interactions.is_organic, Last 15 Days) * STD(Interactions.label, Last 15 Days)",0.08708185371971866
+"Items__STD(Interactions.is_organic * label, Last 2 Days)",0.08671954725769881
+"Users__STD(Interactions.label, Last 23 Days) * STD(Interactions.track_length_seconds, Last 23 Days)",0.08657500468091268
+"Users__MEAN(Interactions.track_length_seconds, Last 5 Days)",0.08647799764929648
+"Users__COUNT(Interactions, Last 26 Days) * MEAN(Interactions.label, Last 26 Days)",0.08646374757758862
+"Items__MAX(Interactions.label, Last 4 Days) * MEAN(Interactions.is_organic, Last 4 Days)",0.08638497144507792
+"UserArtist__MIN(Interactions.label, Last 8 Days) * MIN(Interactions.track_length_seconds, Last 8 Days)",0.08625032593685995
+"Items__MEAN(Interactions.label, Last 9 Days) * STD(Interactions.is_organic, Last 9 Days)",0.08622766630019017
+"Items__MEAN(Interactions.label, Last 8 Days) * STD(Interactions.label, Last 8 Days)",0.08600509479943294
+"Items__MAX(Interactions.label, Last 16 Days) * STD(Interactions.is_organic, Last 16 Days)",0.0854992904296085
+"Items__STD(Interactions.label, Last 14 Days)",0.08494445038051701
+"Items__STD(Interactions.is_organic, Last 1 Days)",0.0846572392131056
+"UserArtist__MEAN(Interactions.label * track_length_seconds, Last 17 Days)",0.08460411194668994
+"Users__MEAN(Interactions.is_organic * track_length_seconds, Last 8 Days)",0.08394542756146432
+UserItem__MEAN(Interactions.is_organic) * STD(Interactions.is_organic),0.08393821121517678
+"Users__MEAN(Interactions.label, Last 20 Days) * STD(Interactions.track_length_seconds, Last 20 Days)",0.08381116610446902
+"Items__MAX(Interactions.is_organic, Last 21 Days) * STD(Interactions.label, Last 21 Days)",0.08380017583731934
+"Users__STD(Interactions.is_organic * label, Last 26 Days)",0.08344237578408467
+"UserArtist__MEAN(Interactions.label, Last 11 Days) * MIN(Interactions.track_length_seconds, Last 11 Days)",0.0834066118540027
+"Users__MEAN(Interactions.is_organic, Last 4 Days) * MIN(Interactions.track_length_seconds, Last 4 Days)",0.08280992562493432
+"Items__MAX(Interactions.label * track_length_seconds, Last 11 Days)",0.08242950256728387
+"Users__STD(Interactions.is_organic, Last 15 Days) * STD(Interactions.label, Last 15 Days)",0.08226046148550215
+"Users__COUNT(Interactions, Last 12 Days) * MEAN(Interactions.track_length_seconds, Last 12 Days)",0.08219570694204097
+"Items__MEAN(Interactions.is_organic * label, Last 6 Days)",0.08094367861331855
+UserItem__MEAN(Interactions.track_length_seconds) * STD(Interactions.is_organic),0.07932597274053381
+"Items__MAX(Interactions.label, Last 9 Days) * STD(Interactions.is_organic, Last 9 Days)",0.0789592400884222
+"Items__MAX(Interactions.is_organic, Last 3 Days) * STD(Interactions.label, Last 3 Days)",0.07894876961721498
+"Items__MEAN(Interactions.label * track_length_seconds, Last 1 Days)",0.07880926938121387
+"UserArtist__MEAN(Interactions.label, Last 20 Days) * STD(Interactions.is_organic, Last 20 Days)",0.07850484856019474
+"UserArtist__COUNT(Interactions, Last 2 Days) * MEAN(Interactions.track_length_seconds, Last 2 Days)",0.07823528371347133
+"Users__MAX(Interactions.label * track_length_seconds, Last 30 Days)",0.07786672201697194
+"Users__MAX(Interactions.label, Last 5 Days) * STD(Interactions.label, Last 5 Days)",0.07768377778976503
+"UserArtist__MEAN(Interactions.is_organic, Last 7 Days) * STD(Interactions.is_organic, Last 7 Days)",0.0768065193465767
+"UserArtist__MEAN(Interactions.is_organic, Last 30 Days) * STD(Interactions.track_length_seconds, Last 30 Days)",0.076479396484445
+"UserArtist__MAX(Interactions.track_length_seconds, Last 19 Days) * STD(Interactions.label, Last 19 Days)",0.07643976117621164
+"UserArtist__MAX(Interactions.label, Last 3 Days) * STD(Interactions.label, Last 3 Days)",0.07582780816748388
+"Users__MAX(Interactions.is_organic, Last 11 Days) * STD(Interactions.is_organic, Last 11 Days)",0.07569774308260135
+"Items__MEAN(Interactions.label, Last 13 Days) * STD(Interactions.label, Last 13 Days)",0.07553732049356668
+"UserArtist__MAX(Interactions.is_organic, Last 3 Days) * MIN(Interactions.track_length_seconds, Last 3 Days)",0.07494805379298887
+"Users__STD(Interactions.is_organic, Last 14 Days)",0.07491703391551283
+"Items__MEAN(Interactions.label, Last 12 Days) * STD(Interactions.is_organic, Last 12 Days)",0.07442036816447052
+UserArtist__MEAN(Interactions.track_length_seconds),0.07424618912055886
+"Items__MAX(Interactions.label, Last 14 Days) * MEAN(Interactions.is_organic, Last 14 Days)",0.07385642485602417
+"UserArtist__COUNT(Interactions, Last 14 Days) * MIN(Interactions.track_length_seconds, Last 14 Days)",0.07378586788436835
+"UserArtist__MEAN(Interactions.label, Last 6 Days) * STD(Interactions.track_length_seconds, Last 6 Days)",0.07317591931376523
+"Items__MAX(Interactions.is_organic, Last 28 Days) * MEAN(Interactions.label, Last 28 Days)",0.07269260118079753
+Users__MAX(Interactions.is_organic) * MEAN(Interactions.is_organic),0.07252239493351581
+"UserArtist__MAX(Interactions.is_organic, Last 5 Days) * STD(Interactions.track_length_seconds, Last 5 Days)",0.07238546497189446
+"Items__MAX(Interactions.track_length_seconds, Last 10 Days)",0.07146314604073731
+"Items__COUNT(Interactions, Last 29 Days) * STD(Interactions.label, Last 29 Days)",0.07120218533642483
+"UserArtist__MEAN(Interactions.is_organic, Last 8 Days) * STD(Interactions.is_organic, Last 8 Days)",0.07074309012274013
+"Users__COUNT(Interactions, Last 15 Days) * MEAN(Interactions.is_organic, Last 15 Days)",0.07069343742791748
+"Users__STD(Interactions.is_organic, Last 19 Days)",0.07018195404097372
+"Items__MEAN(Interactions.is_organic, Last 26 Days) * STD(Interactions.is_organic, Last 26 Days)",0.06981223512378283
+"UserArtist__MAX(Interactions.label, Last 29 Days) * STD(Interactions.track_length_seconds, Last 29 Days)",0.06919839930237481
+"UserArtist__COUNT(Interactions, Last 5 Days) * MIN(Interactions.track_length_seconds, Last 5 Days)",0.06830418563704611
+"Users__MEAN(Interactions.label, Last 11 Days) * STD(Interactions.label, Last 11 Days)",0.06768065286227543
+"UserArtist__MEAN(Interactions.label * track_length_seconds, Last 5 Days)",0.06724352547654008
+"Items__MEAN(Interactions.track_length_seconds, Last 30 Days) * STD(Interactions.label, Last 30 Days)",0.06650550951612277
+"Items__COUNT(Interactions, Last 16 Days) * MAX(Interactions.label, Last 16 Days)",0.06614346668911217
+"UserArtist__STD(Interactions.is_organic * label, Last 30 Days)",0.06602573409314604
+"UserArtist__MEAN(Interactions.is_organic, Last 1 Days) * STD(Interactions.is_organic, Last 1 Days)",0.06593871559786624
+"Items__COUNT(Interactions, Last 6 Days) * MAX(Interactions.label, Last 6 Days)",0.06562826605026632
+"UserArtist__STD(Interactions.label * track_length_seconds, Last 24 Days)",0.064878661543629
+"UserArtist__MIN(Interactions.track_length_seconds, Last 9 Days) * STD(Interactions.label, Last 9 Days)",0.0646934066805427
+"UserArtist__MAX(Interactions.track_length_seconds, Last 9 Days) * MEAN(Interactions.label, Last 9 Days)",0.06447891107150834
+"Users__MAX(Interactions.is_organic, Last 16 Days) * STD(Interactions.label, Last 16 Days)",0.06435347934615378
+"UserArtist__MAX(Interactions.label, Last 24 Days) * MEAN(Interactions.label, Last 24 Days)",0.06423947353138884
+"Users__MAX(Interactions.label, Last 24 Days) * STD(Interactions.track_length_seconds, Last 24 Days)",0.0638741318071172
+"Users__STD(Interactions.track_length_seconds, Last 12 Days)",0.06360920777920576
+"UserArtist__MEAN(Interactions.label, Last 19 Days) * STD(Interactions.label, Last 19 Days)",0.06356011978967069
+"Users__MIN(Interactions.track_length_seconds, Last 2 Days) * STD(Interactions.track_length_seconds, Last 2 Days)",0.063528474628173
+"Users__MAX(Interactions.is_organic, Last 1 Days) * MEAN(Interactions.track_length_seconds, Last 1 Days)",0.06268260029859907
+"Items__MAX(Interactions.is_organic, Last 19 Days) * STD(Interactions.is_organic, Last 19 Days)",0.06221723285724479
+"Users__COUNT(Interactions, Last 18 Days) * MAX(Interactions.is_organic, Last 18 Days)",0.06182948869099885
+"UserArtist__MEAN(Interactions.label, Last 10 Days) * MEAN(Interactions.track_length_seconds, Last 10 Days)",0.061317116585465126
+UserArtist__MAX(Interactions.is_organic) * MAX(Interactions.track_length_seconds),0.06074888971523141
+"Items__MAX(Interactions.label, Last 2 Days) * MEAN(Interactions.is_organic, Last 2 Days)",0.05966540142166302
+"Items__STD(Interactions.is_organic * label, Last 18 Days)",0.059502740398593844
+"Users__MEAN(Interactions.is_organic, Last 4 Days) * STD(Interactions.is_organic, Last 4 Days)",0.05898843291475253
+"UserArtist__MEAN(Interactions.is_organic, Last 19 Days) * STD(Interactions.label, Last 19 Days)",0.0583926267356865
+"UserArtist__STD(Interactions.track_length_seconds, Last 28 Days)",0.05838435300038993
+"UserArtist__MAX(Interactions.is_organic, Last 15 Days) * STD(Interactions.label, Last 15 Days)",0.05815017062044509
+"Items__MAX(Interactions.is_organic, Last 5 Days) * STD(Interactions.is_organic, Last 5 Days)",0.05786506189086382
+"Items__MEAN(Interactions.label, Last 3 Days) * STD(Interactions.is_organic, Last 3 Days)",0.05738464097450336
+"Users__STD(Interactions.track_length_seconds, Last 7 Days)",0.05704340470795327
+"Items__STD(Interactions.is_organic * track_length_seconds, Last 26 Days)",0.05676287532354302
+"UserArtist__MIN(Interactions.is_organic, Last 2 Days) * STD(Interactions.track_length_seconds, Last 2 Days)",0.05675820121978377
+"Items__MEAN(Interactions.label * track_length_seconds, Last 10 Days)",0.0560240005109354
+"UserArtist__COUNT(Interactions, Last 30 Days) * MEAN(Interactions.is_organic, Last 30 Days)",0.05577429418865058
+"Users__MAX(Interactions.label, Last 2 Days) * MIN(Interactions.track_length_seconds, Last 2 Days)",0.05501408534835898
+"UserArtist__MEAN(Interactions.label, Last 28 Days) * MEAN(Interactions.track_length_seconds, Last 28 Days)",0.05427024039508091
+"Items__MAX(Interactions.label, Last 1 Days) * MAX(Interactions.track_length_seconds, Last 1 Days)",0.05359464450866089
+"Items__COUNT(Interactions, Last 5 Days)",0.05318251302607582
+"UserArtist__MEAN(Interactions.label, Last 24 Days) * MEAN(Interactions.track_length_seconds, Last 24 Days)",0.05317916371003133
+"Items__MAX(Interactions.label, Last 7 Days) * STD(Interactions.is_organic, Last 7 Days)",0.05316097276667698
+"Users__MEAN(Interactions.is_organic, Last 18 Days) * MEAN(Interactions.track_length_seconds, Last 18 Days)",0.0530507983257747
+"Users__STD(Interactions.is_organic * label, Last 10 Days)",0.052796083186220935
+"UserItem__MEAN(Interactions.label, Last 11 Days) * MEAN(Interactions.track_length_seconds, Last 11 Days)",0.0526955184283434
+"Users__STD(Interactions.label * track_length_seconds, Last 10 Days)",0.052573981536499496
+"Items__MEAN(Interactions.track_length_seconds, Last 3 Days) * STD(Interactions.label, Last 3 Days)",0.052439778626471624
+"UserArtist__COUNT(Interactions, Last 7 Days) * MAX(Interactions.label, Last 7 Days)",0.051829003592344804
+"Items__MAX(Interactions.is_organic, Last 4 Days) * MEAN(Interactions.is_organic, Last 4 Days)",0.051616452053298345
+"Items__MAX(Interactions.track_length_seconds, Last 6 Days) * MEAN(Interactions.label, Last 6 Days)",0.05150786037487414
+"Users__STD(Interactions.is_organic, Last 2 Days) * STD(Interactions.label, Last 2 Days)",0.051344953954397456
+"Users__STD(Interactions.is_organic * label, Last 15 Days)",0.051097067483465146
+"Items__MAX(Interactions.label, Last 3 Days) * STD(Interactions.is_organic, Last 3 Days)",0.05089765315844264
+"Users__MAX(Interactions.label, Last 5 Days) * STD(Interactions.is_organic, Last 5 Days)",0.05072007964874143
+"Items__MEAN(Interactions.is_organic, Last 3 Days) * STD(Interactions.is_organic, Last 3 Days)",0.05053192846320835
+"Items__MEAN(Interactions.label, Last 21 Days)",0.05008687234688867
+"UserArtist__MAX(Interactions.track_length_seconds, Last 30 Days) * MIN(Interactions.is_organic, Last 30 Days)",0.04994196545963929
+"UserArtist__MEAN(Interactions.is_organic, Last 16 Days) * STD(Interactions.is_organic, Last 16 Days)",0.04952252237594516
+"UserArtist__MEAN(Interactions.is_organic, Last 13 Days) * STD(Interactions.is_organic, Last 13 Days)",0.04918569429307936
+"UserArtist__MEAN(Interactions.label, Last 23 Days) * STD(Interactions.label, Last 23 Days)",0.04899570931203207
+"Items__MEAN(Interactions.label, Last 7 Days) * STD(Interactions.is_organic, Last 7 Days)",0.048862240988312086
+"Items__MAX(Interactions.label * track_length_seconds, Last 13 Days)",0.0485075427447987
+"Items__STD(Interactions.label, Last 21 Days)",0.048369896221576454
+"UserArtist__COUNT(Interactions, Last 21 Days) * MEAN(Interactions.is_organic, Last 21 Days)",0.048034321862245745
+"UserItem__MAX(Interactions.track_length_seconds, Last 7 Days) * MEAN(Interactions.label, Last 7 Days)",0.047955330480128996
+"Items__STD(Interactions.is_organic, Last 15 Days) * STD(Interactions.label, Last 15 Days)",0.04747376464516009
+"UserItem__COUNT(Interactions, Last 14 Days) * STD(Interactions.is_organic, Last 14 Days)",0.047119630800652935
+"Users__MEAN(Interactions.is_organic, Last 11 Days) * STD(Interactions.label, Last 11 Days)",0.04649536695411469
+"Items__MEAN(Interactions.is_organic, Last 21 Days) * MEAN(Interactions.track_length_seconds, Last 21 Days)",0.04595107886699952
+"UserArtist__MIN(Interactions.track_length_seconds, Last 28 Days) * STD(Interactions.label, Last 28 Days)",0.0456338540172341
+"Items__COUNT(Interactions, Last 3 Days) * MIN(Interactions.is_organic, Last 3 Days)",0.04539141485676679
+UserArtist__MEAN(Interactions.track_length_seconds) * STD(Interactions.track_length_seconds),0.04533207171941474
+"UserArtist__MEAN(Interactions.is_organic * label, Last 20 Days)",0.04491158195313986
+"UserArtist__MEAN(Interactions.label, Last 1 Days) * STD(Interactions.track_length_seconds, Last 1 Days)",0.044760443911010625
+"UserArtist__STD(Interactions.label * track_length_seconds, Last 10 Days)",0.044431016855574296
+"UserArtist__MEAN(Interactions.label, Last 22 Days) * MIN(Interactions.is_organic, Last 22 Days)",0.044087820853996415
+"UserItem__COUNT(Interactions, Last 15 Days) * MIN(Interactions.track_length_seconds, Last 15 Days)",0.04403499896034954
+"Items__STD(Interactions.label, Last 30 Days)",0.043866916116167255
+"Items__MAX(Interactions.is_organic, Last 1 Days) * MIN(Interactions.track_length_seconds, Last 1 Days)",0.04386389957948988
+"Users__MAX(Interactions.track_length_seconds, Last 2 Days) * MEAN(Interactions.track_length_seconds, Last 2 Days)",0.04365630020110011
+"Users__MEAN(Interactions.is_organic, Last 7 Days) * STD(Interactions.track_length_seconds, Last 7 Days)",0.04355785362708485
+"Items__MEAN(Interactions.is_organic, Last 10 Days) * STD(Interactions.label, Last 10 Days)",0.043549560884176525
+"UserArtist__MEAN(Interactions.is_organic * label, Last 16 Days)",0.0435456914059673
+"UserArtist__MEAN(Interactions.label, Last 17 Days) * MIN(Interactions.track_length_seconds, Last 17 Days)",0.04342002185875273
+"Items__STD(Interactions.label * track_length_seconds, Last 12 Days)",0.04334840786721545
+"Users__MEAN(Interactions.label * track_length_seconds, Last 19 Days)",0.04322590519824562
+"Users__STD(Interactions.is_organic * track_length_seconds, Last 17 Days)",0.043050360309923534
+"UserArtist__MEAN(Interactions.label, Last 22 Days) * STD(Interactions.label, Last 22 Days)",0.043015781513166054
+"Users__MAX(Interactions.track_length_seconds, Last 5 Days) * MIN(Interactions.track_length_seconds, Last 5 Days)",0.04271418922168997
+"UserArtist__MEAN(Interactions.label, Last 17 Days) * STD(Interactions.is_organic, Last 17 Days)",0.04239749159371775
+"Items__MEAN(Interactions.is_organic * label, Last 12 Days)",0.042339776784138014
+"UserItem__COUNT(Interactions, Last 29 Days) * MEAN(Interactions.track_length_seconds, Last 29 Days)",0.042199693708964384
+"Items__STD(Interactions.label, Last 25 Days)",0.04140997202482658
+"Items__MAX(Interactions.label, Last 30 Days) * STD(Interactions.label, Last 30 Days)",0.04128738432259014
+"UserArtist__COUNT(Interactions, Last 24 Days) * STD(Interactions.label, Last 24 Days)",0.04106568603627261
+"Users__MAX(Interactions.track_length_seconds, Last 17 Days) * MEAN(Interactions.track_length_seconds, Last 17 Days)",0.04096945126670177
+"Items__STD(Interactions.label, Last 26 Days)",0.04023808697267839
+"Users__STD(Interactions.is_organic * label, Last 14 Days)",0.040043945075038855
+"Items__MAX(Interactions.label, Last 29 Days) * STD(Interactions.label, Last 29 Days)",0.03982111454867585
+"Items__MEAN(Interactions.is_organic, Last 12 Days) * MEAN(Interactions.label, Last 12 Days)",0.03940287892320315
+"Users__MEAN(Interactions.track_length_seconds, Last 12 Days)",0.03931071330168239
+"Users__MAX(Interactions.track_length_seconds, Last 12 Days) * MEAN(Interactions.track_length_seconds, Last 12 Days)",0.03914211320757723
+"Users__MAX(Interactions.label, Last 9 Days) * MEAN(Interactions.track_length_seconds, Last 9 Days)",0.03901304984823522
+"UserItem__MAX(Interactions.track_length_seconds, Last 12 Days) * MEAN(Interactions.track_length_seconds, Last 12 Days)",0.03892517115949338
+"UserArtist__MEAN(Interactions.is_organic, Last 4 Days) * STD(Interactions.label, Last 4 Days)",0.03892379333113908
+"UserItem__COUNT(Interactions, Last 20 Days) * STD(Interactions.is_organic, Last 20 Days)",0.03809470112012049
+"UserArtist__MAX(Interactions.label, Last 21 Days) * MAX(Interactions.track_length_seconds, Last 21 Days)",0.037936938987682675
+"UserArtist__MIN(Interactions.is_organic, Last 17 Days) * STD(Interactions.track_length_seconds, Last 17 Days)",0.03754212388432459
+"UserArtist__STD(Interactions.is_organic * label, Last 2 Days)",0.037329881940916104
+"Items__MAX(Interactions.label, Last 28 Days) * STD(Interactions.label, Last 28 Days)",0.036870162272614686
+"Items__STD(Interactions.is_organic, Last 10 Days)",0.036282967046490686
+"UserItem__MEAN(Interactions.track_length_seconds, Last 30 Days) * MIN(Interactions.label, Last 30 Days)",0.036179446699778094
+"UserArtist__MAX(Interactions.is_organic, Last 12 Days) * MIN(Interactions.track_length_seconds, Last 12 Days)",0.036099813292729536
+"Items__MEAN(Interactions.is_organic, Last 5 Days) * MIN(Interactions.track_length_seconds, Last 5 Days)",0.03603325258874323
+"Users__MAX(Interactions.track_length_seconds, Last 7 Days) * MIN(Interactions.track_length_seconds, Last 7 Days)",0.03593773464826838
+"Items__MEAN(Interactions.is_organic, Last 5 Days)",0.03591535382375281
+"UserArtist__MAX(Interactions.track_length_seconds, Last 26 Days) * STD(Interactions.track_length_seconds, Last 26 Days)",0.035432201377855056
+"UserArtist__MEAN(Interactions.track_length_seconds, Last 28 Days) * STD(Interactions.label, Last 28 Days)",0.03529554480898527
+"Users__MEAN(Interactions.is_organic, Last 6 Days) * STD(Interactions.is_organic, Last 6 Days)",0.03514107099869004
+"UserArtist__MIN(Interactions.track_length_seconds, Last 12 Days)",0.03493364604042598
+"UserArtist__MEAN(Interactions.is_organic, Last 28 Days) * STD(Interactions.is_organic, Last 28 Days)",0.034708109914870236
+"Items__MEAN(Interactions.track_length_seconds, Last 2 Days) * STD(Interactions.label, Last 2 Days)",0.03465184408440253
+"Items__COUNT(Interactions, Last 8 Days) * MAX(Interactions.is_organic, Last 8 Days)",0.03451982116661993
+"Users__MAX(Interactions.label, Last 22 Days) * STD(Interactions.track_length_seconds, Last 22 Days)",0.034236863316923265
+"Users__MEAN(Interactions.is_organic, Last 9 Days) * STD(Interactions.label, Last 9 Days)",0.034172076974102336
+"UserArtist__STD(Interactions.is_organic, Last 27 Days)",0.03377064297410817
+"Users__MEAN(Interactions.track_length_seconds, Last 7 Days) * STD(Interactions.is_organic, Last 7 Days)",0.03363108268022255
+"Items__MAX(Interactions.label, Last 23 Days) * STD(Interactions.is_organic, Last 23 Days)",0.03351943348998334
+"Items__MEAN(Interactions.track_length_seconds, Last 12 Days)",0.03312893274642888
+"Users__MAX(Interactions.track_length_seconds, Last 15 Days) * MEAN(Interactions.track_length_seconds, Last 15 Days)",0.03312857177885047
+"UserArtist__MAX(Interactions.is_organic, Last 26 Days) * STD(Interactions.is_organic, Last 26 Days)",0.033071676866012166
+"UserItem__MAX(Interactions.track_length_seconds, Last 23 Days) * MEAN(Interactions.label, Last 23 Days)",0.03295927380107698
+"Users__MEAN(Interactions.is_organic, Last 15 Days) * STD(Interactions.label, Last 15 Days)",0.0328660730399769
+"UserArtist__COUNT(Interactions, Last 12 Days) * MIN(Interactions.track_length_seconds, Last 12 Days)",0.03262923304512188
+"Items__MAX(Interactions.track_length_seconds, Last 16 Days) * STD(Interactions.label, Last 16 Days)",0.03255247178489782
+"Items__MAX(Interactions.track_length_seconds, Last 12 Days) * MIN(Interactions.label, Last 12 Days)",0.03219141391553633
+"Items__MEAN(Interactions.label * track_length_seconds, Last 5 Days)",0.03213057833138906
+"UserArtist__MAX(Interactions.track_length_seconds, Last 23 Days) * STD(Interactions.label, Last 23 Days)",0.03198101078032089
+"Items__MIN(Interactions.track_length_seconds, Last 8 Days) * STD(Interactions.is_organic, Last 8 Days)",0.03188737163997617
+"Items__MAX(Interactions.is_organic, Last 22 Days) * STD(Interactions.is_organic, Last 22 Days)",0.03169097032006972
+"UserArtist__MEAN(Interactions.is_organic, Last 21 Days) * MIN(Interactions.label, Last 21 Days)",0.03165866139457151
+"UserArtist__MAX(Interactions.label, Last 1 Days) * MEAN(Interactions.is_organic, Last 1 Days)",0.031501995060655284
+"Items__STD(Interactions.is_organic, Last 6 Days) * STD(Interactions.label, Last 6 Days)",0.031457226776525064
+"UserItem__COUNT(Interactions, Last 20 Days) * MIN(Interactions.is_organic, Last 20 Days)",0.03124280603652319
+"Items__MEAN(Interactions.is_organic, Last 14 Days) * STD(Interactions.label, Last 14 Days)",0.03089505701781868
+"Users__MAX(Interactions.track_length_seconds, Last 11 Days) * MEAN(Interactions.track_length_seconds, Last 11 Days)",0.030691329033863773
+"Items__MEAN(Interactions.is_organic, Last 11 Days) * MEAN(Interactions.label, Last 11 Days)",0.030593434413477866
+"UserItem__MAX(Interactions.track_length_seconds, Last 27 Days) * MEAN(Interactions.label, Last 27 Days)",0.0286614430430287
+"Users__MEAN(Interactions.track_length_seconds, Last 2 Days) * STD(Interactions.track_length_seconds, Last 2 Days)",0.02862079869635687
+"UserArtist__MEAN(Interactions.track_length_seconds, Last 13 Days) * STD(Interactions.track_length_seconds, Last 13 Days)",0.028451601497224546
+"UserArtist__MAX(Interactions.is_organic, Last 6 Days) * STD(Interactions.is_organic, Last 6 Days)",0.02822835543573157
+"Items__MIN(Interactions.track_length_seconds, Last 8 Days) * STD(Interactions.label, Last 8 Days)",0.028100740879221455
+"UserArtist__MEAN(Interactions.is_organic, Last 29 Days) * STD(Interactions.is_organic, Last 29 Days)",0.02785667100513793
+"UserArtist__STD(Interactions.is_organic * label, Last 10 Days)",0.027677105829321796
+"Users__MEAN(Interactions.is_organic, Last 26 Days) * STD(Interactions.is_organic, Last 26 Days)",0.027057434414438714
+"Items__MAX(Interactions.label, Last 27 Days) * STD(Interactions.label, Last 27 Days)",0.026776523885710373
+"UserItem__MIN(Interactions.label * track_length_seconds, Last 10 Days)",0.026533163619615805
+"Items__MAX(Interactions.label, Last 17 Days) * MAX(Interactions.track_length_seconds, Last 17 Days)",0.026380195692741436
+"Items__MAX(Interactions.track_length_seconds, Last 2 Days) * STD(Interactions.is_organic, Last 2 Days)",0.02623895484272069
+"UserItem__COUNT(Interactions, Last 18 Days) * MIN(Interactions.track_length_seconds, Last 18 Days)",0.02606746445075111
+"Items__MIN(Interactions.is_organic, Last 3 Days) * MIN(Interactions.track_length_seconds, Last 3 Days)",0.02580543736566515
+"Items__MIN(Interactions.is_organic, Last 28 Days) * MIN(Interactions.track_length_seconds, Last 28 Days)",0.02578085232372352
+"UserArtist__MIN(Interactions.is_organic, Last 18 Days) * STD(Interactions.track_length_seconds, Last 18 Days)",0.025010323231461472
+"UserArtist__MAX(Interactions.track_length_seconds, Last 20 Days) * MEAN(Interactions.track_length_seconds, Last 20 Days)",0.024702937522956103
+"UserArtist__MEAN(Interactions.is_organic, Last 24 Days) * STD(Interactions.label, Last 24 Days)",0.024305223007963134
+"Users__STD(Interactions.is_organic, Last 24 Days)",0.02384244173210968
+"Users__COUNT(Interactions, Last 19 Days) * MEAN(Interactions.is_organic, Last 19 Days)",0.023255802366278472
+"Items__STD(Interactions.is_organic, Last 18 Days)",0.023176059103119748
+"Users__MIN(Interactions.track_length_seconds, Last 9 Days)",0.023048058255582538
+"UserArtist__MIN(Interactions.track_length_seconds, Last 11 Days) * STD(Interactions.label, Last 11 Days)",0.022838468451275674
+"UserArtist__MEAN(Interactions.label, Last 13 Days) * STD(Interactions.is_organic, Last 13 Days)",0.022432841488210738
+"Items__MIN(Interactions.track_length_seconds, Last 22 Days) * STD(Interactions.label, Last 22 Days)",0.022411002323810738
+"Items__MEAN(Interactions.is_organic * label, Last 29 Days)",0.021833950303984405
+"UserArtist__MAX(Interactions.is_organic, Last 12 Days) * STD(Interactions.is_organic, Last 12 Days)",0.021807605393028597
+Users__STD(Interactions.track_length_seconds),0.021327646318359456
+"UserItem__COUNT(Interactions, Last 30 Days) * STD(Interactions.label, Last 30 Days)",0.021112264650132523
+"Items__MAX(Interactions.label, Last 14 Days) * MAX(Interactions.track_length_seconds, Last 14 Days)",0.02097378288467861
+"UserItem__MEAN(Interactions.is_organic * label, Last 19 Days)",0.020622368978874504
+"UserArtist__MEAN(Interactions.label, Last 21 Days) * STD(Interactions.is_organic, Last 21 Days)",0.020588887489681632
+"UserItem__MIN(Interactions.label * track_length_seconds, Last 7 Days)",0.019665191805531
+"UserArtist__MEAN(Interactions.label, Last 22 Days) * STD(Interactions.is_organic, Last 22 Days)",0.019427444261097684
+"UserArtist__STD(Interactions.is_organic, Last 9 Days) * STD(Interactions.track_length_seconds, Last 9 Days)",0.017782316036139844
+"Items__MAX(Interactions.track_length_seconds, Last 1 Days) * MEAN(Interactions.label, Last 1 Days)",0.017744646538209667
+"UserItem__COUNT(Interactions, Last 28 Days) * STD(Interactions.is_organic, Last 28 Days)",0.01717410339033037
+"UserArtist__COUNT(Interactions, Last 11 Days)",0.01652576038112573
+"Users__MEAN(Interactions.label, Last 3 Days) * MIN(Interactions.is_organic, Last 3 Days)",0.01443495854070819
+"UserArtist__MIN(Interactions.track_length_seconds, Last 11 Days) * STD(Interactions.track_length_seconds, Last 11 Days)",0.013921491334104245
+"UserArtist__STD(Interactions.label, Last 2 Days) * STD(Interactions.track_length_seconds, Last 2 Days)",0.01240909924628536
+"Users__STD(Interactions.track_length_seconds, Last 6 Days)",0.01197792492193325
+"Items__MEAN(Interactions.label, Last 1 Days) * MIN(Interactions.track_length_seconds, Last 1 Days)",0.011848989085587578
+"UserArtist__MEAN(Interactions.track_length_seconds, Last 12 Days) * MIN(Interactions.is_organic, Last 12 Days)",0.011802161249630452
+"UserArtist__COUNT(Interactions, Last 5 Days)",0.011060977941073063
+"UserArtist__MAX(Interactions.label, Last 4 Days) * STD(Interactions.track_length_seconds, Last 4 Days)",0.008430630772237525
+"Users__MEAN(Interactions.is_organic, Last 17 Days) * STD(Interactions.label, Last 17 Days)",0.008259904042783376
+"Items__MEAN(Interactions.label, Last 2 Days) * MEAN(Interactions.track_length_seconds, Last 2 Days)",0.008218909140579466
+Users__MAX(Interactions.is_organic) * STD(Interactions.track_length_seconds),0.007508881618259314
+"UserArtist__MAX(Interactions.track_length_seconds, Last 3 Days) * STD(Interactions.is_organic, Last 3 Days)",0.00659155688098456
+"UserArtist__MEAN(Interactions.label, Last 12 Days) * MIN(Interactions.track_length_seconds, Last 12 Days)",0.006251126450111031
+"UserArtist__MIN(Interactions.track_length_seconds, Last 19 Days) * STD(Interactions.label, Last 19 Days)",0.006017038387169112
+"Items__MAX(Interactions.is_organic * track_length_seconds, Last 10 Days)",0.0050036381035230455
+"Users__MAX(Interactions.is_organic, Last 14 Days) * STD(Interactions.is_organic, Last 14 Days)",0.0
+"Users__MAX(Interactions.is_organic, Last 24 Days) * STD(Interactions.is_organic, Last 24 Days)",0.0
+"Items__MIN(Interactions.is_organic, Last 5 Days) * MIN(Interactions.label, Last 5 Days)",0.0
+"Items__COUNT(Interactions, Last 9 Days) * STD(Interactions.label, Last 9 Days)",0.0
+"Items__MAX(Interactions.is_organic, Last 10 Days) * STD(Interactions.label, Last 10 Days)",0.0
+"UserItem__COUNT(Interactions, Last 26 Days) * STD(Interactions.is_organic, Last 26 Days)",0.0
+"UserItem__COUNT(Interactions, Last 27 Days) * STD(Interactions.is_organic, Last 27 Days)",0.0
+"UserArtist__MEAN(Interactions.track_length_seconds, Last 22 Days) * STD(Interactions.label, Last 22 Days)",0.0
+"UserArtist__MAX(Interactions.track_length_seconds, Last 23 Days) * STD(Interactions.track_length_seconds, Last 23 Days)",0.0

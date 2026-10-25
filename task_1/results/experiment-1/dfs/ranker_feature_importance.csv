@@ -1,0 +1,131 @@
+Feature Id,Importances
+UserItem__MEAN(Interactions.label),20.25078393893348
+Users__MEAN(Interactions.label),9.694054433461273
+UserItem__STD(Interactions.label),8.097182971053325
+UserArtist__MEAN(Interactions.label),5.034257524425249
+Items__MEAN(Interactions.label),4.740225855408138
+UserItem__COUNT(Interactions) * MEAN(Interactions.label),3.731059967526202
+is_organic,3.7134168071258427
+UserItem__COUNT(Interactions),2.518887163900864
+UserItem__STD(Interactions.is_organic * label),2.0223681719001068
+track_length_seconds,2.0095012360206206
+UserItem__COUNT(Interactions) * MEAN(Interactions.is_organic),2.0041106271962925
+UserArtist__COUNT(Interactions) * MEAN(Interactions.label),1.7167873162656138
+UserItem__MEAN(Interactions.is_organic * label),1.702632599892311
+UserItem__COUNT(Interactions) * MAX(Interactions.label),1.548117355277968
+Items__COUNT(Interactions) * MEAN(Interactions.label),1.4067009593878919
+UserItem__COUNT(Interactions) * MAX(Interactions.is_organic),1.1527223183277278
+Users__MEAN(Interactions.label * track_length_seconds),1.0756374667696207
+Users__STD(Interactions.label),0.9947242701767073
+Items__STD(Interactions.label),0.8279311755460048
+UserItem__MEAN(Interactions.label * track_length_seconds),0.7331595649248581
+Items__MEAN(Interactions.is_organic * label),0.7018746600267896
+Items__MEAN(Interactions.is_organic * track_length_seconds),0.7017666614430471
+UserItem__MAX(Interactions.label * track_length_seconds),0.6917559056018444
+UserItem__COUNT(Interactions) * MEAN(Interactions.track_length_seconds),0.6753954732879526
+Users__MAX(Interactions.label * track_length_seconds),0.6745515365062303
+UserArtist__STD(Interactions.label),0.6736750111589678
+Items__STD(Interactions.label * track_length_seconds),0.6702078457845215
+Users__MEAN(Interactions.track_length_seconds),0.6576404112055001
+UserArtist__MEAN(Interactions.is_organic * label),0.6535543577736374
+Users__COUNT(Interactions) * MEAN(Interactions.is_organic),0.6484728890504203
+Items__STD(Interactions.is_organic * label),0.609544128064123
+UserItem__MEAN(Interactions.is_organic),0.5842418989274178
+UserArtist__MIN(Interactions.track_length_seconds),0.5768771896968226
+UserArtist__STD(Interactions.track_length_seconds),0.5689153032045462
+Users__COUNT(Interactions) * MEAN(Interactions.label),0.564123704151702
+UserArtist__MAX(Interactions.is_organic * track_length_seconds),0.5479323345587119
+Users__MEAN(Interactions.is_organic * label),0.539413935186297
+UserItem__MAX(Interactions.track_length_seconds),0.5355324652066704
+UserItem__MIN(Interactions.track_length_seconds),0.5155248648834394
+UserItem__COUNT(Interactions) * MAX(Interactions.track_length_seconds),0.4798610067916999
+Users__STD(Interactions.track_length_seconds),0.4770734036043766
+UserArtist__MEAN(Interactions.label * track_length_seconds),0.4726453619136947
+Items__MEAN(Interactions.label * track_length_seconds),0.45251836009512514
+Users__STD(Interactions.label * track_length_seconds),0.4389967411765801
+Items__MEAN(Interactions.is_organic),0.4289575719133886
+UserItem__MEAN(Interactions.track_length_seconds),0.41996845772376684
+UserArtist__STD(Interactions.is_organic * label),0.37522435607905325
+Users__STD(Interactions.is_organic * label),0.35314223620193325
+Items__COUNT(Interactions) * MEAN(Interactions.is_organic),0.3493578143569718
+Users__COUNT(Interactions) * MEAN(Interactions.track_length_seconds),0.30398549430477007
+UserArtist__COUNT(Interactions) * MAX(Interactions.label),0.3029082246494986
+Users__MEAN(Interactions.is_organic),0.29511576511699933
+UserArtist__COUNT(Interactions) * MAX(Interactions.track_length_seconds),0.2946001034476167
+UserItem__STD(Interactions.is_organic),0.2761285012557924
+UserItem__MAX(Interactions.label),0.2743312705979262
+UserArtist__COUNT(Interactions),0.27374961651289637
+UserArtist__STD(Interactions.label * track_length_seconds),0.2704001055969323
+UserArtist__MEAN(Interactions.is_organic),0.26866794768068464
+Items__STD(Interactions.is_organic),0.2617328556846549
+UserArtist__COUNT(Interactions) * MIN(Interactions.is_organic),0.2608543861628735
+Users__MEAN(Interactions.is_organic * track_length_seconds),0.24867680153721686
+UserItem__STD(Interactions.is_organic * track_length_seconds),0.23661713385545918
+UserArtist__COUNT(Interactions) * MEAN(Interactions.track_length_seconds),0.2245812127471133
+Items__COUNT(Interactions),0.2216648069497591
+Items__MAX(Interactions.label * track_length_seconds),0.21194348839160068
+UserItem__STD(Interactions.label * track_length_seconds),0.2082051219888086
+UserArtist__MAX(Interactions.label * track_length_seconds),0.2072588771378135
+Items__COUNT(Interactions) * MAX(Interactions.label),0.2002161508943218
+Users__MAX(Interactions.track_length_seconds),0.1925760323167478
+Users__COUNT(Interactions),0.18761599812497098
+Users__MIN(Interactions.track_length_seconds),0.18153176225962142
+UserArtist__MEAN(Interactions.track_length_seconds),0.17080590214624686
+UserItem__MEAN(Interactions.is_organic * track_length_seconds),0.16910409106886898
+Users__COUNT(Interactions) * MAX(Interactions.label),0.16173113445171236
+Users__STD(Interactions.is_organic * track_length_seconds),0.15766186619645903
+Items__COUNT(Interactions) * MAX(Interactions.track_length_seconds),0.15337442053152708
+Items__MIN(Interactions.is_organic * track_length_seconds),0.15129418672091083
+Items__COUNT(Interactions) * MEAN(Interactions.track_length_seconds),0.15108351981535978
+UserArtist__COUNT(Interactions) * MAX(Interactions.is_organic),0.13919379046383112
+Items__STD(Interactions.is_organic * track_length_seconds),0.13174073833608757
+UserArtist__MAX(Interactions.track_length_seconds),0.12696214530718913
+Users__COUNT(Interactions) * MAX(Interactions.is_organic),0.1256984369985926
+UserArtist__COUNT(Interactions) * MEAN(Interactions.is_organic),0.12295335491670674
+Users__COUNT(Interactions) * MAX(Interactions.track_length_seconds),0.1183786449831703
+Items__COUNT(Interactions) * MAX(Interactions.is_organic),0.11750692619787502
+UserArtist__MEAN(Interactions.is_organic * track_length_seconds),0.11619395301539891
+Users__MAX(Interactions.is_organic * track_length_seconds),0.11180928025152487
+UserArtist__STD(Interactions.is_organic),0.11151710757239831
+Users__STD(Interactions.is_organic),0.0985735859605788
+UserItem__MIN(Interactions.label * track_length_seconds),0.09740894732426579
+UserArtist__MIN(Interactions.is_organic * track_length_seconds),0.0919391065431446
+Items__COUNT(Interactions) * MIN(Interactions.is_organic),0.08975192026900555
+UserItem__COUNT(Interactions) * MIN(Interactions.is_organic),0.08912583980274781
+UserItem__MIN(Interactions.is_organic * track_length_seconds),0.08566132708414673
+Items__MAX(Interactions.is_organic * label),0.08303455548405693
+UserArtist__STD(Interactions.is_organic * track_length_seconds),0.07789117055655698
+Items__MAX(Interactions.track_length_seconds),0.060221013548749876
+UserArtist__MAX(Interactions.label),0.05186977184703746
+Items__MAX(Interactions.is_organic * track_length_seconds),0.04737828056264167
+UserArtist__MIN(Interactions.label * track_length_seconds),0.04557747785834564
+UserArtist__MAX(Interactions.is_organic * label),0.04451829361643242
+Users__MAX(Interactions.is_organic * label),0.041960338961505306
+UserItem__MAX(Interactions.is_organic * track_length_seconds),0.036410760136380886
+Users__MAX(Interactions.label),0.026905472974719628
+Items__MAX(Interactions.label),0.02591721562947029
+Items__MIN(Interactions.label * track_length_seconds),0.0242176985577954
+Users__COUNT(Interactions) * MIN(Interactions.is_organic),0.024063937344441625
+UserArtist__MIN(Interactions.is_organic * label),0.0229840120378268
+Users__MIN(Interactions.is_organic * track_length_seconds),0.019017526541191637
+Items__MEAN(Interactions.track_length_seconds),0.01843088612220043
+Users__MIN(Interactions.label * track_length_seconds),0.017080222393186194
+Users__MIN(Interactions.label),0.009823584620282893
+Items__MIN(Interactions.track_length_seconds),0.009515472141278819
+UserItem__MIN(Interactions.is_organic * label),0.0073428167987390665
+Users__MAX(Interactions.is_organic),0.0
+Users__MIN(Interactions.is_organic),0.0
+Users__MIN(Interactions.is_organic * label),0.0
+Items__MAX(Interactions.is_organic),0.0
+Items__MIN(Interactions.is_organic),0.0
+Items__MIN(Interactions.label),0.0
+Items__STD(Interactions.track_length_seconds),0.0
+Items__MIN(Interactions.is_organic * label),0.0
+UserItem__MAX(Interactions.is_organic),0.0
+UserItem__MIN(Interactions.is_organic),0.0
+UserItem__MIN(Interactions.label),0.0
+UserItem__STD(Interactions.track_length_seconds),0.0
+UserItem__MAX(Interactions.is_organic * label),0.0
+UserArtist__MAX(Interactions.is_organic),0.0
+UserArtist__MIN(Interactions.is_organic),0.0
+UserArtist__MIN(Interactions.label),0.0

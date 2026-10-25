@@ -1,0 +1,16 @@
+{
+  "completed": true,
+  "test_used": true,
+  "history_scope": "complete source journal; actual feature history remains original_timestamp<t",
+  "frozen_labels_match": true,
+  "all_attached_reactions_at_or_before_listen_end": true,
+  "rule": "next_same_pair_end>=reaction_ts; reaction_ts>=saved start_ts; like overrides dislike",
+  "source_end_max": 26000000,
+  "source_rows_scanned": 46467212,
+  "historical_listen_rows": 46467212,
+  "verified_labels": 46467212,
+  "attached_reaction_rows": 329520,
+  "attached_like_rows": 303207,
+  "attached_dislike_rows": 26313,
+  "listens_with_both_reaction_types": 567
+}

@@ -1,0 +1,13 @@
+{
+  "completed": true,
+  "schema": "dfs462",
+  "rows": 3165779,
+  "groups": 61842,
+  "physical_features": 462,
+  "pool_sha256": "e4e10bbee25798e90491345ea42a1a7347b1548347066942ed19ce0c6ea7cdd4",
+  "targets_sha256": "4b55c841b4132e115e5b82c2cfa159199f9ee6c796b0ef71737288ea72630cf8",
+  "schema_targets_sha256": "377ae19eca97f0f2a5ee7a000294b5828e36c1a6238bd429317447bf09f2e017",
+  "applied_borders_sha256": "7dca38898ba6a28a61e426ba83f8df31c938c59e42a4451ff8ba3bfba3d6fcba",
+  "predict_executed": false,
+  "metrics_computed": false
+}

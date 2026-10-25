@@ -1,0 +1,128 @@
+{
+  "run_name": "c4_packet_20261024_v1",
+  "frozen_at_utc": "2026-10-24T07:10:32.653891+00:00",
+  "stage": "train_validation_only",
+  "test_used": false,
+  "models": [
+    "M-t",
+    "C2b-t",
+    "D462-t"
+  ],
+  "max_training_seconds": 7200,
+  "budget_scope": "Общая последовательная фаза моделей, включая загрузку и оценку workers; подготовка отдельно",
+  "user_authorization": "Реализовать C4 с уточнениями и запустить M-t, C2b-t, D462-t; на обучение до 2 часов; test не трогать",
+  "epoch_rule": "t = previous strictly smaller raw listen timestamp of this user; target = next distinct timestamp packet",
+  "history_rule": "original timestamp < t; windows [t-window,t); previous packet at t excluded",
+  "tie_rule": "timestamp, immutable physical source row id; no target outcome as tie breaker",
+  "target_guard": "exclude target if ANY attached like/dislike timestamp < t, regardless of final label",
+  "label_rule": "frozen existing labels and attachment rule; like overrides dislike; eligibility still uses that mapping",
+  "split": {
+    "train_cutoff": [
+      19440000,
+      23328000
+    ],
+    "val_cutoff": [
+      23328000,
+      24624000
+    ],
+    "target_end_strictly_before_next_boundary_minus_seconds": 1800
+  },
+  "train_selection": {
+    "whole_mixed_user_day_groups": 40000,
+    "replace": false,
+    "seed": 42
+  },
+  "validation": "all eligible mixed user-day groups; reused exploratory validation",
+  "quantization": "fresh C4 train-only native CatBoost borders; validation never learns borders",
+  "comparisons": [
+    [
+      "D462-t",
+      "M-t"
+    ],
+    [
+      "C2b-t",
+      "M-t"
+    ],
+    [
+      "C2b-t",
+      "D462-t"
+    ]
+  ],
+  "bootstrap": {
+    "type": "paired circular day blocks",
+    "block_days": [
+      3,
+      4
+    ],
+    "replicates": 20000,
+    "seed": 42,
+    "confidence": 0.95,
+    "two_sided": true,
+    "weights": "groups",
+    "multiplicity_correction": false
+  },
+  "data_dir": "data/c4/c4_packet_20261024_v1",
+  "result_dir": "results/c4/c4_packet_20261024_v1",
+  "source_sha256": {
+    "src/audit_start_time_dfs_phase_permutation.py": "b4bc292da3e83ba852c8ca91276850c92333eb38f22e2723238ed5594a652a78",
+    "src/audit_start_time_formula.py": "9fa91365d1c77e5fd1a5b8566b109ddc6933b2efb815159f5d2d93ab0cbb10b8",
+    "src/audit_start_time_phase.py": "60da520066e5ae87a322991989755ba997193c1b2d967338a632adad9af0695a",
+    "src/audit_start_time_phase_permutation.py": "44850e476ecc548fa5599556d0d3d794dae36e438927ce92ca52cf81838058c7",
+    "src/block_bootstrap.py": "9d7609cc1514b5c37f1de3f2fdf5e7681a8240401798d0f4fca7072f87231174",
+    "src/bootstrap_intervals.py": "cb9fc3ade4f843f5405a9af96d988b92ec8fdbd95eb1fd498cbf5c41e1760745",
+    "src/bootstrap_validation.py": "df5c6b40f8300f8e6e13f995fa7036d39b83400d819b40fe29688b198689df3d",
+    "src/c4_features.py": "5a6407af89964bea5cf085e5d76c47be165dd2527ac239f4a8166cba8be0feb5",
+    "src/c4_targets.py": "a3313e414d0942c2467309199c6fb1ec8403c73a668d7550f592c38e760f3002",
+    "src/c4_training.py": "45516d290a8345335746db4b5d9e70de6431eed6435471eef9562578280166c1",
+    "src/check_project.py": "11cc4dd6069f587f9aac12ba9a399ff9ecc227f1b487a56a42ab302b5526f146",
+    "src/check_used_temporal_features.py": "ae71ecc7db6c002058ecb375bac01b689ad8db45342b0ed5f8bfd6cd85415f5f",
+    "src/compare_temporal_controls_pairs.py": "6d6e77318f16a0a531488178e296c07ba950c5cae11468689411176171089eb7",
+    "src/controls_quantization.py": "73325e58563486f9e8d62c84a40e5259bed9c29b9bca186b235c15e206242cb5",
+    "src/cumulative_features.py": "4ddd51fc370c7fbd87fd6dec4cf670366a4786982ff7b3599b1e1b36018c9dbb",
+    "src/final_test_data.py": "611c2324bcdb990850fe9c8c7f720400b554f7f46daa5646f33dbbfd6f344af5",
+    "src/final_test_evaluation.py": "5b1b5e9b7950852cd517572666c7532e1931bde6d9a6decaf305f2d3b9c85fbb",
+    "src/final_test_features.py": "d1b963a47a9e458accd68ba4d2ff553179c273ee8e886ea46989cc7bdf52b27d",
+    "src/generate_cumulative.py": "81a011c593412a596316e1ad8c1ae2b57b234fdba06415582daee14ff5f34625",
+    "src/optuna_config.py": "d5f8e88724bb9cd508d16066a706d83a09aadf5bf86587f835ba90298d1432c0",
+    "src/optuna_data.py": "7d8dbbd2341e042a5fe3ba0e03b7747b0b3779b432a71a7aa41cb11971c196a3",
+    "src/optuna_evaluation.py": "d3884b6af36d5395e4f1f9c44f0aad3cfe2d7e2ef76b3bfbfa7b00230a3efd38",
+    "src/optuna_report.py": "3f697a42922d967dd4bbe2d34e4be423ede4f28a62c295c1d63e087bd866ed68",
+    "src/optuna_selection.py": "9ff8521c40bd9a4f683c5b91f158ca1c2ef2fa613d6be51cf6e81bcabfc2e568",
+    "src/optuna_worker.py": "5583e609f729f8b0e5e705f9cb7cd60f2c50edb226a4c47b532eb9333a678eb4",
+    "src/parallel_resources.py": "6244c31d31b673b6a8e67a91464a5b60aec1660025aad714dea6a12ed5d24efa",
+    "src/project_artifacts.py": "e8416a3aa54fb1b645e4b71d8ac4aa1341fb3d3a8724f1685275b7e9f015f8e5",
+    "src/rolling_catboost.py": "395a2c1b827ebc46752319fdbf4abcefe2a0b76da7a72043dec539c4ed701f64",
+    "src/rolling_dfs_features.py": "cd5753d53cbdde729844bfca2afaf4917bcfef81b3f587cbdc3647f33b666536",
+    "src/rolling_manual_features.py": "5514b562164e24e0910951d586a76602370137062899cc0fe5d8c6085d3238be",
+    "src/rolling_report.py": "c0868767bdcc74f3638f50b7c06a084aee7d95f8402ea8093bc0bba54e842a98",
+    "src/rolling_windows.py": "f5cb2cbb1f21dc3765caa8878743ce0c399995157c6297a4b2a88a168a97d332",
+    "src/run_c4.py": "7eca9ee9a9cbc1c9433f1fbb042992a4ef76af96cfa56b303159eb152339ddfb",
+    "src/run_final_test.py": "30bf404cbe85ac776104887491593ae6b2e6a97b7edc2caffad148f24e9a7744",
+    "src/run_optuna.py": "d12ae9c046e23ac5089de0781d096a03604779e4c14c65d393f80d9da6011002",
+    "src/run_rolling_parallel.py": "133700125a1d04b57b78ca3a44fe5bd54b7670722d8f331e3862c6e9894fbdbc",
+    "src/run_rolling_windows.py": "0c3905d792e5062a86df31f2d85f697a31290453c3159049327b08bfa7ef769d",
+    "src/run_temporal_controls.py": "219d41257b63f7a809b27b2f1c70e9930b9065ae18ee9cf799d6f8f605f58384",
+    "src/run_temporal_full.py": "d33f67b4a0ab50f14d3dac91852cf4c6015ae9f931f5634f9e92c05d6c795314",
+    "src/run_temporal_selection.py": "71d9746fc21d28806fcaf074a4a9b29cd4bd2325c3df17520fe060a1427c8583",
+    "src/temporal_column_quantization.py": "fb28da5b969fc12cd8031bf7a1ba1a417f7cd4cab3143e2fbd4f99afb86bfd47",
+    "src/temporal_controls_data.py": "5c6b267a3c1eaad019e907b1c020fbbab2563a808ca52ae751f4d97d324bad2e",
+    "src/temporal_dfs_demo.py": "3d9e1cd0bbc2f31301515c05a684f311a9c7fc6c38a339cebe331935b140f0e9",
+    "src/temporal_dfs_features.py": "a0a2bcfa6f78e5c7f1b6537642f946f3acfa614bc3ba3a8ac91ad12e2d4fa3eb",
+    "src/temporal_feature_selection.py": "23ad30162424ec91a9a447607b597fdc14f312b600eb8c2d1b70d66c1e3aaa03",
+    "src/temporal_full_data.py": "6387b6712d1b44dd16f1b91210c04ecf83c739dc38b93dd5a9b5214c6effe3d7",
+    "src/temporal_full_training.py": "45eb3eac2fe500ae1c192ad846d6d82fd61a577940b1407f5c47c8bae4dc10e3",
+    "src/temporal_memmap_training.py": "950b0eaee271ca801f6dc09faaf20d4fb740f38415b8c97b5b7d1088c92c452f",
+    "src/temporal_sample_data.py": "c4c10989ac13df8a2f0f1664b1c9c0b11bd01d6e55a87bccbbb640be3d047e6b",
+    "src/temporal_single_thread_quantization.py": "e9e16e2fd517e77350047d615b57ad9c7a46f007d8adeee4ef62c7cbd9397291",
+    "src/train_dfs_catboost.py": "bd8aef058dae7624f8035aaff11433f26262c1495ee01800db3be0f116f33dd3",
+    "src/user_session_features.py": "d236b60d23a55898f89945a54717ed069534e5f5417ae75a1b630e6a0bb6b801",
+    "src/watch_temporal_controls.py": "1abc96383e0168841701b06d91d3bf35e4976511762ef3c17d835accc84f28e9",
+    "src/watch_temporal_full.py": "2faed2f6623517bc1688bfe157753e8e70b22d6b43939c93dc63f6ae7b6161e3"
+  },
+  "limitations": [
+    "Timestamp availability is an assumption; not guaranteed before physical listen start",
+    "User-day ranking covers observed events with different cutoffs, not catalog recommendation",
+    "Existing label attachment and selected 462 formulas are inherited from earlier research",
+    "Old test is already open; no test preparation or evaluation is authorized for this queue"
+  ]
+}

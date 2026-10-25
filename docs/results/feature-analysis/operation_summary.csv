@@ -1,0 +1,5 @@
+feature_kind,operation_label,feature_count,importance_sum
+aggregate,Один агрегат,52,18.974184342856127
+aggregate_product,Произведение двух агрегатов,349,56.63782838563767
+event_product_aggregate,Агрегат произведения полей события,56,6.6594452301104345
+freshness,Давность первого/последнего события,5,17.728542041395706

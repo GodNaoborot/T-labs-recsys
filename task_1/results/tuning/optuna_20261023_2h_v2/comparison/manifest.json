@@ -1,0 +1,33 @@
+{
+  "artifacts": {
+    "models": "results/tuning/optuna_20261023_2h_v2/comparison/models.csv",
+    "comparison": "results/tuning/optuna_20261023_2h_v2/comparison/summary.csv",
+    "bootstrap": "results/tuning/optuna_20261023_2h_v2/comparison/bootstrap_summary.csv",
+    "manifest": "results/tuning/optuna_20261023_2h_v2/comparison/manifest.json"
+  },
+  "comparison_rows": 6,
+  "pairs": {
+    "control_ranker": {
+      "status": "cached"
+    },
+    "control_pointwise": {
+      "status": "cached"
+    },
+    "tuned_ranker": {
+      "status": "cached"
+    },
+    "tuned_pointwise": {
+      "status": "cached"
+    }
+  },
+  "deadline_expired": false,
+  "relative_gain_definition": "(NDCG_DFS - NDCG_manual) / NDCG_manual; positive means DFS improves",
+  "test_used": false,
+  "training_started": false,
+  "limitations": [
+    "Validation reused for early stopping and parameter selection; exploratory CI.",
+    "Bootstrap conditional on fitted models; training seed uncertainty omitted.",
+    "600→1600 also changes patience 50→80: extended training policy, not isolated cap.",
+    "Fit seconds describe observed runs; tree counts and runtime conditions may differ."
+  ]
+}

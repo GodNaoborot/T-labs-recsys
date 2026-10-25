@@ -1,0 +1,27 @@
+{
+  "completed": true,
+  "source_run": "temporal_topk_20261023_v2",
+  "features": 462,
+  "reference_features": 12782,
+  "metrics": {
+    "NDCG@10": 0.7829104571573132,
+    "QueryAUC": 0.6352336287327875
+  },
+  "reference_metrics": {
+    "NDCG@10": 0.7934151174704774,
+    "QueryAUC": 0.6478908977906584
+  },
+  "NDCG_relative_change": -0.013239803580570308,
+  "NDCG_absolute_change": -0.010504660313164216,
+  "fit_seconds": 4.127789040998323,
+  "reference_fit_seconds": 51.72832045299583,
+  "best_iteration": 117,
+  "tree_count": 118,
+  "original_model_subset_predictions_exact": true,
+  "reload_predictions_exact": true,
+  "model_path": "results/experiment-1/temporal_runs/temporal_used_20261023_v1/models/used_in_trees/model.cbm",
+  "model_sha256": "005ea5c08f380a5d2e18bc37e88f91b7e7ea422e2423faa2db3cb0e5a4d661e4",
+  "elapsed_seconds": 4.761458521999884,
+  "max_rss_gib": 1.0606117248535156,
+  "test_used": false
+}

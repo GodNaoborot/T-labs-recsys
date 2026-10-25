@@ -1,0 +1,128 @@
+{
+  "measured_at_utc": "2026-10-22T08:28:02.748311+00:00",
+  "featuretools_version": "1.31.0",
+  "scope": "make_definitions: empty typed EntitySet construction plus ft.dfs(features_only=True); no value calculation, no large data, no serialization",
+  "parameters": {
+    "agg_primitives": [
+      "count",
+      "mean",
+      "std",
+      "min",
+      "max"
+    ],
+    "trans_primitives": [
+      "multiply_numeric"
+    ],
+    "max_depth": 2,
+    "max_features": 32
+  },
+  "branches": [
+    [
+      "Users",
+      "uid"
+    ],
+    [
+      "Items",
+      "item_id"
+    ],
+    [
+      "UserItem",
+      "user_item_id"
+    ],
+    [
+      "UserArtist",
+      "user_artist_id"
+    ]
+  ],
+  "repeat_count": 5,
+  "import_seconds": 4.307848434000334,
+  "first_total_seconds": 0.021195398992858827,
+  "median_total_seconds": 0.02512577100424096,
+  "min_total_seconds": 0.018779412006551865,
+  "max_total_seconds": 0.02955174900125712,
+  "all_names_exactly_match_saved_definitions": true,
+  "generated_formula_count": 128,
+  "source_sha256": "ad74d81b5b07b180ae103fcff07211332be1569a667e32cf72683942fef9818e",
+  "trials": [
+    {
+      "repeat": 1,
+      "seconds_by_entity": {
+        "Users": 0.006127173997811042,
+        "Items": 0.005394189996877685,
+        "UserItem": 0.004972531001840252,
+        "UserArtist": 0.004701503996329848
+      },
+      "total_seconds": 0.021195398992858827,
+      "counts": {
+        "Users": 32,
+        "Items": 32,
+        "UserItem": 32,
+        "UserArtist": 32
+      }
+    },
+    {
+      "repeat": 2,
+      "seconds_by_entity": {
+        "Users": 0.004757133006933145,
+        "Items": 0.0044416870005079545,
+        "UserItem": 0.0046247889986261725,
+        "UserArtist": 0.004955803000484593
+      },
+      "total_seconds": 0.018779412006551865,
+      "counts": {
+        "Users": 32,
+        "Items": 32,
+        "UserItem": 32,
+        "UserArtist": 32
+      }
+    },
+    {
+      "repeat": 3,
+      "seconds_by_entity": {
+        "Users": 0.006172112000058405,
+        "Items": 0.005640472998493351,
+        "UserItem": 0.0070758030051365495,
+        "UserArtist": 0.006237383000552654
+      },
+      "total_seconds": 0.02512577100424096,
+      "counts": {
+        "Users": 32,
+        "Items": 32,
+        "UserItem": 32,
+        "UserArtist": 32
+      }
+    },
+    {
+      "repeat": 4,
+      "seconds_by_entity": {
+        "Users": 0.007273324998095632,
+        "Items": 0.008025340997846797,
+        "UserItem": 0.007426046002365183,
+        "UserArtist": 0.00682703700294951
+      },
+      "total_seconds": 0.02955174900125712,
+      "counts": {
+        "Users": 32,
+        "Items": 32,
+        "UserItem": 32,
+        "UserArtist": 32
+      }
+    },
+    {
+      "repeat": 5,
+      "seconds_by_entity": {
+        "Users": 0.006260734000534285,
+        "Items": 0.006062588996428531,
+        "UserItem": 0.0072165199962910265,
+        "UserArtist": 0.0059145960040041246
+      },
+      "total_seconds": 0.025454438997257967,
+      "counts": {
+        "Users": 32,
+        "Items": 32,
+        "UserItem": 32,
+        "UserArtist": 32
+      }
+    }
+  ]
+}

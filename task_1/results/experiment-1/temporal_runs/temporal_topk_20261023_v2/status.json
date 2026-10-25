@@ -1,0 +1,11 @@
+{
+  "completed": true,
+  "phase": "finished",
+  "elapsed_seconds": 170.19439133699052,
+  "rss_gib": 1.7141456604003906,
+  "max_rss_gib": 3.7449302673339844,
+  "available_gib": 8.253067016601562,
+  "test_used": false,
+  "candidates": 12782,
+  "result_path": "results/experiment-1/temporal_runs/temporal_topk_20261023_v2/result.json"
+}
