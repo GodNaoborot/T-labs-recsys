@@ -13,11 +13,11 @@ def check_sources():
     """Проверить синтаксис скриптов и ячеек, не выполняя их."""
     scripts = list((TASK_ROOT / 'src').glob('*.py'))
     for path in scripts:
-        ast.parse(path.read_text(), filename=str(path))
+        ast.parse(path.read_text(encoding='utf-8'), filename=str(path))
     notebooks = list((TASK_ROOT / 'notebooks').glob('*.ipynb'))
     code_cells = 0
     for path in notebooks:
-        notebook = json.loads(path.read_text())
+        notebook = json.loads(path.read_text(encoding='utf-8'))
         for number, cell in enumerate(notebook['cells']):
             if cell['cell_type'] == 'code':
                 ast.parse(''.join(cell['source']), filename=f'{path.name}:cell{number}')

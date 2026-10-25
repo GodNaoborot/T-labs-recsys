@@ -110,7 +110,7 @@ EDA читается порциями целых пользователей; б�
 | model-baseline | Samples, 42 ручных входа, простые ориентиры, YetiRank и MultiClass, Optuna |
 | experiment-1 | DFS130, два обучения, bootstrap, пять временных окон, построение формул |
 | experiment-2 | 12 782 кандидата, top-k, признаки деревьев, полный DFS, пять контролей, интервалы, диагностика start_ts, семь моделей на test |
-| final-comparison | Исправленное время запроса, 42/49/462 входа, три обучения, интервалы, test, важности |
+| final-comparison | Исправленное время запроса, 42/49/462 входа, контроль 48 входов без текущего канала, интервалы, test, важности |
 
 Повторный поиск по деревьям может выбрать другое число входов. Оно сохраняется
 в новом протоколе. Основное исправленное сравнение использует фиксированный
@@ -125,9 +125,20 @@ python task_1/src/run_all_experiments.py --run-name repeat_01 --download --inclu
 Для выполнения добавить `--execute`. Отдельные ветви выбираются через
 `--experiments`, например `--experiments bootstrap rolling`.
 
-## Только основное сравнение
+## Основное сравнение: ручные 48 и DFS 462
 
-Без нового исторического поиска и Optuna:
+Из исходных данных, без нового исторического поиска и Optuna:
+
+```bash
+python task_1/src/run_all_experiments.py --run-name repeat_main \
+  --experiments channel-control --download --include-test --execute
+```
+
+Граф готовит историю и C4-пулы, обучает три первоначальных модели и дополнительный контроль без текущего канала. В итоговом сравнении используются ручные 48 и DFS 462; модели 42/49 остаются предыдущими этапами. Test — ранее открытый период.
+
+### Первоначальный маршрут трёх моделей
+
+Без дополнительного контроля 48:
 
 ```bash
 python task_1/src/reproduce.py --run-name repeat_main --stage all --download
@@ -145,6 +156,25 @@ python task_1/src/run_c4_test.py --run-name repeat_main_test --training-run repe
 Результаты: `task_1/results/c4/repeat_main/` и
 `task_1/results/c4_test/repeat_main_test/`. Таблицы — comparison.csv
 и bootstrap_summary.csv. Завершение — completed=true в status.json и result.json.
+
+## Контроль без текущего канала
+
+Готовое сравнение 48 ручных признаков с DFS читается из results/c4/no_current_channel/. Исторические модели 42/49/462 сохранены отдельно.
+
+План повторного контроля на готовых C4-пулах печатается без обучения:
+
+```bash
+python task_1/src/run_channel_control.py --training-run repeat_main --run-name repeat_channel
+```
+
+Для нового fit нужно явно добавить --stage fit. Отдельная оценка ранее открытого test:
+
+```bash
+python task_1/src/run_channel_control.py --stage evaluate --include-test \
+  --training-run repeat_main --test-run repeat_main_test --run-name repeat_channel
+```
+
+В recompute итоговый notebook использует тот же RUN_NAME: контроль зависит от новых C4-пулов, а при INCLUDE_TEST=True — и от нового test этого запуска. Готовые старые метрики вместо нового расчёта не подставляются.
 
 ## Время и ресурсы
 
@@ -167,11 +197,9 @@ python task_1/src/verify_reproduction.py --output-dir task_1/.validation/synthet
 EDA, 42/49/462 признака, три обучения, искусственный test и важности.
 Исследовательские данные и модели не используются.
 
-На полном журнале повторены история, EDA, samples, ручные признаки,
-train/validation DFS130 и подготовка Pool. Все значения истории и ручных
-признаков совпали; DFS-матрицы совпали побайтно. Новые validation Pool дали
-точно те же прогнозы двух сохранённых моделей. Полный повтор всех исследовательских обучений в чистой копии
-пока не выполнен. [Фактические проверки](provenance/audit_reproduction_20261025.json).
+Основное исходное C4-сравнение независимо повторено в отдельной Python 3.12.13 venv: шесть полных матриц manual49/DFS462 для train/validation/test совпали побайтно. Три модели повторили 791/685/1043 дерева, все validation/test-прогнозы и обе метрики. Ручной контроль без текущего канала дополнительно предсказал на свежем test Pool: все 3 160 068 прогнозов совпали с сохранённой оценкой. [Подтверждение](results/reproduction/main_verification.json).
+
+Это полный повтор основного C4-сравнения первоначальной публикации. Исторический Optuna и все старые временные окна полностью не переобучались. Новые версии отчётного режима проверены отдельно; новый CLI контроля 48 в текущей ветке прошёл план и тесты без повторного fit. [Более ранние проверки](provenance/audit_reproduction_20261025.json).
 
 Метрики сохранённого исследования: [основной протокол](c4.md),
 [test](c4-test.md), [выбранные признаки](feature-analysis.md).

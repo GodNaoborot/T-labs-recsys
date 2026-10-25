@@ -14,17 +14,19 @@ PAIRS = (
 )
 
 
-def plot_intervals(validation, test=None):
+def plot_intervals(validation, test=None, pairs=None):
     """У каждой пары свой масштаб, чтобы была видна и небольшая разница."""
+    pairs = PAIRS if pairs is None else tuple(pairs)
     splits = [('Validation', validation)]
     if test is not None:
         splits.append(('Повторный test', test))
-    figure, axes = plt.subplots(3, len(splits), figsize=(6 * len(splits), 7.3), squeeze=False)
+    height = 7.3 if len(pairs) == 3 else 2.3 * len(pairs) + 0.4
+    figure, axes = plt.subplots(len(pairs), len(splits), figsize=(6 * len(splits), height), squeeze=False)
     for column, (split, table) in enumerate(splits):
         required = {'candidate', 'reference', 'block_days', 'delta_ndcg', 'ci_low', 'ci_high'}
         if not required.issubset(table.columns):
             raise ValueError(f'{split}: не хватает столбцов интервалов')
-        for row, (candidate, reference, title) in enumerate(PAIRS):
+        for row, (candidate, reference, title) in enumerate(pairs):
             selected = table[(table.candidate == candidate) & (table.reference == reference)]
             if len(selected) != 2 or set(selected.block_days) != {3, 4}:
                 raise ValueError(f'{split}: нужны блоки 3 и 4 дня для {candidate} − {reference}')

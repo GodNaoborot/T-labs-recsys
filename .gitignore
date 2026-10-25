@@ -151,3 +151,10 @@ catboost_info/
 /task_1/results/final_test/final_test_20261023_v1/frozen_plan.json
 
 !/docs/provenance/path_sanitization.json
+
+# Готовый контроль без текущего канала: только компактные отчёты.
+!/task_1/results/c4/no_current_channel/result.json
+!/task_1/results/c4/no_current_channel/protocol.json
+!/task_1/results/c4/no_current_channel/provenance.json
+!/task_1/results/c4/no_current_channel/comparison.csv
+!/task_1/results/c4/no_current_channel/bootstrap_summary.csv

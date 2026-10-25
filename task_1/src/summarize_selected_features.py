@@ -226,16 +226,16 @@ def build_report(root, importance_path, output, run=RUN):
                       'output': str(output)}, ensure_ascii=False))
 
 
-def main():
+def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--root', type=Path, default=PROJECT_ROOT)
     parser.add_argument('--training-run', help='Новый источник results/c4/<имя>')
     parser.add_argument('--output-dir', type=Path)
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
     root = args.root.resolve()
     output = args.output_dir.resolve() if args.output_dir else root / OUTPUT
     run = RUN
-    importance = output / 'prediction_values_change.csv'
+    importance = root / OUTPUT / 'prediction_values_change.csv'
     if args.training_run:
         from reproduce import run_name
         run = Path('task_1/results/c4') / run_name(args.training_run)

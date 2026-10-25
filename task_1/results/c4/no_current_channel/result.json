@@ -1,0 +1,50 @@
+{
+  "completed": true,
+  "variant": "manual48_no_current_channel",
+  "active_features": 48,
+  "physical_features": 49,
+  "excluded_current_features": [
+    "is_organic"
+  ],
+  "ignored_indices": [
+    0
+  ],
+  "tree_count": 911,
+  "fit_seconds": 1070.330985933997,
+  "train": {
+    "rows": 2021867,
+    "groups": 40000
+  },
+  "validation": {
+    "rows": 2879535,
+    "groups": 57097,
+    "metrics": {
+      "NDCG@10": 0.8045892271864397,
+      "QueryAUC": 0.6776775862846705
+    }
+  },
+  "test": {
+    "rows": 3160068,
+    "groups": 61964,
+    "metrics": {
+      "NDCG@10": 0.808769071213863,
+      "QueryAUC": 0.6770530012749088
+    }
+  },
+  "reference_training_run": "c4_packet_20261024_v1",
+  "reference_test_run": "c4_test_20261024_v1",
+  "model_path": "results/c4/no_current_channel/model/model.cbm",
+  "model_sha256": "bf2c742fc88bcab454748e0e4d860678eba105fcab86bfd1f8090793db68adcb",
+  "imported_completed_audit": true,
+  "training_performed_during_import": false,
+  "test_evaluated_during_import": false,
+  "test_already_open": true,
+  "new_blind_test": false,
+  "new_hyperparameter_search": false,
+  "comparability": {
+    "same_target_rows_and_order": true,
+    "same_train_borders": true,
+    "same_model_parameters_except_ignored_feature": true
+  },
+  "timing_note": "The control ran with lower scheduling priority alongside other audit jobs; fit time is not a matched speed comparison."
+}

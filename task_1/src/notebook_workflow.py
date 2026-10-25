@@ -58,6 +58,7 @@ class NotebookWorkflow:
             'old-test': 'results/final_test/final_test_20261023_v1',
             'corrected': 'results/c4/c4_packet_20261024_v1',
             'corrected-test': 'results/c4_test/c4_test_20261024_v1',
+            'channel-control': 'results/c4/no_current_channel',
             'feature-analysis': '../docs/results/feature-analysis',
         }
         new = {
@@ -74,6 +75,7 @@ class NotebookWorkflow:
             'old-test': f'results/final_test/{self.name}_test',
             'corrected': f'results/c4/{self.name}_packet',
             'corrected-test': f'results/c4_test/{self.name}_packet_test',
+            'channel-control': f'results/c4/{self.name}_channel_control',
             'feature-analysis': f'results/reproduction/{self.name}/feature-analysis',
         }
         return (TASK_ROOT / (old if self.mode == 'report' else new)[stage]).resolve()
@@ -103,6 +105,14 @@ class NotebookWorkflow:
         borders = f'results/baselines/runs/{name}/train_borders.tsv'
         if stage == 'history':
             return self.history_commands()
+        if stage == 'channel-control':
+            common = ['src/run_channel_control.py', '--training-run', name + '_packet',
+                      '--run-name', name + '_channel_control']
+            commands = [[*common, '--stage', 'fit']]
+            if self.include_test:
+                commands.append([*common, '--stage', 'evaluate', '--include-test',
+                                 '--test-run', name + '_packet_test'])
+            return commands
         if stage == 'eda':
             source = self.raw_events
             if source is None:
@@ -161,6 +171,7 @@ class NotebookWorkflow:
             'full': ['used', 'optuna'], 'controls': ['full'], 'direct-intervals': ['controls'],
             'test-plan': ['controls'], 'old-test': ['test-plan'], 'diagnostics': ['test-plan'],
             'corrected': ['history'], 'corrected-test': ['corrected'], 'feature-analysis': ['corrected'],
+            'channel-control': ['corrected', *(['corrected-test'] if self.include_test else [])],
             'formula-benchmark': [],
         }[stage]
 
@@ -178,6 +189,7 @@ class NotebookWorkflow:
             'old-test': ['result.json', 'comparison_sub.csv', 'comparison_full.csv'],
             'corrected': ['status.json', 'result.json', 'comparison.csv', 'bootstrap_summary.csv'],
             'corrected-test': ['status.json', 'result.json', 'comparison.csv', 'bootstrap_summary.csv'],
+            'channel-control': ['result.json', 'protocol.json', 'comparison.csv', 'bootstrap_summary.csv'],
             'feature-analysis': ['selected_features.csv', 'provenance.json'],
         }
         if stage == 'legacy':

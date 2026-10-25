@@ -29,6 +29,21 @@ class FinalIntervalPlotTests(unittest.TestCase):
         finally:
             plt.close(figure)
 
+    def test_selected_control_pair_is_plotted(self):
+        pair = ('manual48_no_current_channel', 'D462-t', 'Контроль без текущего канала')
+        table = pd.DataFrame([
+            {'candidate': pair[0], 'reference': pair[1], 'block_days': block,
+             'delta_ndcg': -0.00003, 'ci_low': -0.0012, 'ci_high': 0.0011}
+            for block in (3, 4)
+        ])
+        figure = plot_intervals(table, pairs=[pair])
+        try:
+            self.assertEqual(len(figure.axes), 1)
+            self.assertEqual(len(figure.axes[0].containers), 2)
+            self.assertIn(pair[2], figure.axes[0].get_title())
+        finally:
+            plt.close(figure)
+
     def test_missing_pair_is_not_silently_omitted(self):
         table = pd.DataFrame(columns=['candidate', 'reference', 'block_days',
                                       'delta_ndcg', 'ci_low', 'ci_high'])

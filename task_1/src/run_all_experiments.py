@@ -8,7 +8,7 @@ from notebook_workflow import NotebookWorkflow
 
 EXPERIMENTS = ('eda', 'baseline', 'bootstrap', 'rolling', 'optuna', 'selection',
                'used', 'full', 'controls', 'direct-intervals', 'test-plan',
-               'diagnostics', 'corrected', 'feature-analysis', 'formula-benchmark')
+               'diagnostics', 'corrected', 'channel-control', 'feature-analysis', 'formula-benchmark')
 
 
 def ordered_stages(workflow, requested):

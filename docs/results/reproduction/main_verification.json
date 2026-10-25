@@ -1,0 +1,188 @@
+{
+  "scope": "Independent full-data replay of the original three-model C4 comparison and a separate no-current-channel control. Historical Optuna and all rolling fits were not repeated.",
+  "source_repository_revision": "Initial publication before path-only history normalization",
+  "source_evidence": {
+    "file": "AUDIT_REVIEW_EVIDENCE_20261025.json",
+    "sha256": "f36049921ed8800627557ed984f11b93d76f753b9c8b979e2bbd85d9599bd5d5"
+  },
+  "source_comparison": {
+    "file": "AUDIT_REVIEW_MAIN_COMPARISON_20261025.csv",
+    "sha256": "d745beba912d357f0622f0b21f02a3b339c5a22d32296b4af6ebac2385e777ae"
+  },
+  "environment": {
+    "python": "3.12.13",
+    "isolated_environment": true,
+    "include_system_site_packages": false,
+    "pip_check_passed": true
+  },
+  "dataset_revision": "dd6f3a19eef5866e346c3270e098baa641a44948",
+  "main_replay": {
+    "completed": true,
+    "models": [
+      "M-t",
+      "C2b-t",
+      "D462-t"
+    ],
+    "rows": {
+      "train": 2021867,
+      "validation": 2879535,
+      "test": 3160068
+    },
+    "matrix_count": 6,
+    "matrices_byte_identical": true,
+    "train_validation_matrices": [
+      {
+        "split": "train",
+        "schema": "manual49",
+        "rows": 2021867,
+        "feature_count": 49,
+        "old_sha256": "1f4dd1c11a79f030ee0de7158207002a8c363068809a2e15b1035bc454c64edf",
+        "new_sha256": "1f4dd1c11a79f030ee0de7158207002a8c363068809a2e15b1035bc454c64edf",
+        "byte_identical": true
+      },
+      {
+        "split": "train",
+        "schema": "dfs462",
+        "rows": 2021867,
+        "feature_count": 462,
+        "old_sha256": "20a1074834be29fefbbace94a6625bec8cdaf57c3a3c8ad9428d2922c99c58fb",
+        "new_sha256": "20a1074834be29fefbbace94a6625bec8cdaf57c3a3c8ad9428d2922c99c58fb",
+        "byte_identical": true
+      },
+      {
+        "split": "val",
+        "schema": "manual49",
+        "rows": 2879535,
+        "feature_count": 49,
+        "old_sha256": "b58c329c6704feb40a4b01c328c6e20729ca633f4cdc5552630d8e365d0b1927",
+        "new_sha256": "b58c329c6704feb40a4b01c328c6e20729ca633f4cdc5552630d8e365d0b1927",
+        "byte_identical": true
+      },
+      {
+        "split": "val",
+        "schema": "dfs462",
+        "rows": 2879535,
+        "feature_count": 462,
+        "old_sha256": "4047a53419fcf736101b786c0c7cac3d09c23cf5008c9b6a2ed473679b549707",
+        "new_sha256": "4047a53419fcf736101b786c0c7cac3d09c23cf5008c9b6a2ed473679b549707",
+        "byte_identical": true
+      }
+    ],
+    "test_matrices": {
+      "generation_manual_test.json": {
+        "matrix_sha256": true,
+        "features": true,
+        "rows": true,
+        "feature_count": true,
+        "query_arrays": true,
+        "target_arrays": true
+      },
+      "generation_dfs_test.json": {
+        "matrix_sha256": true,
+        "features": true,
+        "rows": true,
+        "feature_count": true,
+        "query_arrays": true,
+        "target_arrays": true
+      }
+    },
+    "tree_counts": {
+      "M-t": 791,
+      "C2b-t": 685,
+      "D462-t": 1043
+    },
+    "all_validation_and_test_predictions_exact": true,
+    "all_ndcg_and_queryauc_exact": true,
+    "comparison_csv": "main_comparison.csv",
+    "independent_ndcg": [
+      {
+        "split": "validation",
+        "variant": "M-t",
+        "rows": 2879535,
+        "groups": 57097,
+        "ndcg10": 0.7689636751991842,
+        "max_group_error": 4.440892098500626e-16
+      },
+      {
+        "split": "validation",
+        "variant": "C2b-t",
+        "rows": 2879535,
+        "groups": 57097,
+        "ndcg10": 0.8048955859810554,
+        "max_group_error": 5.551115123125783e-16
+      },
+      {
+        "split": "validation",
+        "variant": "D462-t",
+        "rows": 2879535,
+        "groups": 57097,
+        "ndcg10": 0.804623403591631,
+        "max_group_error": 5.551115123125783e-16
+      },
+      {
+        "split": "test",
+        "variant": "M-t",
+        "rows": 3160068,
+        "groups": 61964,
+        "ndcg10": 0.771546816670519,
+        "max_group_error": 4.440892098500626e-16
+      },
+      {
+        "split": "test",
+        "variant": "C2b-t",
+        "rows": 3160068,
+        "groups": 61964,
+        "ndcg10": 0.8090400804683152,
+        "max_group_error": 4.440892098500626e-16
+      },
+      {
+        "split": "test",
+        "variant": "D462-t",
+        "rows": 3160068,
+        "groups": 61964,
+        "ndcg10": 0.8081871077033019,
+        "max_group_error": 4.440892098500626e-16
+      }
+    ],
+    "feature_report_csvs_byte_identical": {
+      "primitive_counts.csv": true,
+      "top_features.csv": true,
+      "entity_summary.csv": true,
+      "selected_features.csv": true,
+      "window_summary.csv": true,
+      "operation_summary.csv": true
+    }
+  },
+  "manual48_control": {
+    "active_features": 48,
+    "excluded_current_feature": "is_organic",
+    "absent_from_all_tree_splits": true,
+    "tree_count": 911,
+    "validation_metrics": {
+      "NDCG@10": 0.8045892271864397,
+      "QueryAUC": 0.6776775862846705
+    },
+    "test_metrics": {
+      "NDCG@10": 0.808769071213863,
+      "QueryAUC": 0.6770530012749088
+    },
+    "fresh_test_replay": {
+      "completed": true,
+      "fresh_test_predictions_exact": true,
+      "max_score_difference": 0.0,
+      "independent_ndcg": {
+        "rows": 3160068,
+        "groups": 61964,
+        "ndcg10": 0.8087690712138641,
+        "max_group_error": 4.440892098500626e-16
+      },
+      "new_blind_test": false
+    }
+  },
+  "full_historical_training_repeated": false,
+  "historical_optuna_repeated": false,
+  "all_rolling_fits_repeated": false,
+  "test_is_new_blind_holdout": false,
+  "new_channel_cli_fit_executed_in_current_checkout": false,
+  "publication_note": "Compact report imported from completed independent audit. No model training or prediction was run while preparing this report."
+}

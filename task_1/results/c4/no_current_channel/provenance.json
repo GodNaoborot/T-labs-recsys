@@ -1,0 +1,127 @@
+{
+  "source_repository_revision": "Initial publication before path-only history normalization",
+  "source_kind": "Completed independent audit; existing artefacts imported without fitting or predicting.",
+  "original_reports": [
+    {
+      "source_relative_path": "expert_audit/no_organic/status.json",
+      "original_sha256": "64c8ba8994c6d8a34652fce1ee3c8ba6b86b553a25bb5d2198ffd2e0c25029e8",
+      "original_bytes": 88
+    },
+    {
+      "source_relative_path": "expert_audit/no_organic/result.json",
+      "original_sha256": "69aaad9ed3b714ddbe823ba33c4161b1071587b4e8479b016510c2dbe23a9d4e",
+      "original_bytes": 3709
+    },
+    {
+      "source_relative_path": "expert_audit/no_organic/evaluation.json",
+      "original_sha256": "a3f6b2a0baca2d91c0dca0441a84443cb7fbdc6227295bdff18a3afa195992af",
+      "original_bytes": 1658
+    },
+    {
+      "source_relative_path": "expert_audit/no_organic/audit_provenance.json",
+      "original_sha256": "6967205ee29b7f1aa9bda881e53d921a959fa1f4148690bcd0a41ca3dab27089",
+      "original_bytes": 977
+    },
+    {
+      "source_relative_path": "expert_audit/no_organic/model/fit_request.json",
+      "original_sha256": "267e804d31db312dd59927fc4fa01fb3929bb1c5802b8615d6a1373aaa09158a",
+      "original_bytes": 2352
+    },
+    {
+      "source_relative_path": "expert_audit/no_organic/model/requested_params.json",
+      "original_sha256": "e02ee1b942d5fc24fefa18c5b8615e968b796c39b45f0b9267db274d536a4fef",
+      "original_bytes": 521
+    }
+  ],
+  "original_training_and_evaluation_scripts": [
+    {
+      "source_file": "audit_no_organic_20261025.py",
+      "original_sha256": "4d66776673090d4073358c05bc95b20506a276115f001eb5e7d94ab2a62cc4e0"
+    },
+    {
+      "source_file": "audit_no_organic_evaluate_20261025.py",
+      "original_sha256": "c404cc8b80ae51bf895451720cef9eec8baf788e7921c3dd71981e1543b82f25"
+    }
+  ],
+  "source_training_protocol_sha256": "b6cc330a8360065b6aa2ad227efdb5ec8865a069ad141f08dbbad29f3a793bba",
+  "source_training_plan_sha256": "c1147d70c6c648a54e3161121a12969af4e79cc426eb0d1467b11a4e608c1bcd",
+  "reference_training_plan": {
+    "path": "results/c4/c4_packet_20261024_v1/training_plan.json",
+    "sha256": "a96cbd74b2067035b34df85c4e9e55b6ec1cd2527f6f6cb43a68ceb5f24ce97a"
+  },
+  "metadata_policy": "Only portable summary fields are published. Source-report hashes refer to the unmodified external audit reports. Original reports were not edited or relabelled as a run in this checkout.",
+  "local_artifacts": [
+    {
+      "source_relative_path": "expert_audit/no_organic/model/model.cbm",
+      "path": "results/c4/no_current_channel/model/model.cbm",
+      "sha256": "bf2c742fc88bcab454748e0e4d860678eba105fcab86bfd1f8090793db68adcb",
+      "bytes": 1089072,
+      "published": false
+    },
+    {
+      "source_relative_path": "expert_audit/no_organic/model/params.json",
+      "path": "results/c4/no_current_channel/model/params.json",
+      "sha256": "df6393e2a6e616eb8c302f61a1171470ec7b56409a1e3a43e1dfb387d574a9c9",
+      "bytes": 1356,
+      "published": false
+    },
+    {
+      "source_relative_path": "expert_audit/no_organic/model/requested_params.json",
+      "path": "results/c4/no_current_channel/model/requested_params.json",
+      "sha256": "e02ee1b942d5fc24fefa18c5b8615e968b796c39b45f0b9267db274d536a4fef",
+      "bytes": 521,
+      "published": false
+    },
+    {
+      "source_relative_path": "expert_audit/no_organic/model/group_ndcg.parquet",
+      "path": "results/c4/no_current_channel/model/group_ndcg.parquet",
+      "sha256": "fde0173857cb7fe04d7155ff1c77b21a1e8801c59758b717b60c1c6eda9c7072",
+      "bytes": 596754,
+      "published": false
+    },
+    {
+      "source_relative_path": "expert_audit/no_organic/model/daily_ndcg.csv",
+      "path": "results/c4/no_current_channel/model/daily_ndcg.csv",
+      "sha256": "0f2390a99fcf4fbb3fe7669773968aa23e4ad892072e612ff10942376012f93d",
+      "bytes": 727,
+      "published": false
+    },
+    {
+      "source_relative_path": "expert_audit/no_organic/model/feature_importance.csv",
+      "path": "results/c4/no_current_channel/model/feature_importance.csv",
+      "sha256": "d1ff6dc4906cff2f7a57ebd58459bd085e7ca286b105d9ce258c470c2df6a353",
+      "bytes": 1760,
+      "published": false
+    },
+    {
+      "source_relative_path": "expert_audit/no_organic/model/val_score.npy",
+      "path": "results/c4/no_current_channel/model/val_score.npy",
+      "sha256": "7a054664741180e5e8890dd7a20349cddce9468bc9a701f0a9242cb0511540af",
+      "bytes": 23036408,
+      "published": false
+    },
+    {
+      "source_relative_path": "expert_audit/no_organic/test_group_ndcg.parquet",
+      "path": "results/c4/no_current_channel/test_group_ndcg.parquet",
+      "sha256": "ad59eb9eb7670a0aae281cf541ff6cf3432a799cec1e813eb7fca937ff541c5a",
+      "bytes": 642969,
+      "published": false
+    },
+    {
+      "source_relative_path": "expert_audit/no_organic/test_score.npy",
+      "path": "results/c4/no_current_channel/test_score.npy",
+      "sha256": "d43d28fa0288d86fb81185b6682290e148a070cd42329cd7e6eddb33563941ee",
+      "bytes": 25280672,
+      "published": false
+    }
+  ],
+  "published_report_sha256": {
+    "result.json": "144384c40068a71e4a552d72e1854cd7023f20605a93e0efcf4b9ec314cabe6b",
+    "protocol.json": "2088a2d099d009c9dac956f32d5837bd6c6621a6a53233260c6c5401386a12fa",
+    "comparison.csv": "5cc78a6a5412f697a2d0c327b059c221f9dc10459a18d821a2805df30a38f617",
+    "bootstrap_summary.csv": "0a67306f120b80f87c7621b956c5dd37fea0e1bc3fdfbcc7e3d2dd484fd21c77"
+  },
+  "training_performed_during_import": false,
+  "prediction_performed_during_import": false,
+  "bootstrap_recomputed_during_import": false
+}
