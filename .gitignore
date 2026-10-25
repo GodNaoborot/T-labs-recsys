@@ -158,3 +158,8 @@ catboost_info/
 !/task_1/results/c4/no_current_channel/provenance.json
 !/task_1/results/c4/no_current_channel/comparison.csv
 !/task_1/results/c4/no_current_channel/bootstrap_summary.csv
+
+# Публикуется итоговый PDF; резервные копии остаются локально.
+/output/**
+!/output/pdf/
+!/output/pdf/recsys_feature_generation_editorial.pdf

@@ -14,7 +14,7 @@ PAIRS = (
 )
 
 
-def plot_intervals(validation, test=None, pairs=None):
+def plot_intervals(validation, test=None, pairs=None, colors=('#4e79a7', '#f28e2b')):
     """У каждой пары свой масштаб, чтобы была видна и небольшая разница."""
     pairs = PAIRS if pairs is None else tuple(pairs)
     splits = [('Validation', validation)]
@@ -38,7 +38,7 @@ def plot_intervals(validation, test=None, pairs=None):
                     raise ValueError(f'{split}: точечная разница вне интервала')
                 axis.errorbar(delta, position,
                               xerr=[[delta - record.ci_low], [record.ci_high - delta]],
-                              fmt='o', capsize=5, color=('#4e79a7', '#f28e2b')[position])
+                              fmt='o', capsize=5, color=colors[position])
             if abs(selected.delta_ndcg.iloc[0]) < 0.002:
                 axis.axvline(0, color='gray', linestyle='--', linewidth=1)
             axis.set_yticks([0, 1], ['Блок 3 дня', 'Блок 4 дня'])

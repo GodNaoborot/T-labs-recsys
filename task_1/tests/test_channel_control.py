@@ -65,6 +65,27 @@ class ChannelControlTests(unittest.TestCase):
         with self.assertRaises(AssertionError):
             module.paired_intervals(candidate, reference, 'validation')
 
+    def test_test_reference_fit_times_come_from_training_without_fit(self):
+        with tempfile.TemporaryDirectory() as directory, patch.object(module, 'fit_ranker') as fit_call:
+            folder = Path(directory)
+            training = folder / 'training'
+            test = folder / 'test'
+            training.mkdir()
+            test.mkdir()
+            rows = pd.DataFrame({'variant': ['C2b-t', 'D462-t'], 'active_features': [49, 462],
+                                 'NDCG@10': [.8, .81], 'QueryAUC': [.67, .68],
+                                 'tree_count': [900, 1000], 'rows': [10, 10], 'groups': [2, 2]})
+            rows.to_csv(test / 'comparison.csv', index=False)
+            rows.assign(fit_seconds=[100., 200.]).to_csv(training / 'comparison.csv', index=False)
+            groups = pd.DataFrame({'group_size': [5, 5]})
+            fitted = {'fit_seconds': 150., 'evaluation': {'tree_count': 911}}
+            result = module.comparison_rows(test, 'test', {'NDCG@10': .82, 'QueryAUC': .69},
+                                            groups, fitted, training_dir=training).set_index('variant')
+            self.assertEqual(result.loc['C2b-t', 'fit_seconds'], 100.)
+            self.assertEqual(result.loc['D462-t', 'fit_seconds'], 200.)
+            self.assertEqual(result.loc[module.VARIANT, 'fit_seconds'], 150.)
+        fit_call.assert_not_called()
+
     def test_workflow_uses_fresh_sources_and_explicit_test(self):
         report = NotebookWorkflow()
         self.assertTrue(str(report.path('channel-control')).endswith('/results/c4/no_current_channel'))

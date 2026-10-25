@@ -52,12 +52,16 @@ def artifact(path):
     return {'path': portable(str(path)), 'sha256': file_hash(path)}
 
 
-def comparison_rows(reference_dir, split, metrics, groups, fit):
+def comparison_rows(reference_dir, split, metrics, groups, fit, training_dir=None):
     table = pd.read_csv(reference_dir / 'comparison.csv', float_precision='round_trip')
     rows = table.loc[table.variant.isin(REFERENCES)].copy()
     rows['split'] = split
     if 'fit_seconds' not in rows:
         rows['fit_seconds'] = np.nan
+    if training_dir is not None:
+        training = pd.read_csv(training_dir / 'comparison.csv', float_precision='round_trip')
+        times = training.set_index('variant')['fit_seconds']
+        rows['fit_seconds'] = rows['fit_seconds'].fillna(rows.variant.map(times))
     row = {'variant': VARIANT, 'split': split, 'active_features': 48,
            **metrics, 'fit_seconds': fit['fit_seconds'],
            'tree_count': fit['evaluation']['tree_count'],
@@ -180,7 +184,7 @@ def evaluate_control(training_run, control_run, test_run):
     groups = _group_scores(arrays, starts, score, metrics['NDCG@10'])
     reference = pd.read_parquet(test / 'models/D462-t/group_ndcg.parquet')
     intervals = paired_intervals(groups, reference, 'test')
-    comparison = comparison_rows(test, 'test', metrics, groups, result['fit'])
+    comparison = comparison_rows(test, 'test', metrics, groups, result['fit'], training_dir=source)
     if file_hash(model_path) != result['model_sha256']:
         raise ValueError('Модель изменилась во время оценки')
     np.save(output / 'test_score.npy', score)

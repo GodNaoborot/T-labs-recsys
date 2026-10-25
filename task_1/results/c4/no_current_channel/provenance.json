@@ -123,5 +123,21 @@
   },
   "training_performed_during_import": false,
   "prediction_performed_during_import": false,
-  "bootstrap_recomputed_during_import": false
+  "bootstrap_recomputed_during_import": false,
+  "source_publication": [
+    {
+      "original_source_file": "audit_no_organic_20261025.py",
+      "original_sha256": "4d66776673090d4073358c05bc95b20506a276115f001eb5e7d94ab2a62cc4e0",
+      "path": "task_1/reproduction/channel_control_fit.py",
+      "sanitized_source_sha256": "cbf60d228b34890d751efe1e0a5db1c843545b9349ea00133e92aa3ab336c007",
+      "changes": "Portable paths and configurable run names, current Python interpreter and explicit execution/overwrite guards; numerical fit, evaluation and bootstrap calculations preserved."
+    },
+    {
+      "original_source_file": "audit_no_organic_evaluate_20261025.py",
+      "original_sha256": "c404cc8b80ae51bf895451720cef9eec8baf788e7921c3dd71981e1543b82f25",
+      "path": "task_1/reproduction/channel_control_evaluate.py",
+      "sanitized_source_sha256": "a876411555e64a1e924f451283cc4955784274ca304b19eb6a632a5bd2131b22",
+      "changes": "Portable paths and configurable run names, current Python interpreter and explicit execution/overwrite guards; numerical fit, evaluation and bootstrap calculations preserved."
+    }
+  ]
 }

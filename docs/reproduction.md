@@ -70,13 +70,23 @@ Runner фиксирует inline-бэкенд Matplotlib, чтобы графи�
 
 ## Рисунок итогового сравнения
 
-Диаграмма интервалов в README строится из опубликованных CSV:
+Актуальная диаграмма ручные48-DFS462 в README и графики PDF строятся из опубликованных CSV:
 
 ```bash
-python task_1/src/plot_final_intervals.py
+python task_1/reproduction/build_research_report.py --figures-only
 ```
 
-Команда обновляет только docs/figures/c4_intervals.png. Обучение и новая оценка моделей не выполняются.
+Команда обновляет docs/figures/manual48_vs_dfs.png и docs/figures/research/. Обучение и новая оценка моделей не выполняются.
+
+Для сборки итогового PDF нужны ReportLab и шрифты DejaVu Sans, DejaVu Serif и DejaVu Sans Mono:
+
+```bash
+python -m pip install reportlab
+python task_1/reproduction/build_editorial_report.py --figures-only
+python task_1/reproduction/build_editorial_report.py
+```
+
+Готовый отчёт: [recsys_feature_generation_editorial.pdf](../output/pdf/recsys_feature_generation_editorial.pdf). Исторический рисунок трёх моделей отдельно строит task_1/src/plot_final_intervals.py.
 
 ## Пути в опубликованных результатах
 
@@ -197,9 +207,9 @@ python task_1/src/verify_reproduction.py --output-dir task_1/.validation/synthet
 EDA, 42/49/462 признака, три обучения, искусственный test и важности.
 Исследовательские данные и модели не используются.
 
-Основное исходное C4-сравнение независимо повторено в отдельной Python 3.12.13 venv: шесть полных матриц manual49/DFS462 для train/validation/test совпали побайтно. Три модели повторили 791/685/1043 дерева, все validation/test-прогнозы и обе метрики. Ручной контроль без текущего канала дополнительно предсказал на свежем test Pool: все 3 160 068 прогнозов совпали с сохранённой оценкой. [Подтверждение](results/reproduction/main_verification.json).
+Основное исходное C4-сравнение повторено в отдельной чистой копии проекта с Python 3.12.13 venv: шесть полных матриц manual49/DFS462 для train/validation/test совпали побайтно. Три модели повторили 791/685/1043 дерева, все validation/test-прогнозы и обе метрики. Ручной контроль без текущего канала дополнительно предсказал на свежем test Pool: все 3 160 068 прогнозов совпали с сохранённой оценкой. [Подтверждение](results/reproduction/main_verification.json).
 
-Это полный повтор основного C4-сравнения первоначальной публикации. Исторический Optuna и все старые временные окна полностью не переобучались. Новые версии отчётного режима проверены отдельно; новый CLI контроля 48 в текущей ветке прошёл план и тесты без повторного fit. [Более ранние проверки](provenance/audit_reproduction_20261025.json).
+Это полный повтор трёх моделей первоначального C4-сравнения. Исторический Optuna и все старые временные окна полностью не переобучались. Новые версии отчётного режима проверены отдельно. Новый CLI контроля 48 прошёл план и тесты; внешний проверяющий выполнил полный синтетический контроль fit/evaluate. Полный fit на Yambda именно через этот CLI пока не повторялся. Исходные скрипты выполненного контроля опубликованы отдельно: [обучение](../task_1/reproduction/channel_control_fit.py), [оценка](../task_1/reproduction/channel_control_evaluate.py). [Более ранние проверки](provenance/audit_reproduction_20261025.json).
 
 Метрики сохранённого исследования: [основной протокол](c4.md),
 [test](c4-test.md), [выбранные признаки](feature-analysis.md).
