@@ -5,6 +5,7 @@
 трёх последовательных worker, включая загрузку Pool и сохранение оценки.
 """
 from pathlib import Path
+from replay_paths import saved_path
 import argparse
 import gc
 import json
@@ -169,7 +170,7 @@ def prepare_pools(data_dir, result_dir, progress=None):
             # подвыборка C4; эти отчёты принадлежат только новому запуску.
             report['quantization']['borders_origin'] = 'c4_common_selected_train'
             _write_json(folder / (split + '_quantization.json'), report)
-            actual = load_targets(report['targets_path'])
+            actual = load_targets(saved_path(report['targets_path']))
             canonical = load_targets(data_dir / (split + '_targets.npz'))
             for key in TARGET_KEYS:
                 np.testing.assert_array_equal(actual[key], canonical[key])

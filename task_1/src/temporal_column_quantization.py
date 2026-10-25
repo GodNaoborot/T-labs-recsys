@@ -5,6 +5,7 @@
 Формат сверяется с catboost/private/libs/quantized_pool/serialization.cpp.
 """
 from pathlib import Path
+from replay_paths import saved_path
 import struct
 import gc
 import ctypes
@@ -366,7 +367,7 @@ def prepare_quantized_split(matrix_path, targets_path, features, output_dir, spl
     if report_path.exists():
         report = json.loads(report_path.read_text())
         for kind in ['pool', 'targets', 'borders']:
-            if _sha256(report[kind + '_path']) != report[kind + '_sha256']:
+            if _sha256(saved_path(report[kind + '_path'])) != report[kind + '_sha256']:
                 raise ValueError('Изменился завершенный quantized-артефакт')
         return report
     started = time.perf_counter()

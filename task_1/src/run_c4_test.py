@@ -1,5 +1,6 @@
 """Оценить три сохранённые модели на прежнем test без обучения."""
 from pathlib import Path
+from replay_paths import saved_path
 import argparse
 from datetime import datetime, timezone
 import json
@@ -43,7 +44,7 @@ def training_path(name):
 def verify_training_reference(plan, requested=None):
     """Проверить, что план и модели относятся к выбранному обучению."""
     # Старые планы уже содержат точные frozen-пути, но ещё не отдельное имя.
-    recorded = Path(plan['c4_provenance']['protocol']['path']).parent
+    recorded = saved_path(plan['c4_provenance']['protocol']['path']).parent
     name = plan.get('training_run', recorded.name)
     expected = training_path(name)
     if requested is not None and requested != name:
@@ -57,7 +58,7 @@ def verify_training_reference(plan, requested=None):
         if variant not in VARIANTS:
             raise ValueError('Неизвестный вариант модели в плане')
         model_path = expected / 'models' / variant / 'model.cbm'
-        if Path(record['model']['path']).resolve() != model_path.resolve():
+        if saved_path(record['model']['path']).resolve() != model_path.resolve():
             raise ValueError('Модель относится к другому обучению: ' + variant)
     return name
 
@@ -76,7 +77,7 @@ def verify_plan(folder, check_sources=True):
     records += list(plan['c4_provenance'].values())
     records += list(plan['sources'].values())
     for record in records:
-        if file_hash(record['path']) != record['sha256']:
+        if file_hash(saved_path(record['path'])) != record['sha256']:
             raise ValueError('Изменился зафиксированный артефакт: ' + record['path'])
     if check_sources:
         for name, expected in plan['source_sha256'].items():
@@ -168,7 +169,7 @@ def build_plan(name, data_dir, result_dir, training_run=DEFAULT_TRAINING_RUN):
     verify_training_reference(plan, training_run)
     # Проверка завершения обучения не читает и не создаёт test-запросы.
     for record in plan['sources'].values():
-        if file_hash(record['path']) != record['sha256']:
+        if file_hash(saved_path(record['path'])) != record['sha256']:
             raise ValueError('Изменился исходный журнал: ' + record['path'])
     return plan
 

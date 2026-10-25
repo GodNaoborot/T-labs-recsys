@@ -15,8 +15,14 @@ def main(argv=None):
     parser.add_argument('--artist-mapping', type=Path)
     parser.add_argument('--include-test', action='store_true')
     parser.add_argument('--notebooks', nargs='+', choices=NOTEBOOKS, default=list(NOTEBOOKS))
-    parser.add_argument('--check', action='store_true', help='Выполнить, не сохраняя notebook-файлы')
+    output = parser.add_mutually_exclusive_group()
+    output.add_argument('--check', action='store_true', help='Выполнить без записи notebook-файлов')
+    output.add_argument('--output-dir', type=Path, help='Записать выполненные ноутбуки отдельно')
+    output.add_argument('--in-place', action='store_true',
+                        help='Обновить исходные ноутбуки; только для report')
     args = parser.parse_args(argv)
+    if args.in_place and args.mode != 'report':
+        parser.error('--in-place разрешён только в режиме report')
     from notebook_workflow import safe_name
     safe_name(args.run_name)
     if bool(args.raw_events) != bool(args.artist_mapping):
@@ -33,7 +39,14 @@ def main(argv=None):
         path = TASK_ROOT / 'notebooks' / name
         # Новые выводы хранятся отдельно от исходного исследования.
         output = TASK_ROOT / 'results/reproduction' / args.run_name / 'notebooks' / name
-        destination = None if args.check else (path if args.mode == 'report' else output)
+        if args.check:
+            destination = None
+        elif args.output_dir is not None:
+            destination = args.output_dir / name
+        elif args.mode == 'recompute':
+            destination = output
+        else:
+            destination = path if args.in_place else None
         records.append(execute_notebook(path, 172800 if args.mode == 'recompute' else 180,
                                         destination, environment=environment))
     print(json.dumps({'mode': args.mode, 'test_requested': args.include_test,

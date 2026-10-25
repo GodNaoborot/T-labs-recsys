@@ -4,6 +4,7 @@
 C4 переиспользуются; расширяется только допустимый диапазон запросов/истории.
 """
 from pathlib import Path
+from replay_paths import saved_path
 import gc
 import json
 
@@ -103,15 +104,15 @@ def _feature_spec(plan):
     if manual_names != expected_manual:
         raise ValueError('Изменён порядок frozen 49 ручных признаков')
     selection = plan['selection']
-    paths = {parent: Path(plan['definitions'][parent]['path']) for parent, _ in BRANCHES}
+    paths = {parent: saved_path(plan['definitions'][parent]['path']) for parent, _ in BRANCHES}
     records = {'selection': selection, **{parent: plan['definitions'][parent] for parent, _ in BRANCHES}}
     for name, record in records.items():
-        if file_hash(Path(record['path'])) != record['sha256']:
+        if file_hash(saved_path(record['path'])) != record['sha256']:
             raise ValueError(f'Изменён frozen источник формул: {name}')
     parents = {path.parent.resolve() for path in paths.values()}
     if len(parents) != 1 or any(path.name != parent + '.json' for parent, path in paths.items()):
         raise ValueError('Definitions должны быть отдельными parent.json в общем каталоге')
-    loaded, definitions = load_selected_definitions(Path(selection['path']), next(iter(parents)))
+    loaded, definitions = load_selected_definitions(saved_path(selection['path']), next(iter(parents)))
     if loaded != dfs_names:
         raise ValueError('Порядок 462 признаков отличается от frozen плана')
     return manual_names, dfs_names, definitions, {name: record['sha256'] for name, record in records.items()}
@@ -146,7 +147,7 @@ def prepare_test_features(data_dir, result_dir, plan, progress=None):
     availability = _check_availability(result_dir, limit)
     # DFS reader использует эти же постоянные пути. Иной источник не подменяем.
     for name in ['listens', 'events']:
-        if Path(plan['sources'][name]['path']).resolve() != (TASK_ROOT / 'data' / f'{name}.parquet').resolve():
+        if saved_path(plan['sources'][name]['path']).resolve() != (TASK_ROOT / 'data' / f'{name}.parquet').resolve():
             raise ValueError('Источник истории отличается от frozen рабочего файла')
     contract = {'query_arrays': c4._query_record(queries),
                 'target_arrays': {name: _array_hash(value) for name, value in targets.items()},

@@ -57,5 +57,20 @@
       "source_cell_index": 17,
       "sha256": "150f81d16fa0465e71eea19a77975c02a8f99efa06d01f608a336b1592c6bc0e"
     }
-  ]
+  ],
+  "aggregates": {
+    "ratio_counts.csv": {
+      "bytes": 4134,
+      "sha256": "adbe4a956637cc8e751dd9a57bdf355f5758ad9fcafa2d1748d529c7433cab9d"
+    },
+    "timeline_histograms.csv": {
+      "bytes": 32580,
+      "sha256": "a7f6195c3356dc298cb779c1f55df2d1cf28288fd64e26da556e9fa587b93290"
+    }
+  },
+  "aggregate_source": {
+    "dataset_revision": "dd6f3a19eef5866e346c3270e098baa641a44948",
+    "raw_sha256": "b92f6c97277a554c8a7d6cfea900eca51639fd53a3e6c4fa58b82e35fd35804d",
+    "method": "analyze_dataset.collect_statistics; frequencies and normalized histogram bins only"
+  }
 }

@@ -6,6 +6,7 @@
 """
 from contextlib import contextmanager
 from pathlib import Path
+from replay_paths import saved_path
 import fcntl
 import hashlib
 import json
@@ -70,8 +71,9 @@ def _artifact(path, sha256=None):
 
 def _check_artifact(record, checksum=False):
     """Не перечитывать большой Pool при неизменных size/mtime/ctime/inode."""
-    path = Path(record['state']['path'])
-    if _file_state(path) != record['state']:
+    path = saved_path(record['state']['path'])
+    expected_state = {**record['state'], 'path': str(path.resolve())}
+    if _file_state(path) != expected_state:
         raise ValueError(f'Артефакт изменился: {path}')
     if checksum and _sha256(path) != record['sha256']:
         raise ValueError(f'Checksum не совпал: {path}')
@@ -323,7 +325,7 @@ def pool_info(run_dir, method, split, scope):
     run_dir = Path(run_dir).resolve()
     paths = _cache_paths(run_dir, method, split, scope)
     config = _check_cache(paths['config'], _request(run_dir, method, split, scope, _feature_names(method)))
-    return {'pool': Path(config['artifacts']['pool']['state']['path']),
+    return {'pool': saved_path(config['artifacts']['pool']['state']['path']),
             'targets': paths['targets'], 'config': paths['config']}
 
 
@@ -429,7 +431,7 @@ def prepare_pool(run_dir, method, split, scope):
         request = _request(run_dir, method, split, scope, names)
         if paths['config'].exists():
             config = _check_cache(paths['config'], request)
-            return Path(config['artifacts']['pool']['state']['path'])
+            return saved_path(config['artifacts']['pool']['state']['path'])
         paths['pool'].parent.mkdir(parents=True, exist_ok=True)
         if any(paths[name].exists() for name in ('pool', 'targets')):
             raise FileExistsError('Неполный cache: нужен новый run_dir')

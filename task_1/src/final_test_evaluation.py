@@ -1,5 +1,6 @@
 """Оценка сохранённых ранкеров на test без обучения и выбора моделей."""
 from pathlib import Path
+from replay_paths import saved_path
 import gc
 import hashlib
 import json
@@ -63,11 +64,11 @@ def check_inputs(model_record, plan, data_dir):
     """Сверить модель, пороги, все targets и схему перед predict."""
     data_dir = Path(data_dir)
     schema_dir = data_dir / model_record['schema']
-    model_path = Path(model_record['model']['path'])
+    model_path = saved_path(model_record['model']['path'])
     if file_hash(model_path) != model_record['model']['sha256']:
         raise ValueError('Изменился hash сохранённой модели')
     border = plan['train_borders'][model_record['schema']]
-    if file_hash(border['path']) != border['sha256']:
+    if file_hash(saved_path(border['path'])) != border['sha256']:
         raise ValueError('Изменились зафиксированные train-пороги')
     if file_hash(schema_dir / 'test_applied_borders.tsv') != border['sha256']:
         raise ValueError('Test получил другие пороги')
@@ -101,7 +102,7 @@ def validate_schema(plan, data_dir, schema):
         raise ValueError('У плана нет моделей для этой схемы')
     arrays, features, pool_path = check_inputs(models[0], plan, data_dir)
     for model in models:
-        if file_hash(model['model']['path']) != model['model']['sha256']:
+        if file_hash(saved_path(model['model']['path'])) != model['model']['sha256']:
             raise ValueError('Изменился hash модели')
         if verify_schema(model, plan) != features:
             raise ValueError('Различаются схемы общих физических входов')
@@ -135,7 +136,7 @@ def evaluate_model(model_record, plan, data_dir, output_dir):
         if previous['inputs'] != input_record or not previous['completed']:
             raise ValueError('Есть оценка с другими входами')
         for name, saved in previous['artifacts'].items():
-            if file_hash(saved['path']) != saved['sha256']:
+            if file_hash(saved_path(saved['path'])) != saved['sha256']:
                 raise ValueError('Повреждён сохранённый результат: ' + name)
         return previous
     if folder.exists() and any(folder.iterdir()):
@@ -145,7 +146,7 @@ def evaluate_model(model_record, plan, data_dir, output_dir):
     pool = Pool('quantized://' + str(pool_path), thread_count=THREADS)
     arrays, starts = check_pool(pool, arrays, features)
     loaded = time.perf_counter()
-    model = CatBoostRanker().load_model(model_record['model']['path'])
+    model = CatBoostRanker().load_model(str(saved_path(model_record['model']['path'])))
     if model.feature_names_ != features or int(model.tree_count_) != model_record['tree_count']:
         raise ValueError('Схема или число деревьев модели отличаются от плана')
     model_loaded = time.perf_counter()
@@ -168,7 +169,7 @@ def evaluate_model(model_record, plan, data_dir, output_dir):
     group_scores.to_parquet(files['groups'], index=False)
     _daily_scores(group_scores).to_csv(files['daily'], index=False)
     write_json(files['metrics'], metrics)
-    if file_hash(model_record['model']['path']) != model_record['model']['sha256']:
+    if file_hash(saved_path(model_record['model']['path'])) != model_record['model']['sha256']:
         raise ValueError('Исходный model.cbm изменился во время оценки')
     record = {'completed': True, 'split': 'test', 'model_id': model_record['id'],
               'family': model_record['family'], 'schema': model_record['schema'],
@@ -213,7 +214,7 @@ def summarize(plan, data_dir, output_dir):
         if evaluation['inputs']['targets_sha256'] != file_hash(Path(data_dir) / 'targets.npz'):
             raise ValueError('Модели оценены на разных targets')
         for saved in evaluation['artifacts'].values():
-            if file_hash(saved['path']) != saved['sha256']:
+            if file_hash(saved_path(saved['path'])) != saved['sha256']:
                 raise ValueError('Изменился артефакт оценки')
         frame = pd.read_parquet(folder / 'group_ndcg.parquet')
         np.testing.assert_allclose(frame['ndcg'].mean(), evaluation['metrics']['NDCG@10'],

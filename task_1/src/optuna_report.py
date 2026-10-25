@@ -4,6 +4,7 @@
 Положительный знак означает улучшение DFS; интервалы условны на обученных моделях.
 """
 from pathlib import Path
+from replay_paths import saved_path
 import json
 import os
 import time
@@ -150,7 +151,7 @@ def _recorded_intervals():
 
 def _group_source(result):
     """Проверить хеш сохраненных групп и вернуть путь с его текущим SHA256."""
-    path = Path(result['artifacts']['groups'])
+    path = saved_path(result['artifacts']['groups'])
     digest = file_hash(path)
     expected = result.get('artifact_sha256', {}).get('groups')
     if expected is not None and digest != expected:
@@ -160,7 +161,7 @@ def _group_source(result):
 
 def _read_groups(source, metric):
     """Проверить уникальный порядок ranking-групп и совпадение среднего с метрикой."""
-    frame = pd.read_parquet(source['path'])
+    frame = pd.read_parquet(saved_path(source['path']))
     required = {'group_id', 'day', 'ndcg'}
     if not required.issubset(frame) or frame.empty:
         raise ValueError('Нужна непустая таблица group_id/day/ndcg')

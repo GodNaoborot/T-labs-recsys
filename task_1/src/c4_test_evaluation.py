@@ -4,6 +4,7 @@
 повторная оценка прежнего test после исправления времени запроса C4.
 """
 from pathlib import Path
+from replay_paths import saved_path
 import gc
 import json
 import time
@@ -62,7 +63,7 @@ def _authorized(plan):
 
 
 def _artifact(record):
-    path = Path(record['path'])
+    path = saved_path(record['path'])
     if file_hash(path) != record['sha256']:
         raise ValueError('Изменился зафиксированный артефакт ' + str(path))
     return path
@@ -260,7 +261,7 @@ def summarize_test(result_dir, plan, evaluations):
         variant = model['variant']
         evaluation = evaluations[variant]
         _verify_saved(evaluation)
-        frame = pd.read_parquet(evaluation['artifacts']['groups']['path'])
+        frame = pd.read_parquet(saved_path(evaluation['artifacts']['groups']['path']))
         np.testing.assert_allclose(frame['ndcg'].mean(), evaluation['metrics']['NDCG@10'],
                                    rtol=0, atol=1e-12)
         groups[variant] = frame

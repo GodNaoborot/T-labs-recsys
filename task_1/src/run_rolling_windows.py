@@ -1,5 +1,6 @@
 """Последовательный запуск пяти окон с восстановлением завершенных этапов."""
 from pathlib import Path
+from replay_paths import saved_path
 import argparse
 import fcntl
 import json
@@ -166,7 +167,7 @@ def check_saved_model(paths, kind, objective):
     """Сверить checkpoint и результаты, без которых парное сравнение невозможно."""
     name = f'{kind}_{objective}'
     info = read_json(paths['results'] / f'{name}_report.json')
-    assert file_sha256(info['path']) == info['sha256']
+    assert file_sha256(saved_path(info['path'])) == info['sha256']
     for suffix, key in [('val_score.npy', 'score_sha256'),
                         ('group_ndcg.parquet', 'group_ndcg_sha256')]:
         assert file_sha256(paths['results'] / f'{name}_{suffix}') == info[key]

@@ -1,5 +1,6 @@
 """Подготовка парных NDCG user–day для bootstrap без обучения моделей."""
 from pathlib import Path
+from replay_paths import saved_path
 import argparse
 import gc
 import hashlib
@@ -95,7 +96,7 @@ def input_fingerprint(paths, models, seed):
     files = {name: {'path': str(path), 'sha256': file_sha256(path)}
              for name, path in paths.items()}
     for name, info in models.items():
-        digest = file_sha256(info['path'])
+        digest = file_sha256(saved_path(info['path']))
         if digest != info['sha256']:
             raise ValueError(f'Hash модели не совпал: {name}')
         files[name] = {'path': info['path'], 'sha256': digest}
@@ -153,8 +154,8 @@ def assert_paired_rows(base, dfs, targets):
 
 def load_models(information, prefix):
     """Загрузить два checkpoint; обучение в этом модуле не вызывается."""
-    ranker = CatBoostRanker().load_model(information[f'{prefix}_ranker']['path'])
-    pointwise = CatBoostClassifier().load_model(information[f'{prefix}_pointwise']['path'])
+    ranker = CatBoostRanker().load_model(str(saved_path(information[f'{prefix}_ranker']['path'])))
+    pointwise = CatBoostClassifier().load_model(str(saved_path(information[f'{prefix}_pointwise']['path'])))
     np.testing.assert_array_equal(pointwise.classes_, [0, 1, 2])
     return {'ranker': ranker, 'pointwise': pointwise}
 

@@ -13,7 +13,7 @@ import pandas as pd
 import psutil
 
 import temporal_controls_data
-from replay_paths import configure_legacy
+from replay_paths import saved_path, configure_legacy
 
 from temporal_controls_data import (
     ROOT, BASE_BORDERS, VARIANTS, initialize, run_paths, read_json, write_json,
@@ -131,7 +131,7 @@ def worker(args):
     if args.stage == 'quantize':
         matrix = read_json(result / f'manual_sessions_{args.split}.json')
         return prepare_augmented_pool(
-            matrix['matrix_path'], data / 'selection' / f'{args.split}.npz',
+            saved_path(matrix['matrix_path']), data / 'selection' / f'{args.split}.npz',
             matrix['features'], data / 'manual_quantized', args.split,
             base_borders=BASE_BORDERS if args.split == 'train' else None)
     if args.stage == 'pilot':

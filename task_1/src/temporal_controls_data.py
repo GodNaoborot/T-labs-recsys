@@ -261,10 +261,10 @@ def variant_spec(name, variant):
                else [48] if variant == 'C2a' else [])
     if dfs:
         info = read_json(result / 'dfs_preparation.json')
-        train_pool, val_pool = info['train_pool'], info['val_pool']
+        train_pool, val_pool = str(saved_path(info['train_pool'])), str(saved_path(info['val_pool']))
     else:
-        train_pool = read_json(data / 'manual_quantized/train_report.json')['pool_path']
-        val_pool = read_json(data / 'manual_quantized/val_report.json')['pool_path']
+        train_pool = str(saved_path(read_json(data / 'manual_quantized/train_report.json')['pool_path']))
+        val_pool = str(saved_path(read_json(data / 'manual_quantized/val_report.json')['pool_path']))
     return {'train_pool': train_pool, 'val_pool': val_pool, 'features': names,
             'ignored_indices': ignored, 'active_count': len(names) - len(ignored),
             'active_features': [feature for i, feature in enumerate(names) if i not in ignored]}

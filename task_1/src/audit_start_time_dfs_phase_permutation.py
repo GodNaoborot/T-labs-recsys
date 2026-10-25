@@ -28,7 +28,7 @@ def main(output=None, controls_run=RUN, full_run='temporal_full462_20261023_v5')
     record = {'model': {'path': str(run / 'models/D462-sub/model.cbm'),
                         'sha256': control['model_sha256']},
               'tree_count': control['evaluation']['tree_count']}
-    model_path = Path(record['model']['path'])
+    model_path = saved_path(record['model']['path'])
     if hash_file(model_path) != record['model']['sha256']:
         raise ValueError('Модель изменилась')
     names = protocol['dfs_features']

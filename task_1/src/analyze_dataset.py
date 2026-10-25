@@ -154,6 +154,19 @@ def save_timeline_plots(edges, histograms, output):
     return records
 
 
+
+def timeline_table(edges, histograms):
+    """Сохранить границы бинов и уже нормированные частоты без сырых событий."""
+    rows = []
+    names = ('like_seconds', 'like_hours', 'first_listen_days')
+    for name, bins, histogram in zip(names, edges, histograms):
+        for event, values in histogram.items():
+            for left, right, value in zip(bins[:-1], bins[1:], values):
+                rows.append({'histogram': name, 'event': event, 'bin_left': left,
+                             'bin_right': right, 'normalized_value': value})
+    return pd.DataFrame(rows)
+
+
 def analyze(raw_events, output_dir):
     raw_events, output_dir = Path(raw_events).resolve(), Path(output_dir).resolve()
     if output_dir.exists():
@@ -163,6 +176,7 @@ def analyze(raw_events, output_dir):
     output_dir.mkdir(parents=True)
     schema.to_csv(output_dir / 'schema.csv', index=False)
     ratios.to_csv(output_dir / 'ratio_counts.csv', index=False)
+    timeline_table(edges, histograms).to_csv(output_dir / 'timeline_histograms.csv', index=False)
     images = save_ratio_plots(ratios, output_dir) + save_timeline_plots(edges, histograms, output_dir)
     for image in images:
         image['sha256'] = file_hash(output_dir / image['file'])

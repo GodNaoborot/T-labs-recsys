@@ -91,21 +91,22 @@ def execute_notebook(path, timeout, destination=None, environment=None):
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--check', action='store_true',
-                        help='Выполнить, но не заменять сохранённые выводы')
-    parser.add_argument('--output-dir', type=Path,
+    output = parser.add_mutually_exclusive_group()
+    output.add_argument('--check', action='store_true',
+                        help='Выполнить без записи; поведение по умолчанию')
+    output.add_argument('--output-dir', type=Path,
                         help='Сохранить выполненные файлы в отдельной папке')
+    output.add_argument('--in-place', action='store_true',
+                        help='Явно обновить выводы исходных ноутбуков')
     parser.add_argument('--timeout', type=int, default=180,
                         help='Лимит одной отчётной ячейки, секунд')
     args = parser.parse_args(argv)
-    if args.check and args.output_dir is not None:
-        parser.error('--check и --output-dir несовместимы')
     if args.timeout <= 0:
         parser.error('--timeout должен быть положительным')
     records = []
     for name in NOTEBOOKS:
         path = TASK_ROOT / 'notebooks' / name
-        destination = None if args.check else ((args.output_dir / name) if args.output_dir else path)
+        destination = (args.output_dir / name) if args.output_dir else (path if args.in_place else None)
         print(f'Выполнение {name}', flush=True)
         record = execute_notebook(path, args.timeout, destination)
         records.append(record)

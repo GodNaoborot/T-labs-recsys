@@ -1,5 +1,6 @@
 """Ночная очередь: контроль1600, общий поиск2ч и matched refit до общего дедлайна."""
 from pathlib import Path
+from replay_paths import saved_path
 from datetime import datetime, timezone
 import argparse
 import fcntl
@@ -290,7 +291,7 @@ def verified_refit(output, parameters):
         if file_hash(path) != hashes[name]:
             raise ValueError(f'Поврежден артефакт: {path}')
     for record in result.get('input_configs', {}).values():
-        if file_hash(record['path']) != record['sha256']:
+        if file_hash(saved_path(record['path'])) != record['sha256']:
             raise ValueError(f'Изменился входной config: {record["path"]}')
     return result
 
@@ -301,7 +302,7 @@ def _verified_stage(stages, stage_id, parameters):
     if stage.get('status') != 'completed':
         return None
     try:
-        return verified_refit(Path(stage['output']), parameters)
+        return verified_refit(saved_path(stage['output']), parameters)
     except (FileNotFoundError, ValueError, KeyError):
         return None
 

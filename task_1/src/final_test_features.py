@@ -1,5 +1,6 @@
 """Признаки и фиксированное квантование финального test без обучения моделей."""
 from pathlib import Path
+from replay_paths import saved_path
 import gc
 import json
 import time
@@ -40,7 +41,7 @@ def _write_json(path, record):
 
 
 def _assert_artifact(record):
-    path = Path(record['path'])
+    path = saved_path(record['path'])
     if file_hash(path) != record['sha256']:
         raise ValueError('Изменился зафиксированный источник: ' + str(path))
     return path
@@ -277,7 +278,7 @@ def quantize_schema(data_dir, result_dir, plan, schema, progress=None):
     if report_path.exists():
         report = json.loads(report_path.read_text())
         for kind in ['pool', 'targets', 'applied_borders']:
-            if file_hash(report[kind + '_path']) != report[kind + '_sha256']:
+            if file_hash(saved_path(report[kind + '_path'])) != report[kind + '_sha256']:
                 raise ValueError('Изменился quantized test checkpoint')
         return report
     started = time.perf_counter()

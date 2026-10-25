@@ -43,6 +43,19 @@ class AnalyzeDatasetTests(unittest.TestCase):
             self.assertEqual(row['unique'], frame[name].nunique())
         self.assertEqual(ratios['count'].sum(), frame.event_type.eq('listen').sum())
 
+    def test_saved_timeline_preserves_normalized_counts_and_bins(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / 'raw.parquet'
+            fixture().to_parquet(path, index=False)
+            _, _, _, edges, histograms = module.collect_statistics(path)
+        table = module.timeline_table(edges, histograms)
+        self.assertTrue((table.bin_right > table.bin_left).all())
+        self.assertFalse(table.duplicated(['histogram', 'event', 'bin_left']).any())
+        for name in table.histogram.unique():
+            totals = table.loc[table.histogram.eq(name)].groupby('event').normalized_value.sum()
+            self.assertAlmostEqual(totals['listen'], 2.)
+            self.assertAlmostEqual(totals['like'], 1.)
+
     def test_first_like_and_first_listen_definition(self):
         timeline, pairs = module.liked_timeline(fixture())
         self.assertEqual(pairs, 2)

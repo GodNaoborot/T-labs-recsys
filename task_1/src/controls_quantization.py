@@ -4,6 +4,7 @@
 train: частичный input_borders иначе задает новым колонкам 32 порога в CatBoost.
 """
 from pathlib import Path
+from replay_paths import saved_path
 import gc
 import json
 import time
@@ -150,7 +151,7 @@ def _recover(report_path, request_path, request):
     if not report.get('completed'):
         raise ValueError('Незавершенный отчет квантизации')
     for kind in ('pool', 'borders', 'targets'):
-        if _sha256(report[kind + '_path']) != report[kind + '_sha256']:
+        if _sha256(saved_path(report[kind + '_path'])) != report[kind + '_sha256']:
             raise ValueError('Изменился завершенный артефакт: ' + kind)
     return report
 

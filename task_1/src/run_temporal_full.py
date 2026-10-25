@@ -19,7 +19,7 @@ from datetime import datetime, timezone
 
 import psutil
 
-from replay_paths import configure_legacy, legacy_featuretools_dir, project_path, run_name
+from replay_paths import saved_path, configure_legacy, legacy_featuretools_dir, project_path, run_name
 
 ROOT = Path(__file__).resolve().parents[1]
 RELATIVE = Path('experiment-1/temporal_runs')
@@ -179,14 +179,14 @@ def verify_sample_values(split, generation):
     import numpy as np
     source = DEFINITIONS.parent
     selected = read_json(SELECTION)
-    with np.load(generation['targets_path']) as saved:
+    with np.load(saved_path(generation['targets_path'])) as saved:
         ids = saved['log_id']
     with np.load(source / (split + '_targets.npz')) as saved:
         sample_ids = saved['log_id']
     order = np.argsort(ids)
     positions = np.searchsorted(ids[order], sample_ids)
     np.testing.assert_array_equal(ids[order[positions]], sample_ids)
-    full = np.load(generation['matrix_path'], mmap_mode='r')
+    full = np.load(saved_path(generation['matrix_path']), mmap_mode='r')
     previous = np.load(source / (split + '_X.npy'), mmap_mode='r')
     expected = np.asarray(previous[:, selected['indices']])
     rows = order[positions]
@@ -215,12 +215,12 @@ def reuse_train(source_run):
                 'temporal_sample_data.py', 'project_artifacts.py']
     for name in ['listens', 'train_targets', 'train_metadata', 'selection']:
         record = protocol['inputs'][name]
-        if sha256(record['path']) != record['sha256']:
+        if sha256(saved_path(record['path'])) != record['sha256']:
             raise ValueError('Исходные данные переиспользуемого train изменились: ' + name)
     for name in required:
         if protocol['sources'][name]['sha256'] != sha256(ROOT / 'src' / name):
             raise ValueError('Генератор переиспользуемого train изменился: ' + name)
-    if sha256(report['matrix_path']) != report['matrix_sha256']:
+    if sha256(saved_path(report['matrix_path'])) != report['matrix_sha256']:
         raise ValueError('Переиспользуемая матрица повреждена')
     return {**report, 'reused_from_run': source_run}
 
@@ -236,7 +236,7 @@ def generate(args, folder, data, split):
                                  query_chunk=args.query_chunk,
                                  progress=progress_writer(folder, 'generate_' + split), resume=True)
     report['sample_verification'] = verify_sample_values(split, report)
-    report['matrix_sha256'] = sha256(report['matrix_path'])
+    report['matrix_sha256'] = sha256(saved_path(report['matrix_path']))
     write_json(folder / ('generation_' + split + '.json'), report)
     return report
 
@@ -244,8 +244,8 @@ def generate(args, folder, data, split):
 def quantize(folder, data, split):
     from temporal_column_quantization import prepare_quantized_split
     generation = read_json(folder / ('generation_' + split + '.json'))
-    borders = None if split == 'train' else read_json(folder / 'quantization_train.json')['borders_path']
-    report = prepare_quantized_split(generation['matrix_path'], generation['targets_path'],
+    borders = None if split == 'train' else saved_path(read_json(folder / 'quantization_train.json')['borders_path'])
+    report = prepare_quantized_split(saved_path(generation['matrix_path']), saved_path(generation['targets_path']),
                                     generation['features'], data / 'quantized', split,
                                     input_borders=borders,
                                     progress=progress_writer(folder, 'quantize_' + split),
@@ -259,7 +259,7 @@ def fit(folder):
     protocol = read_json(folder / 'protocol.json')
     train = read_json(folder / 'quantization_train.json')
     val = read_json(folder / 'quantization_val.json')
-    return fit_ranker(train['pool_path'], val['pool_path'], val['targets_path'],
+    return fit_ranker(saved_path(train['pool_path']), saved_path(val['pool_path']), saved_path(val['targets_path']),
                       protocol['features'], folder / 'model', protocol['parameters'])
 
 
@@ -304,7 +304,7 @@ def verify_frozen(folder):
     protocol = read_json(folder / 'protocol.json')
     for group in ['sources', 'inputs', 'baseline']:
         for name, record in protocol[group].items():
-            path = Path(record['path'])
+            path = saved_path(record['path'])
             state = path.stat()
             if state.st_size != record['bytes'] or state.st_mtime_ns != record['mtime_ns']:
                 raise ValueError('Замороженный файл изменился: ' + name)

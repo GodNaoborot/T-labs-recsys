@@ -1,5 +1,6 @@
 """Test-запросы C4: те же пакеты и guard, без переобучения и новых правил метки."""
 from pathlib import Path
+from replay_paths import saved_path
 import gc
 import time
 
@@ -101,7 +102,7 @@ def _verify_plan_sources(plan):
     paths = {}
     for name in ('listens', 'events'):
         source = plan['sources'][name]
-        path = Path(source['path'])
+        path = saved_path(source['path'])
         if _sha256(path) != source['sha256']:
             raise ValueError('Изменён исходный файл: ' + str(path))
         paths[name] = path

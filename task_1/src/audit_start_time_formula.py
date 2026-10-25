@@ -8,7 +8,7 @@ import numpy as np
 import pandas as pd
 import pyarrow.parquet as pq
 
-from replay_paths import project_path, run_name
+from replay_paths import saved_path, project_path, run_name
 
 ROOT = Path(__file__).resolve().parents[1]
 CONTROL = 'dfs462_controls_20261023_v1'
@@ -88,7 +88,7 @@ def summarize(requests):
         phase_formula = (-((length * ratio + 99) // 100)) % 5
         phase = start % 5
         records[split] = {
-            'rows': len(start), 'targets_sha256': hash_file(row['path']),
+            'rows': len(start), 'targets_sha256': hash_file(saved_path(row['path'])),
             'timestamp_multiple5_fraction': float(np.mean(end % 5 == 0)),
             'length_multiple5_fraction': float(np.mean(length % 5 == 0)),
             'stored_start_matches_exact_fraction': float(np.mean(start == reconstructed)),
