@@ -18,6 +18,9 @@ from jupyter_client.kernelspec import KernelSpecManager
 TASK_ROOT = Path(__file__).resolve().parents[1]
 NOTEBOOKS = ('dataset-analysis.ipynb', 'model-baseline.ipynb',
              'experiment-1.ipynb', 'experiment-2.ipynb', 'final-comparison.ipynb')
+MIN_REPORT_IMAGES = {'dataset-analysis.ipynb': 2, 'experiment-2.ipynb': 1,
+                     'final-comparison.ipynb': 3}
+INLINE_BACKEND = 'module://matplotlib_inline.backend_inline'
 
 
 def make_kernel(directory):
@@ -65,7 +68,8 @@ def execute_notebook(path, timeout, destination=None, environment=None):
                     f'assert _report_kernel.prefix == {sys.prefix!r}, _report_kernel.prefix\n'
                     'del _report_kernel\n' + original)
     started = time.monotonic()
-    execution_env = {'TLAB_NOTEBOOK_MODE': 'report', **(environment or {})}
+    execution_env = {'TLAB_NOTEBOOK_MODE': 'report', **(environment or {}),
+                     'MPLBACKEND': INLINE_BACKEND}
     with patch.dict(os.environ, execution_env), tempfile.TemporaryDirectory(prefix='recsys-kernel-') as temporary:
         kernel = make_kernel(Path(temporary))
         try:
@@ -78,13 +82,19 @@ def execute_notebook(path, timeout, destination=None, environment=None):
     counts = [cell.execution_count for cell in notebook.cells if cell.cell_type == 'code']
     if counts != list(range(1, len(counts) + 1)):
         raise AssertionError(f'Непоследовательные номера в {path.name}: {counts}')
+    png_images = sum(bool(output.get('data', {}).get('image/png'))
+                     for cell in notebook.cells for output in cell.get('outputs', []))
+    if execution_env['TLAB_NOTEBOOK_MODE'] == 'report':
+        expected = MIN_REPORT_IMAGES.get(path.name, 0)
+        if png_images < expected:
+            raise AssertionError(f'В {path.name} сохранено {png_images} PNG, ожидалось не меньше {expected}')
     notebook.metadata['kernelspec'] = {
         'display_name': 'Python 3', 'language': 'python', 'name': 'python3'}
     if destination is not None:
         destination.parent.mkdir(parents=True, exist_ok=True)
         relocate_links(notebook, path, destination)
         nbformat.write(notebook, destination)
-    return {'notebook': path.name, 'code_cells': len(counts),
+    return {'notebook': path.name, 'code_cells': len(counts), 'png_images': png_images,
             'sequential_from_one': True, 'kernel_matches_current_environment': True,
             'seconds': time.monotonic() - started, 'saved': destination is not None}
 

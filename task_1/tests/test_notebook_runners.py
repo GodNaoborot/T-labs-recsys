@@ -1,9 +1,11 @@
 """Просмотр отчётов сохраняет исходники, запись требует явного параметра."""
 from contextlib import redirect_stdout, redirect_stderr
+import base64
 from io import StringIO
 from pathlib import Path
 from types import SimpleNamespace
 import sys
+import os
 import tempfile
 import unittest
 from unittest.mock import patch
@@ -80,6 +82,54 @@ class NotebookRunnerTests(unittest.TestCase):
             with self.assertRaises(SystemExit):
                 experiments.main(['--mode', 'recompute', '--in-place'])
         execute.assert_not_called()
+
+
+class NotebookPlotTests(unittest.TestCase):
+    def test_real_kernel_keeps_png_when_parent_and_override_request_agg(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            source = root / 'tiny.ipynb'
+            destination = root / 'executed.ipynb'
+            notebook = nbformat.v4.new_notebook(
+                cells=[nbformat.v4.new_code_cell(
+                    "import matplotlib.pyplot as plt\n"
+                    "plt.plot([0, 1], [0, 1])\n"
+                    "plt.show()")],
+                metadata={'tlab_report': True})
+            nbformat.write(notebook, source)
+            original = source.read_bytes()
+            with patch.dict(os.environ, {'MPLBACKEND': 'Agg'}):
+                result = reports.execute_notebook(
+                    source, 60, destination, environment={'MPLBACKEND': 'Agg'})
+                self.assertEqual(os.environ['MPLBACKEND'], 'Agg')
+            executed = nbformat.read(destination, as_version=4)
+            outputs = executed.cells[0].outputs
+            images = [output['data']['image/png'] for output in outputs
+                      if output.get('data', {}).get('image/png')]
+            self.assertGreaterEqual(len(images), 1)
+            image = base64.b64decode(images[0])
+            self.assertTrue(image.startswith(b'\x89PNG\r\n\x1a\n'))
+            self.assertGreater(len(image), 100)
+            self.assertEqual(result['png_images'], len(images))
+            self.assertNotIn('FigureCanvasAgg', str(outputs))
+            self.assertEqual(source.read_bytes(), original)
+
+    def test_missing_expected_report_images_prevents_saving(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            source = root / 'dataset-analysis.ipynb'
+            destination = root / 'executed.ipynb'
+            notebook = nbformat.v4.new_notebook(
+                cells=[nbformat.v4.new_code_cell('print(2)')],
+                metadata={'tlab_report': True})
+            nbformat.write(notebook, source)
+            original = source.read_bytes()
+            with patch.object(reports, 'make_kernel', return_value=SimpleNamespace(has_kernel=False)), \
+                    patch.object(reports, 'NotebookClient', FakeClient):
+                with self.assertRaisesRegex(AssertionError, 'PNG'):
+                    reports.execute_notebook(source, 60, destination)
+            self.assertFalse(destination.exists())
+            self.assertEqual(source.read_bytes(), original)
 
 
 if __name__ == '__main__':
